@@ -90,7 +90,7 @@
 		<div class="profil">
 			<div class="avatar">
 				<?php
-					if($getUserInfos['avatar'] != "0") 
+					if(!empty($getUserInfos['avatar']) AND $getUserInfos['avatar'] != "0")
 					{
 				?>
 						<img src="users/<?php echo $getUserInfos['id'];?>/avatar/60_<?php echo $getUserInfos['avatar'];?>.png">

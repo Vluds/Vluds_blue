@@ -1,4 +1,4 @@
-##Vluds_V1
+##Vluds
 
  Social network for creative people. Discover creations, meet people, talk to them and share !
 
