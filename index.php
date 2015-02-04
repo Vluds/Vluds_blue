@@ -106,6 +106,7 @@
 		<?php
 			require(INCLUDES."regBox.php");
 			require(INCLUDES."logBox.php");
+			require(INCLUDES."cookiesBox.php");
 		?>
 
 		<div id="module-container">
@@ -119,6 +120,7 @@
 
 		<!--JQuery Scripts-->
 		<script src="<?php echo SCRIPT; ?>JAnimate.js"></script>
+		<script src="<?php echo SCRIPT; ?>JEngine.js"></script>
 
 		<script>
 		  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){

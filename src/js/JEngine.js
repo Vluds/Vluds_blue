@@ -5,8 +5,44 @@ $(document).on('click', function()
 	setTime();
 });
 
+checkAcceptationCookies();
 
+function checkAcceptationCookies()
+{
+	var cookieValue = getCookie('AcceptationCookies');
 
+	if(cookieValue != 1)
+	{
+		cookiesBox(1);
+	}
+	else
+	{
+		cookiesBox(0);
+	}
+}
+
+function AcceptCookies()
+{
+	var today = new Date(), expires = new Date();
+	expires.setTime(today.getTime() + (365*24*60*60*1000));
+	document.cookie = "AcceptationCookies =" + encodeURIComponent(1) + ";expires=" + expires.toGMTString();
+
+	cookiesBox(0);
+}
+
+function getCookie(cookieName) 
+{
+    var oRegex = new RegExp("(?:; )?" + cookieName + "=([^;]*);?");
+ 
+	if (oRegex.test(document.cookie))
+    {
+		return decodeURIComponent(RegExp["$1"]);
+	} 
+	else 
+	{
+		return null;
+	}
+}
 
 function delDiv(div, time)
 {

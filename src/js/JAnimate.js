@@ -435,6 +435,20 @@ function regBox(state)
 	}
 }
 
+function cookiesBox(state)
+{
+	if(state == 0)
+	{
+		backgroundBox(0);
+		$('#cookiesBox').fadeOut(200);
+	}
+	else
+	{
+		backgroundBox(1);
+		$('#cookiesBox').fadeIn(400);
+	}
+}
+
 $('#backgroundBox').on('click', function(){
 	backgroundBox(0);
 });

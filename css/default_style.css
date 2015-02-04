@@ -1011,6 +1011,38 @@ header
 	margin-bottom: 1%
 }
 
+#cookiesBox
+{
+	margin-left: -150px;
+	margin-top: -185px;
+	width: 300px;
+}
+#cookiesBox #container
+{
+	margin-top: 20px;
+}
+#cookiesBox ul
+{
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+	text-align: left;
+	margin-bottom: 5px;
+}
+#cookiesBox ul#submit
+{
+	margin-top: 10px;
+	text-align: center;
+}
+#cookiesBox ul#submit input[type=submit]
+{
+	width: 100%;
+}
+#cookiesBox ul li
+{
+
+}
+
 #backgroundBox
 {
 	display: none;

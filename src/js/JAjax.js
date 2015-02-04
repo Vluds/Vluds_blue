@@ -229,7 +229,7 @@ function getFlux()
 
 					if(data.reply == "")
 					{
-						messageBox("Aucune publication à afficher ...");
+						//messageBox("Aucune publication à afficher ...");
 					}
 					else if(data.result == 1)
 					{
