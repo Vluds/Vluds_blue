@@ -1,0 +1,196 @@
+#profil-container
+{
+	width: 100%;
+
+	overflow-y: auto;
+	overflow-x: hidden;
+	position: relative;
+}
+
+#profil-container #banner
+{
+	background-color: rgba(255, 255, 255, 0.5);
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center center;
+
+	position: relative;
+	height: 430px;
+}
+#profil-container #banner #changeBanner
+{
+	position: absolute;
+	top: 5%;
+	left: 1%;
+	height: 40px;
+	width: 40px;
+	border-radius: 100px;
+	box-sizing: border-box;
+	background: rgba(255, 255, 255, 0.7) url('../img/add.png') no-repeat center;
+	background-size: 60%;
+	cursor: pointer;
+	
+	display: none;
+}
+#profil-container #banner #changeBanner .info
+{
+	background-color: rgba(255, 255, 255, 0.7);
+	position: absolute;
+	top: 50%;
+	margin-top: -15px;
+	left: 50px;
+	width: 200px;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	padding-left: 5px;
+	padding-right: 5px;
+	border-radius: 2px;
+
+	display: none;
+}
+
+#profil-container #profil
+{
+	text-align: center;
+	width: 100%;
+	margin-top: -130px;
+}
+
+#profil-container #profil #avatar
+{
+	height: 210px;
+	width: 210px;
+	left: 50%;
+	margin-left: -105px;
+	position: relative;
+}
+#profil-container #profil #avatar img
+{
+	height: 200px;
+	width: 200px;
+	border-radius: 200px;
+	box-shadow: 0px 0px 0px 4px rgba(10, 10, 10, 0.2);
+}
+#profil-container #profil #avatar #addAvatar
+{
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	margin-top: -25px;
+	margin-left: -25px;
+	height: 50px;
+	width: 50px;
+	border-radius: 100px;
+	padding: 2%;
+	box-sizing: border-box;
+	background: rgba(255, 255, 255, 0.7) url('/img/add.png') no-repeat center;
+	background-size: 55%;
+	cursor: pointer;
+	
+	display: none;
+}
+#profil-container #profil #avatar #addAvatar .info
+{
+	background-color: rgba(255, 255, 255, 0.7);
+	position: absolute;
+	top: 50%;
+	margin-top: -15px;
+	left: 60px;
+	width: 200px;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	padding-left: 5px;
+	padding-right: 5px;
+	border-radius: 2px;
+
+	display: none;
+}
+
+#profil-container #infos
+{
+	width: 100%;
+	position: relative;
+}
+#profil-container #infos h1
+{
+	text-shadow: 0px 0px 3px rgba(10, 10, 10, 0.1);
+}
+#profil-container #infos .follow-container
+{
+	background-color: rgba(10, 10, 10, 0.1);
+	display: inline-block;
+	vertical-align: middle;
+	padding-left: 6px;
+	padding-right: 6px;
+	padding-top: 2px;
+	padding-bottom: 2px;
+	border-radius: 4px;
+	margin-left: -3px;
+	margin-right: 4px;
+	cursor: pointer;
+}
+#profil-container #infos #fullname
+{
+	display: inline-block;
+	vertical-align: middle;
+}
+#profil-container #infos #username
+{
+	display: inline-block;
+	vertical-align: middle;
+}
+#profil-container #infos #tags-container
+{
+	padding-left: 15px;
+	padding-right: 5px;
+	margin-top: 5px;
+	overflow: hidden;
+	text-align: center;
+	width: 100%;
+}
+#profil-container #infos #time
+{
+
+}
+#profil-container #infos #tags-container #add-tag
+{
+	display: inline-block;
+	vertical-align: top;
+	padding-left: 6px;
+	padding-right: 6px;
+	padding-top: 2px;
+	padding-bottom: 2px;
+	border-radius: 4px;
+	margin-left: -3px;
+	margin-right: 4px;
+	cursor: pointer;
+}
+#profil-container #infos #tags-container #add-tag p
+{
+	font-size: 0.9em;
+}
+#profil-container #infos #tags-container #add-tag #input-container
+{
+	display: none;
+}
+#profil-container #infos #tags-container #add-tag #addtag-input
+{
+	height: 25px;
+	width: 150px;
+}
+
+#profil-container #publication-container
+{
+	margin-top: 10px;
+	margin-bottom: 10px;
+	z-index: 1;
+	width: 100%;
+	box-sizing: border-box;
+	overflow: hidden;
+	text-align: center;
+}
+#profil-container #publication-container .publication
+{
+	margin-bottom: 4px;
+	margin-top: 4px;
+}

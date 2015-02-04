@@ -1,0 +1,458 @@
+#flux-container
+{
+	width: 100%;
+	overflow-x: auto;
+	box-sizing: border-box;
+}
+
+#view-mode
+{
+	margin-bottom: 10px;
+	margin-top: 5px;
+}
+#view-mode #title
+{
+	display: inline-block;
+	vertical-align: text-bottom;
+	margin-right: 5px;
+}
+#view-mode #searchbar
+{
+	display: inline-block;
+	vertical-align: text-bottom;
+}
+
+#publication-container
+{
+	text-align: center;
+	overflow: hidden;
+	position: relative;
+	padding-top: 10px;
+	padding-left: 10px;
+	padding-right: 10px;
+	padding-bottom: 10px;
+	height: 100%;
+	width: 100%;
+	box-sizing: border-box;
+	background-color: rgb(240, 240, 240);
+}
+
+#tags-container
+{
+	position: relative;
+	margin-left: 10px;
+	overflow: hidden;
+}
+
+.profil-publication
+{
+	width: 245px;
+	height: 250px;
+	background-color: rgba(255, 255, 255, 0.7);
+	overflow: hidden;
+	display: inline-block;
+	vertical-align: top;
+	border-radius: 4px;
+	margin-top: 5px;
+	margin-bottom: 5px;
+	margin-left: 5px;
+	margin-right: 5px;
+	border-bottom: 2px solid rgba(10, 10, 10, 0.2);
+	box-sizing: border-box;
+	position: relative;
+
+	float: left;
+}
+
+.profil-publication .infos
+{
+	float: left;
+	height: 100%;
+	width: 100%;
+	margin-top: 25px;
+	box-sizing: border-box;
+	text-align: left;
+	overflow: hidden;
+}
+.profil-publication .infos .banner
+{
+	background-color: rgb(242, 242, 242);
+	text-align: center;
+	width: 100%;
+	position: absolute;
+	top: 0%;
+	left: 0%;
+	height: 40%;
+	overflow: hidden;
+	z-index: 0;
+}
+.profil-publication .infos .banner img
+{
+	min-height: 100%;
+	max-width: 100%;
+}
+
+.profil-publication .infos .profil
+{
+	margin-top: 15%;
+	margin-bottom: 5px;
+	text-align: center;
+	width: 100%;
+	position: absolute;
+	z-index: 1;
+}
+.profil-publication .infos .profil .avatar
+{
+}
+.profil-publication .infos .profil .avatar img
+{
+	border-radius: 100px;
+	width: 60px;
+	height: 60px;
+	box-shadow: 0px 0px 0px 2px rgba(10, 10, 10, 0.2);
+}
+.profil-publication .infos .profil .username
+{
+	display: inline-block;
+	vertical-align: middle;
+	margin-left: 3px;
+	height: 28px;
+
+	overflow: hidden;
+	cursor: pointer;
+}
+.profil-publication .infos .profil .username h3
+{
+	font-size: 1.3em;
+	display: inline-block;
+	vertical-align: middle;
+}
+.profil-publication .infos .profil .username .followed
+{
+	background-color: rgba(10, 10, 10, 0.1);
+	display: inline-block;
+	vertical-align: middle;
+	width: 20px;
+	height: 20px;
+	border-radius: 4px;
+	line-height: 120%;
+	margin-left: 1px;
+	font-size: 0.8em;
+}
+.profil-publication .infos .title
+{
+	padding-left: 15px;
+	margin-bottom: 5px;
+	height: 27px;
+	width: 150%;
+	overflow: hidden;
+}
+.profil-publication .infos .text
+{
+	padding-left: 15px;
+	padding-right: 5px;
+	width: 100%;
+	overflow: hidden;
+	position: absolute;
+	top: 170px;
+	right: 0px;
+	text-align: center;
+	font-size: 0.9em;
+}
+.profil-publication .infos .tags-container
+{
+	padding-left: 15px;
+	padding-right: 5px;
+	overflow: hidden;
+	position: absolute;
+	bottom: 5px;
+	text-align: center;
+	height: 25px;
+}
+.profil-publication .infos .tags-container .tag
+{
+	display: inline-block;
+	vertical-align: top;
+	padding-left: 6px;
+	padding-right: 6px;
+	padding-top: 2px;
+	padding-bottom: 2px;
+	border-radius: 4px;
+	margin-left: -3px;
+	margin-right: 4px;
+	cursor: pointer;
+}
+.profil-publication .infos .tags-container .tag p
+{
+	font-size: 0.8em;
+}
+
+.profil-publication .cover
+{
+	float: right;
+	height: 100%;
+	width: 50%;
+	text-align: center;
+	overflow: hidden;
+	cursor: pointer;
+	background-color: rgba(10, 10, 10, 0.2);
+	position: relative;
+}
+.profil-publication .cover img
+{
+	height: 100%;
+	margin-left: -50%;
+	margin-right: -50%;
+}
+.profil-publication .cover .options
+{
+	height: 100%;
+	width: 100%;
+	background-color: rgba(255, 255, 255, 0.7);
+	position: absolute;
+	top: 0;
+	right: 0;
+	overflow: hidden;
+
+	display: none;
+}
+.profil-publication .cover .options .like
+{
+	height: 30px;
+	width: 30px;
+	left: 50%;
+	background-image: url('/img/like.png');
+	background-size: 100% 100%;
+	vertical-align: middle;
+	display: inline-block;
+}
+.profil-publication .cover .options .like .hover
+{
+	height: 100%;
+	width: 100%;
+	background-image: url('/img/liked.png');
+	background-size: 100% 100%;
+}
+.profil-publication .cover .options .like.liked .hover.liked
+{
+	display: inline-block;
+}
+.profil-publication .cover .options .like.unliked .hover.unliked
+{
+	display: none;
+}
+
+
+/*PUBLICATION*/
+.publication
+{
+	display: inline-block;
+	vertical-align: top;
+	width: 500px;
+	height: 250px;
+	background-color: rgba(255, 255, 255, 1);
+	overflow: hidden;
+	border-radius: 4px;
+	margin-top: 5px;
+	margin-bottom: 5px;
+	margin-left: 5px;
+	margin-right: 5px;
+	border-bottom: 2px solid rgba(10, 10, 10, 0.2);
+	box-sizing: border-box;
+	position: relative;
+
+	float: left;
+}
+.publication.minimized
+{
+	width: 245px;
+}
+
+.more
+{
+	position: absolute;
+	right: 5px;
+	top: 5px;
+	width: 20px;
+	cursor: pointer;
+	z-index: 2;
+}
+.menu
+{
+	position: absolute;
+	top: 5px;
+	right: 5px;
+	padding-top: 15px;
+	background-color: rgba(230, 230, 230, 1);
+	z-index: 1;
+	border-radius: 3px;
+	
+	display: none;
+}
+.menu li
+{
+	cursor: pointer;
+	padding-left: 10px;
+	padding-right: 10px;
+	padding-top: 2px;
+	padding-bottom: 2px;
+}
+.menu li p
+{
+	font-size: 0.9em;
+}
+
+.publication .infos
+{
+	height: 100%;
+	width: 50%;
+	box-sizing: border-box;
+	text-align: left;
+	overflow: hidden;
+	padding-left: 10px;
+	padding-top: 10px;
+	position: relative;
+}
+.publication.minimized .infos
+{
+	width: 100%;
+}
+.publication .infos .profil
+{
+	display: inline-block;
+	vertical-align: middle;
+	margin-bottom: 1px;
+	position: absolute;
+}
+.publication .infos .profil .avatar
+{
+	display: inline-block;
+	vertical-align: middle;
+}
+.publication .infos .profil .avatar img
+{
+	border-radius: 100px;
+	width: 35px;
+	height: 35px;
+}
+.publication .infos .profil .username
+{
+	display: inline-block;
+	vertical-align: middle;
+	margin-left: 3px;
+	height: 23px;
+	width: 125px;
+	overflow: hidden;
+	cursor: pointer;
+}
+.publication .infos .profil .username h3
+{
+	font-size: 1em;
+}
+
+.publication .infos .time
+{
+	display: inline-block;
+	vertical-align: middle;
+	float: right;
+	height: 42px;
+	line-height: 42px;
+	margin-right: 10px;
+}
+.publication .infos .time p
+{
+	font-size: 0.9em;
+}
+
+.publication .cover
+{
+	height: 100%;
+	width: 50%;
+	float: left;
+	text-align: center;
+	overflow: hidden;
+	background-color: rgba(10, 10, 10, 0.2);
+	position: relative;
+	cursor: pointer;
+}
+.publication .cover img
+{
+	height: 100%;
+	margin-left: -50%;
+	margin-right: -50%;
+}
+.publication .cover .options
+{
+	height: 100%;
+	width: 100%;
+	background-color: rgba(255, 255, 255, 0.7);
+	position: absolute;
+	top: 0;
+	right: 0;
+	overflow: hidden;
+
+	display: none;
+}
+.publication .cover .options .like
+{
+	height: 30px;
+	width: 30px;
+	left: 50%;
+	background-image: url('/img/like.png');
+	background-size: 100% 100%;
+	vertical-align: middle;
+	display: inline-block;
+}
+.publication .cover .options .like .hover
+{
+	height: 100%;
+	width: 100%;
+	background-image: url('/img/liked.png');
+	background-size: 100% 100%;
+}
+.publication .cover .options .like.liked .hover.liked
+{
+	display: inline-block;
+}
+.publication .cover .options .like.unliked .hover.unliked
+{
+	display: none;
+}
+
+.publication .infos .description
+{
+	height: 165px;
+	width: 100%;
+	float: right;
+	overflow: hidden;
+	position: relative;
+	cursor: pointer;
+	box-sizing: border-box;
+	padding-right: 5px;
+}
+.publication.minimized .infos .description
+{
+	width: 100%;
+}
+.publication .infos .description p
+{
+	font-size: 0.9em;
+}
+.publication .infos .description .blured-shadow
+{
+	position: absolute;
+	bottom: 0;
+	height: 15px;
+	width: 100%;
+	box-shadow: 0px -7px 7px 0px rgba(255, 255, 255, 0.9) inset;
+	z-index: 2;
+}
+.publication .infos .tags-container
+{
+	position: absolute;
+	bottom: 5px;
+	left: 5px;
+	width: 150%;
+	height: 24px;
+	overflow: hidden;
+}

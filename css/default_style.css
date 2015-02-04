@@ -1,0 +1,1142 @@
+*::selection {
+	background: rgba(10, 10, 10, 0.1);
+}
+
+*::-moz-selection {
+	background: rgba(10, 10, 10, 0.1);
+}
+
+*::-webkit-selection {
+	background: rgba(10, 10, 10, 0.1);
+}
+
+@font-face 
+{
+	font-family: 'PoiretOne';
+	src: url('../fonts/PoiretOne-Regular.ttf');
+}
+@font-face 
+{
+	font-family: 'OpenSans-Light';
+	src: url('../fonts/Open-Sans/OpenSans-Light.ttf');
+}
+@font-face 
+{
+	font-family: 'OpenSans-Regular';
+	src: url('../fonts/Open-Sans/OpenSans-Regular.ttf');
+}
+
+h1
+{
+	font-family: 'PoiretOne';
+	color: rgb(10, 10, 10);
+	font-size: 3.5em;
+	margin: 0;
+	font-weight: normal;
+}
+h2
+{
+	font-family: 'PoiretOne';
+	color: rgba(10, 10, 10, 0.9);
+	font-size: 2.5em;
+	margin: 0;
+	font-weight: normal;
+}
+h3
+{
+	font-family: 'OpenSans-Light';
+	color: rgba(10, 10, 10, 0.9);
+	font-size: 1.2em;
+	margin: 0;
+	font-weight: normal;
+}
+p
+{
+	font-family: 'OpenSans-Regular';
+	color: rgba(10, 10, 10, 0.9);
+	margin: 0;
+	font-weight: normal;
+	font-size: 1em;
+	white-space: pre-line;
+}
+
+a
+{
+	text-decoration: none;
+}
+
+ul
+{
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+}
+li
+{
+	list-style-type: none;
+}
+a:focus
+{
+    outline: none;
+}
+
+.loading
+{
+	background: url(../img/loading.gif) center center no-repeat;
+	min-height: 100px;
+	min-width: 100px;
+	height: 100%;
+	width: 100%;
+	text-align: center;
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: -1;
+}
+
+.tag
+{
+	display: inline-block;
+	vertical-align: top;
+	padding-left: 6px;
+	padding-right: 6px;
+	padding-top: 3px;
+	padding-bottom: 3px;
+	border-radius: 4px;
+	cursor: pointer;
+}
+.tag .content
+{
+	display: inline-block;
+	vertical-align: middle;
+}
+.tag .remove
+{
+	display: inline-block;
+	vertical-align: middle;
+
+	opacity: 0;
+}
+.tag p
+{
+	font-size: 0.8em;
+}
+
+
+html
+{
+	height: 100%;
+}
+
+body
+{
+	margin: 0px;
+	background-color: rgb(240, 240, 240);
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center center;
+	height: 100%;
+	width: 100%;
+	overflow: hidden;
+}
+
+header
+{
+	position: fixed;
+	top: 0;
+	right: 1%;
+	width: 15%;
+	padding-top: 1%;
+	z-index: 3;
+	height: 45px;
+	overflow: hidden;
+	opacity: 0.3;
+}
+
+#slideBar
+{
+	background-color: rgba(255, 255, 255, 0.8);
+	box-shadow: 0px 0px 15px 2px rgba(10, 10, 10, 0.1);
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 10px;
+	height: 100%;
+	box-sizing: border-box;
+	z-index: 2;
+	padding-top: 1%;
+	cursor: pointer;
+}
+#slider
+{
+	position: absolute;
+	left: 175px;
+	top: 10px;
+	cursor: pointer;
+	z-index: 2;
+}
+#sidebar
+{
+	background-color: rgb(255, 255, 255);
+	
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 200px;
+	height: 100%;
+	box-sizing: border-box;
+	z-index: 3;
+	padding-top: 1%;
+}
+#sidebar #sidebar_ajax_container
+{
+	
+}
+#sidebar ul a
+{
+	text-decoration: none;
+}
+#sidebar ul#top
+{
+	text-align: center;
+	cursor: pointer;
+}
+#sidebar ul#profil
+{
+	text-align: center;
+	padding-top: 10%;
+	padding-bottom: 10%;
+	position: relative;
+}
+#sidebar ul#profil p
+{
+	
+}
+#sidebar ul#profil #state
+{
+	position: absolute;
+	top: 30px;
+	left: 50px;
+	height: 20px;
+	width: 20px;
+	cursor: pointer;
+	z-index: 1;
+	border-radius: 100px;
+	z-index: 1;
+}
+#sidebar ul#profil #state.logged
+{
+	background-color: rgba(55, 198, 99, 0.8);
+}
+#sidebar ul#profil #state.unlogged
+{
+	background-color: rgba(198, 55, 55, 0.8);
+}
+#sidebar ul#profil img
+{
+	width: 100px;
+	height: 100px;
+	border-radius: 100px;
+}
+#sidebar ul#profil #submit-container
+{
+	margin-top: 2%;
+}
+#sidebar ul#profil #submit-container input
+{
+	margin-top: 1%;
+	margin-bottom: 1%;
+	width: 130px;
+}
+#sidebar ul#profil #avatar
+{
+	position: relative;
+}
+#sidebar ul#profil #avatar #profilEdit
+{
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	margin-top: -15px;
+	margin-left: -15px;
+	border-radius: 100px;
+	height: 30px;
+	width: 30px;
+	padding: 2%;
+	box-sizing: border-box;
+	background: rgba(255, 255, 255, 0.7) url('../img/add.png') no-repeat center;
+	background-size: 60%;
+	cursor: pointer;
+
+	display: none;
+}
+#sidebar ul#profil #avatar #profilEdit .info
+{
+	background-color: rgba(255, 255, 255, 0.7);
+	position: absolute;
+	top: 0;
+	left: 35px;
+	width: 150px;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	border-radius: 2px;
+
+	display: none;
+}
+#sidebar ul#profil #avatar #profilEdit .info p
+{
+	font-size: 1em;
+}
+#sidebar ul#profil #avatar #avatar-upload
+{
+	display: none;
+}
+#sidebar ul#profil #username
+{
+	cursor: pointer;
+}
+#sidebar ul#profil #addName
+{
+	cursor: pointer;
+	padding-left: 5%;
+	padding-right: 5%;
+	margin-top: 3%;
+	margin-bottom: -3%;
+}
+#sidebar ul#profil #addName #text-indication
+{
+	
+}
+#sidebar ul#profil #addName .input-container
+{
+	display: none;
+	position: relative;
+	margin-bottom: 3%;
+}
+#sidebar ul#profil #addName .input-container .check
+{
+	position: absolute;
+	right: 5%;
+	top: 7px;
+}
+#sidebar ul#profil #addName .input-container .check p
+{
+	color: rgba(10, 10, 10, 0.5);
+}
+#sidebar nav ul li
+{
+	padding-left: 10%;
+	height: 40px;
+	line-height: 37px;
+	cursor: pointer;
+}
+#sidebar nav ul li:active
+{
+	box-shadow: 0px 0px 1px 1px rgba(10, 10, 10, 0.1) inset;
+	border-radius: 2px;
+}
+#sidebar nav ul li.active
+{
+	border-right: 4px solid rgba(10, 10, 10, 0.1);
+	background-color: rgba(10, 10, 10, 0.1);
+}
+#sidebar nav ul li p
+{
+	display: inline-block;
+	vertical-align: middle;
+}
+#sidebar nav ul li #sort
+{
+	height: 40px;
+	display: inline-block;
+	vertical-align: top;
+	float: right;
+	margin-right: 5%;
+}
+#sidebar nav ul li #sort img
+{
+	height: 50%;
+	vertical-align: middle;
+}
+#sidebar nav ul #submit-artwork
+{
+	text-align: center;
+	margin-top: 10%; 
+}
+
+#sidebar nav li#notifications-li
+{
+	position: relative;
+}
+#sidebar nav li#notifications-li .left-arrow
+{
+	width: 0;
+	height: 0;
+	border-style: inset;
+	border-width: 15px 15px 15px 0;
+	border-color: transparent rgb(255, 255, 255) transparent transparent;
+	position: absolute;
+	right: -25px;
+	top: 5px;
+
+	display: none;
+}
+#sidebar nav ul#notifications-viewer
+{
+	position: absolute;
+	left: 220px;
+	top: 320px;
+	height: 150px;
+	min-width: 330px;
+	background-color: rgb(255, 255, 255);
+	box-sizing: border-box;
+	z-index: 3;
+	border-radius: 4px 4px 4px 4px;
+	overflow: hidden;
+	text-align: center;
+
+	display: none;
+}
+#sidebar nav ul#notifications-viewer #close
+{
+	position: absolute;
+	right: 25px;
+	top: 5px;
+	cursor: pointer;
+}
+#sidebar nav ul#notifications-viewer #content
+{
+	overflow: auto;
+	height: 100%;
+	width: 100%;
+	padding-top: 20px;
+}
+#sidebar nav ul#notifications-viewer #content .notification
+{
+	padding-top: 7px;
+	padding-bottom: 7px;
+	padding-left: 10px;
+	padding-right: 10px;
+	cursor: pointer;
+
+	text-align: left;
+}
+#sidebar nav ul#notifications-viewer #content .notification p
+{
+	font-size: 0.9em;
+}
+#sidebar nav ul#notifications-viewer #content .text
+{
+	display: inline-block;
+	vertical-align: middle;
+}
+#sidebar nav ul#notifications-viewer #content .date
+{
+	display: inline-block;
+	vertical-align: middle;
+	float: right;
+}
+
+
+
+#include-container
+{
+	height: 100%;
+	width: 100%;
+	margin-bottom: -2px;
+	overflow-y: auto;
+	overflow-x: hidden;
+	position: relative;
+	text-align: center;
+	box-sizing: border-box;
+	padding-left: 200px;
+	text-align: center;
+}
+
+#searchbar
+{
+	margin-top: 10px;
+	min-width: 250px;
+}
+#searchbar input
+{
+	text-align: center;
+}
+
+#comments-container
+{
+	margin-top: 10px;
+	margin-bottom: 10px;
+
+	overflow: hidden;
+}
+#comments-container #title
+{
+	font-size: 1.1em;
+	text-align: left;
+	margin-bottom: 5px;
+}
+#comments-container #post-comment
+{
+	text-align: left;
+	width: 100%;
+	hoverflow: hidden;
+
+	position: relative;
+}
+#post-comment #avatar
+{
+	display: inline-block;
+	vertical-align: top;
+	cursor: pointer;
+	position: relative;
+	height: 45px;
+	text-align: center;
+}
+#post-comment #avatar img
+{
+	border-radius: 100px;
+	width: 45px;
+	height: 45px;
+}
+#post-comment #avatar .left-arrow
+{
+	width: 0;
+	height: 0;
+	border-style: inset;
+	border-width: 7px 10px 7px 0;
+	border-color: transparent rgba(10, 10, 10, 0.4) transparent transparent;
+	position: absolute;
+	margin-right: -14px;
+	right: 0;
+	top: 15px;
+}
+
+#post-comment #post-content
+{
+	display: inline-block;
+	vertical-align: middle;
+	margin-left: 10px;
+	margin-top: 1px;
+	min-height: 40px;
+}
+#post-comment #post-content #textarea-container
+{
+	display: inline-block;
+	vertical-align: middle;
+	width: auto;
+}
+#post-comment #post-content #textarea-container textarea
+{
+	min-width: 265px;
+	width: 100%;
+	height: 40px;
+	border-radius: 4px 4px 4px 4px;
+	overflow: hidden;
+	line-height: 20px;
+	padding-bottom: 0px;
+}
+#post-comment #post-content #submit-comment
+{
+	display: inline-block;
+	vertical-align: text-bottom;
+	text-align: right;
+	float: right;
+	margin-left: 5px;
+}
+#comments-content
+{
+	padding-bottom: 15px;
+}
+
+.comment
+{
+	text-align: left;
+	padding-left: 10px;
+	padding-right: 10px;
+	padding-top: 10px;
+	padding-bottom: 5px;
+	margin-top: 10px;
+	border-radius: 5px;
+	background-color: rgba(255, 255, 255, 1);
+	position: relative;
+}
+.comment .profil
+{
+	display: inline-block;
+	vertical-align: top;
+}
+.comment .profil .avatar
+{
+	display: inline-block;
+	vertical-align: middle;
+	cursor: pointer;
+}
+.comment .profil .avatar img
+{
+	border-radius: 100px;
+	width: 35px;
+	height: 35px;
+}
+.comment .username
+{
+	display: inline-block;
+	vertical-align: middle;
+	overflow: hidden;
+	cursor: pointer;
+	margin-left: -4px;
+}
+.comment .username h3
+{
+	font-size: 1.1em;
+}
+.comment .username .firstname
+{
+	display: inline-block;
+	vertical-align: middle;
+
+}
+.comment .username .lastname
+{
+	display: inline-block;
+	vertical-align: middle;
+}
+.comment .content-container
+{
+	display: inline-block;
+	vertical-align: middle;
+	margin-top: 7px;
+	margin-left: 5px;
+	margin-right: 10px;
+}
+.comment .date
+{
+	font-size: 0.9em;
+	line-height: 100%;
+	position: absolute;
+	right: 10px;
+	top: 23px;
+	text-align: right;
+}
+
+
+#messageBox_container
+{
+	position: absolute;
+	bottom: 0;
+	right: 0;
+	z-index: 12;
+}
+.messageBox
+{
+	background-color: rgba(255, 255, 255, 0.7);
+	border-bottom: 2px solid rgba(10, 10, 10, 0.2);
+	box-shadow: 0px 0px 0px 1px rgba(10, 10, 10, 0.1);
+	padding-left: 10px;
+	padding-right: 10px;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	border-radius: 3px;
+	text-align: right;
+	margin-top: 1%;
+}
+
+#publicationViewer
+{
+	padding-left: 0;
+	padding-right: 0;
+	padding-top: 0;
+	padding-bottom: 0;
+}
+#publicationViewer #container
+{
+	height: 100%;
+	width: 100%;
+	position: relative;
+}
+#publicationViewer #cross
+{
+	position: absolute;
+	right: 15px;
+	top: 10px;
+	z-index: 2;
+	height: 9px;
+	width: 9px;
+	display: none;
+}
+#publicationViewer #cover
+{
+	overflow: hidden;
+	background-color: rgb(220, 220, 220);
+	position: relative;
+}
+#publicationViewer #cover #cover-container img
+{
+	margin-bottom: -25px;
+}
+#publicationViewer #cover #hover
+{
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: 100%;
+	width: 100%;
+	z-index: 0;
+	text-align: center;
+	display: none;
+}
+#publicationViewer #cover #hover #expand
+{
+	background-color: rgba(255, 255, 255, 0.7);
+	background-image: url(../img/expand.png);
+	background-repeat: no-repeat;
+	background-position: center center;
+	background-size: 65%;
+	height: 70px;
+	width: 70px;
+	display: inline-block;
+	vertical-align: middle;
+	border-radius: 100px;
+	box-sizing: border-box;
+	cursor: pointer;
+}
+#publicationViewer #infos-container
+{
+	min-height: 50px;
+	width: 100%;
+	line-height: 100%;
+	padding-top: 15px;
+	padding-bottom: 10px;
+	box-sizing: border-box;
+	padding-left: 15px;
+	padding-right: 15px;
+	z-index: 1;
+}
+#publicationViewer #infos-container #top-container
+{
+	height: 40px;
+	margin-bottom: 10px;
+}
+#publicationViewer #infos-container #top-container #profil
+{
+	float: left;
+	height: 40px;
+	text-align: left;
+	overflow: hidden;
+	display: inline-block;
+	vertical-align: middle;
+}
+#publicationViewer #infos-container #top-container #profil .username
+{
+	display: inline-block;
+	vertical-align: middle;
+}
+#publicationViewer #infos-container #top-container #profil .avatar
+{
+	display: inline-block;
+	vertical-align: middle;
+	text-align: center;
+}
+#publicationViewer #infos-container #top-container #profil .avatar img
+{
+	width: 40px;
+	height: 40px;
+	border-radius: 50px;
+}
+#publicationViewer #infos-container #top-container #time
+{
+	display: inline-block;
+	vertical-align: middle;
+	height: 40px;
+	float: right;
+	line-height: 40px;
+}
+#publicationViewer #infos-container #description
+{
+	text-align: left;
+	font-size: 0.9em;
+}
+#publicationViewer #infos-container #tags-container
+{
+	width: 100%;
+	overflow: hidden;
+	margin-top: 10px;
+	text-align: left;
+	margin-left: -5px;
+}
+
+.box
+{
+	display: none;
+
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 11;
+	left: 50%;
+	top: 50%;
+	background-color: rgba(255, 255, 255, 1);
+	background-size: 400%;
+	background-repeat: no-repeat;
+	background-position: center center;
+	border-radius: 5px;
+	padding-left: 25px;
+	padding-right: 25px;
+	padding-top: 20px;
+	padding-bottom: 15px;
+	text-align: center;
+	box-sizing: border-box;
+	overflow: hidden;
+	min-height: 100px;
+	min-width: 300px;
+}
+.box .close
+{
+	position: absolute;
+	right: 10px;
+	top: 10px;
+	width: 20px;
+	cursor: pointer;
+}
+
+/*POST PUBLICATION*/
+#postPublication
+{
+	width: 400px;
+	margin-left: -200px;
+	margin-top: -200px;
+}
+#postPublication ul.post-container
+{
+	overflow: hidden;
+	box-sizing: border-box;
+}
+#postPublication .avatar
+{
+	cursor: pointer;
+	position: relative;
+	width: 60px;
+	display: inline-block;
+	vertical-align: middle;
+}
+#postPublication .avatar img
+{
+	border-radius: 100px;
+	width: 50px;
+	height: 50px;
+	border: 2px solid rgba(10, 10, 10, 0.2);
+}
+#postPublication .avatar .bottom-arrow
+{
+	width: 0;
+	height: 0;
+	border-style: inset;
+	border-width: 0px 5px 8px 5px;
+	border-color: transparent transparent rgb(172, 172, 172);
+	position: absolute;
+	margin-right: 0px;
+	right: 24px;
+	bottom: -8px;
+}
+#postPublication .options-container
+{
+	display: inline-block;
+	vertical-align: middle;
+	height: 60px;
+	margin-left: 10px;
+}
+#postPublication .options-container .option-button
+{
+	width: 30px;
+	height: 30px;
+	display: inline-block;
+	vertical-align: middle;
+	border-radius: 4px;
+	border: 2px dashed  rgba(10, 10, 10, 0.7);
+	cursor: pointer;
+	margin-left: 5px;
+	margin-right: 5px;
+	position: relative;
+}
+#postPublication .options-container .option-button img
+{
+	width: 60%;
+	display: inline-block;
+	vertical-align: middle;
+	margin-right: -4px;
+	opacity: 0.7;
+}
+#postPublication .options-container .option-button .info
+{
+	background-color: rgba(255, 255, 255, 0.7);
+	position: absolute;
+	bottom: -40px;
+	left: -50px;
+	width: 145px;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	padding-left: 5px;
+	padding-right: 5px;
+	border-radius: 4px;
+	color: rgba(10, 10, 10, 0.1);
+	z-index: 2;
+
+	display: none;
+}
+
+#postPublication .post-content
+{
+	width: 100%;
+	margin-top: 6px;
+	margin-bottom: 5px;
+}
+#postPublication .post-content textarea
+{
+	display: inline-block;
+	vertical-align: middle;
+	min-width: 265px;
+	width: 100%;
+	height: 80px;
+	border-radius: 4px 4px 4px 4px;
+	overflow: hidden;
+	line-height: 20px;
+	padding-bottom: 0px;
+}
+
+
+#postPublication .file-viewer
+{
+	width: 100%;
+	height: 220px;
+	overflow-x: scroll;
+	overflow-y: hidden;
+	margin-top: 5px;
+	margin-bottom: 5px;
+	border-radius: 4px;
+
+	display: none;
+}
+#postPublication .file-viewer .object-slider
+{
+	overflow: hidden;
+	width: 0px;
+}
+#postPublication .file-viewer .object-slider .object-viewer
+{
+	height: 200px;
+	width: 200px;
+	background-color: rgba(10, 10, 10, 0.1);
+	border-radius: 4px;
+	overflow: hidden;
+	display: inline-block;
+	vertical-align: middle;
+	float: left;
+	margin-right: 5px;
+}
+#postPublication .file-viewer .object-slider .object-viewer img
+{
+	max-height: 100%;
+	margin-left: -50%;
+	margin-right: -50%;
+	display: inline-block;
+	vertical-align: middle;
+}
+
+#postPublication .tags-container
+{
+	width: 100%;
+	margin-top: 5px;
+	margin-bottom: 10px;
+}
+
+
+#signBox
+{
+	margin-left: -135px;
+	margin-top: -125px;
+	width: 270px;
+}
+#signBox #container
+{
+	margin-top: 20px;
+}
+#signBox ul
+{
+	text-align: left;
+	margin-bottom: 5px;
+}
+#signBox ul#submit
+{
+	margin-top: 10px;
+	text-align: center;
+}
+#signBox ul#submit input[type=submit]
+{
+	width: 100%;
+}
+#signBox ul li
+{
+	margin-bottom: 1%
+}
+
+#regBox
+{
+	margin-left: -150px;
+	margin-top: -185px;
+	width: 300px;
+}
+#regBox #container
+{
+	margin-top: 20px;
+}
+#regBox ul
+{
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+	text-align: left;
+	margin-bottom: 5px;
+}
+#regBox ul#submit
+{
+	margin-top: 10px;
+	text-align: center;
+}
+#regBox ul#submit input[type=submit]
+{
+	width: 100%;
+}
+#regBox ul li
+{
+	margin-bottom: 1%
+}
+
+#backgroundBox
+{
+	display: none;
+
+	position: absolute;
+	height: 100%;
+	width: 100%;
+	background-color: rgba(10, 10, 10, 0.4);
+	z-index: 10;
+	top: 0;
+	left: 0;
+	cursor: pointer;
+}
+
+.align-middle
+{
+	height: 100%;
+	vertical-align: middle;
+	display: inline-block;
+}
+
+.separator
+{
+	width: 100%;
+	background-color: rgba(0, 0, 0, 0.1);
+	border-radius: 5px;
+	height: 1px;
+	margin-top: 5px;
+	margin-bottom: 5px;
+}
+
+input
+{
+	outline: none;
+	color: rgba(228, 228, 228, 0.9);
+}
+
+textarea
+{
+	height: 120px;
+	border: 0;
+	border-radius: 4px;
+	width: 100%;
+	box-sizing: border-box;
+	padding-left: 10px;
+	font-family: 'OpenSans-Regular';
+	font-size: 0.9em;
+	background-color: rgba(10, 10, 10, 0.1);
+	color: rgba(10, 10, 10, 0.9);
+	resize: none;
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
+
+input[type=text]
+{
+	height: 40px;
+	border: 0;
+	border-radius: 4px;
+	width: 100%;
+	box-sizing: border-box;
+	padding-left: 10px;
+	padding-right: 10px;
+	font-family: 'OpenSans-Regular';
+	font-size: 0.9em;
+	background-color: rgba(10, 10, 10, 0.1);
+	color: rgba(10, 10, 10, 0.9);
+}
+
+input[type=email]
+{
+	height: 40px;
+	border: 0;
+	border-radius: 4px;
+	width: 100%;
+	box-sizing: border-box;
+	padding-left: 10px;
+	font-family: 'OpenSans-Regular';
+	font-size: 0.9em;
+	background-color: rgba(10, 10, 10, 0.1);
+	color: rgba(10, 10, 10, 0.9);
+}
+
+input[type=password]
+{
+	height: 40px;
+	border: 0;
+	border-radius: 4px;
+	width: 100%;
+	box-sizing: border-box;
+	padding-left: 10px;
+	font-family: 'OpenSans-Regular';
+	font-size: 0.9em;
+	background-color: rgba(10, 10, 10, 0.1);
+	color: rgba(10, 10, 10, 0.9);
+}
+
+input[type=submit]
+{
+	height: 40px;
+	border: 0;
+	padding-top: 2px;
+	padding-bottom: 2px;
+	padding-left: 10px;
+	padding-right: 10px;
+	border-radius: 4px;
+	min-width: 100px;
+	box-sizing: border-box;
+	font-family: 'OpenSans-Regular';
+	font-size: 0.9em;
+	cursor: pointer;
+	background-color: rgba(10, 10, 10, 0.1);
+	color: rgba(10, 10, 10, 0.9);
+}
+input[type=file]
+{
+	display: none;
+}
+
+audio
+{
+	background: url(../img/default_banner.png) no-repeat;
+	background-size: cover;
+	box-sizing: border-box;
+	display: inline-block;
+	vertical-align: middle;
+	width: 100%;
+	height: 100%;
+}
