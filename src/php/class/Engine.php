@@ -177,13 +177,14 @@
 			$returnTags['content'] = "";
 
 			$newStaticBdd = new BDD();
-			$Tag = $newStaticBdd->select("name", "tags", "WHERE publication_id LIKE '".$id."' ORDER BY rand() LIMIT 0, ".$count."");
+			$Tag = $newStaticBdd->select("id, name", "tags", "WHERE publication_id LIKE '".$id."' ORDER BY rand() LIMIT 0, ".$count."");
 
 			while($getTag = $newStaticBdd->fetch_array($Tag))
 			{
-				$returnTags['content'] .= '<div class="tag" name="'.$getTag['name'].'">';
-				$returnTags['content'] .= "<p>".$getTag['name']."</p>";
-				$returnTags['content'] .= '</div>';
+				ob_start();
+				include('../../models/tag.php');
+				$returnTags['content'] .= ob_get_contents();
+				ob_end_clean();
 			}
 
 			return $returnTags['content'];
@@ -195,12 +196,12 @@
 			$returnUserTags['content'] = "";
 
 			$newStaticBdd = new BDD();
-			$UserTag = $newStaticBdd->select("id, name", "user_tags", "WHERE user_id LIKE '".$id."' ORDER BY rand() LIMIT 0, ".$count."");
+			$UserTag = $newStaticBdd->select("id, name, user_id", "user_tags", "WHERE user_id LIKE '".$id."' ORDER BY rand() LIMIT 0, ".$count."");
 
 			while($getUserTag = $newStaticBdd->fetch_array($UserTag))
 			{
 				ob_start();
-				include('../../models/tag.php');
+				include('../../models/user_tag.php');
 				$returnUserTags['content'] .= ob_get_contents();
 				ob_end_clean();
 			}

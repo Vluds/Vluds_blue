@@ -20,10 +20,7 @@
 				<div id="state" class="logged">
 				</div>
 		<?php
-				$Avatar = $newBdd->select("avatar", "users", "WHERE id LIKE '".User::getId()."'");
-				$isAvatarSet = $newBdd->fetch_array($Avatar);
-
-				if($isAvatarSet['avatar'] != "")
+				if(!empty(User::getAvatar()) AND User::getAvatar() != "0")
 				{
 		?>
 					<div id="avatar" class="activate">

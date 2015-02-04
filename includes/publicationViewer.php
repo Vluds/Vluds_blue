@@ -32,6 +32,9 @@
 				
 			</div>
 
+			<div class="separator">
+			</div>
+
 			<div id="comments-container">
 			<?php
 				if(User::isLogged())
@@ -39,7 +42,21 @@
 			?>
 					<div id="post-comment">
 						<div id="avatar">
-							<img src="users/<?php echo User::getId();?>/avatar/60_<?php echo User::getAvatar();?>.png">
+							<?php
+								if(!empty(User::getAvatar()) AND User::getAvatar() != "0")
+								{
+									echo User::getAvatar();
+							?>
+									<img src="users/<?php echo User::getId();?>/avatar/60_<?php echo User::getAvatar();?>.png">
+							<?php
+								}
+								else
+								{
+							?>
+									<img src="img/avatar.png">
+							<?php
+								}
+							?>
 
 							<div class="left-arrow">
 							</div>

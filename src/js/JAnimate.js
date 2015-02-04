@@ -148,8 +148,8 @@ $(document).on('mouseenter', '.tag .remove', function(){
 	$('img', this).stop().rotate(0, 200);
 });
 
-$(document).on('click', '.tag', function(){
-	var name = $(this).attr("name");
+$(document).on('click', '.tag .content', function(){
+	var name = $(this).parent().attr("name");
 
 	loadTagsFinder(name);
 });

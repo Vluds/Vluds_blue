@@ -643,6 +643,7 @@ header
 
 #publicationViewer
 {
+	min-width: 470px;
 	padding-left: 0;
 	padding-right: 0;
 	padding-top: 0;
@@ -1014,12 +1015,12 @@ header
 #cookiesBox
 {
 	margin-left: -150px;
-	margin-top: -185px;
+	margin-top: -150px;
 	width: 300px;
 }
 #cookiesBox #container
 {
-	margin-top: 20px;
+	margin-top: 10px;
 }
 #cookiesBox ul
 {
@@ -1031,7 +1032,7 @@ header
 }
 #cookiesBox ul#submit
 {
-	margin-top: 10px;
+	margin-top: 15px;
 	text-align: center;
 }
 #cookiesBox ul#submit input[type=submit]

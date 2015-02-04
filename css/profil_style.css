@@ -83,7 +83,7 @@
 	border-radius: 100px;
 	padding: 2%;
 	box-sizing: border-box;
-	background: rgba(255, 255, 255, 0.7) url('/img/add.png') no-repeat center;
+	background: rgba(255, 255, 255, 0.7) url('../img/add.png') no-repeat center;
 	background-size: 55%;
 	cursor: pointer;
 	
