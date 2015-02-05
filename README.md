@@ -2,7 +2,8 @@
  
 #####Vluds_blue is the version 1.0 of Vluds.
 Social network for **creative** people. Discover creations, meet people, talk to them and share !
-  Follow us on [Twitter](https://twitter.com/Vluds_)
+
+Follow us on [Twitter](https://twitter.com/Vluds_)
 
 ##Database
 Import into your database tack_bdd.sql for setup.
