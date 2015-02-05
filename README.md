@@ -1,9 +1,11 @@
 ![Vluds](/img/banniere.png "Vluds")
-
- Social network for creative people. Discover creations, meet people, talk to them and share !
+ 
+ ###Vluds####_blue is the version 1.0 of Vluds.
+ Social network for **creative** people. Discover creations, meet people, talk to them and share !
+ Follow us on [Twitter](https://twitter.com/Vluds_)
 
 ##Database
-Use tack_bdd.sql for database connection
+Import into your database tack_bdd.sql for setup.
 
 ##Authors
 
