@@ -2,7 +2,7 @@
 
  Social network for creative people. Discover creations, meet people, talk to them and share !
 
-#Database
+##Database
 Use tack_bdd.sql for database connection
 
 ##Authors
