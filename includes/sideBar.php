@@ -122,7 +122,7 @@
 				<li class="unactive"><a href=""><p>Mes tags</p></a></li>
 				<li class="unactive"><a href=""><p>Mes reglages</p></a></li>-->
 				<?php
-					if (isset($getUserInfos['admin']) AND $getUserInfos['admin'] == 1) {
+					if (isset(User::getUserrole()) AND User::getUserrole() == 1) {
 				?>
 					<li class="unactive" onClick="#"><p>Manage</p></li>
 				<?php
