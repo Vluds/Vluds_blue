@@ -134,6 +134,9 @@
 		public static function setFullName($fullname)
 		{
 			$newStaticBdd = new BDD();
+			
+			$fullname = $newStaticBdd->real_escape_string(htmlspecialchars($fullname));
+
 			$newStaticBdd->update("users", "fullname = '".$fullname."'", "WHERE token = '".self::getToken()."'");
 
 			return true;
