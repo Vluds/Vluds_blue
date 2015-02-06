@@ -143,7 +143,7 @@
 				$getUserInfos = $newStaticBdd->fetch_array($UserInfos);
 
 				ob_start();
-				include('../../models/comment.php');
+				include(ROOT.'models/comment.php');
 				$returnComments['content'] .= ob_get_contents();
 				ob_end_clean();
 			}
@@ -165,7 +165,7 @@
 			$getUserInfos = $newStaticBdd->fetch_array($UserInfos);
 
 			ob_start();
-			include('../../models/comment.php');
+			include(ROOT.'models/comment.php');
 			$returnComment['content'] .= ob_get_contents();
 			ob_end_clean();
 
@@ -183,7 +183,7 @@
 			while($getTag = $newStaticBdd->fetch_array($Tag))
 			{
 				ob_start();
-				include('../../models/tag.php');
+				include(ROOT.'models/tag.php');
 				$returnTags['content'] .= ob_get_contents();
 				ob_end_clean();
 			}
@@ -202,7 +202,7 @@
 			while($getUserTag = $newStaticBdd->fetch_array($UserTag))
 			{
 				ob_start();
-				include('../../models/user_tag.php');
+				include(ROOT.'models/user_tag.php');
 				$returnUserTags['content'] .= ob_get_contents();
 				ob_end_clean();
 			}
@@ -227,7 +227,7 @@
 				$getUserInfos = $newStaticBdd->fetch_array($UserInfos);
 
 				ob_start();
-				include('../../models/publication.php');
+				include(ROOT.'models/publication.php');
 				$dataArray['reply'] .= ob_get_contents();
 				ob_end_clean();
 
@@ -246,7 +246,7 @@
 							if(User::isFollowed(User::getId(), $getProfilInfos['id']) == false)
 							{
 								ob_start();
-								include('../../models/profil-publication.php');
+								include(ROOT.'models/profil-publication.php');
 								$dataArray['reply'] .= ob_get_contents();
 								ob_end_clean();
 							}
@@ -259,7 +259,7 @@
 						while($getProfilInfos = $newStaticBdd->fetch_array($ProfilInfos))
 						{
 							ob_start();
-							include('../../models/profil-publication.php');
+							include(ROOT.'models/profil-publication.php');
 							$dataArray['reply'] .= ob_get_contents();
 							ob_end_clean();
 						}
@@ -284,7 +284,7 @@
 				$getUserInfos = $newStaticBdd->fetch_array($UserInfos);
 
 				ob_start();
-				include('../../models/publication.php');
+				include(ROOT.'models/publication.php');
 				$dataArray['reply'] .= ob_get_contents();
 				ob_end_clean();
 			}
@@ -305,7 +305,7 @@
 			$getUserInfos = $newStaticBdd->fetch_array($UserInfos);
 
 			ob_start();
-			include('../../models/publication_view.php');
+			include(ROOT.'models/publication_view.php');
 			$dataArray['reply'] .= ob_get_contents();
 			ob_end_clean();
 
@@ -318,7 +318,7 @@
 			$dataArray['reply'] = "";
 			
 			ob_start();
-			include('../../includes/'.$file.'.php');
+			include(ROOT.'includes/'.$file.'.php');
 			$dataArray['reply'] .= ob_get_contents();
 			ob_end_clean();
 
@@ -337,7 +337,7 @@
 			if($usernameExist == 1)
 			{
 				ob_start();
-				include('../../models/profil.php');
+				include(ROOT.'models/profil.php');
 				$dataArray['reply'] .= ob_get_contents();
 				ob_end_clean();
 
@@ -368,7 +368,7 @@
 					$getUserInfos = $newStaticBdd->fetch_array($UserInfos);
 
 					ob_start();
-					include('../../models/publication.php');
+					include(ROOT.'models/publication.php');
 					$dataArray['reply'] .= ob_get_contents();
 					ob_end_clean();
 				}
@@ -385,7 +385,7 @@
 				if($isUserExist == 1)
 				{
 					ob_start();
-					include('../../models/profil-publication.php');
+					include(ROOT.'models/profil-publication.php');
 					$dataArray['reply'] .= ob_get_contents();
 					ob_end_clean();
 				}
@@ -441,7 +441,7 @@
 			$content_txt = "Vluds - Vous êtes nouveau ? Suivez-moi ...";
 
 			ob_start();
-			include('../../includes/confirmation_email.php');
+			include(ROOT.'includes/confirmation_email.php');
 
 			$content_html = ob_get_contents();
 

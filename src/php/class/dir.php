@@ -280,7 +280,7 @@
 					$getUserInfos = $newStaticBdd->fetch_array($UserInfos);
 
 					ob_start();
-					include('../../models/notification.php');
+					include(ROOT.'models/notification.php');
 					$dataArray['reply'] .= ob_get_contents();
 					ob_end_clean();
 				}
@@ -341,7 +341,7 @@
 					$getUserInfos = $newStaticBdd->fetch_array($UserInfos);
 
 					ob_start();
-					include('../../models/comment.php');
+					include(ROOT.'models/comment.php');
 					$returnComment['content'] .= ob_get_contents();
 					ob_end_clean();
 
@@ -482,7 +482,7 @@
 					$getUserTag = $newStaticBdd->fetch_array($UserTag);
 
 					ob_start();
-					include('../../models/tag.php');
+					include(ROOT.'models/tag.php');
 					$returnUserTags['content'] .= ob_get_contents();
 					ob_end_clean();
 
