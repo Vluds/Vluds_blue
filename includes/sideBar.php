@@ -122,9 +122,9 @@
 				<li class="unactive"><a href=""><p>Mes tags</p></a></li>
 				<li class="unactive"><a href=""><p>Mes reglages</p></a></li>-->
 				<?php
-					if (isset(User::getUserrole()) AND User::getUserrole() == 1) {
+					if (User::getUserrole() == 1) {
 				?>
-					<li class="unactive" onClick="#"><p>Manage</p></li>
+					<li class="unactive" onClick="loadManage()"><p>Manage</p></li>
 				<?php
 					}
 				?>
