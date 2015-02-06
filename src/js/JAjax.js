@@ -559,7 +559,7 @@ function loadTagsFinder(tag)
 
 		$("#include-container").stop().fadeOut(200).queue(function() {
 
-			window.history.pushState({page: 'tagsfinder', tag: tag}, "Rechercher " + tag, "Search");
+			window.history.pushState({page: 'tagsfinder', tag: tag}, "Rechercher " + tag, "Search/" + tag);
 			document.title = "Vluds - Rechercher " + tag;
 
 			$("#include-container").html("");
