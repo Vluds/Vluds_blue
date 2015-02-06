@@ -218,8 +218,6 @@ function getFlux()
 			nbPublicationPerWidth = Math.round(nbPublicationPerWidth, 0);
 			console.log("per width: " + nbPublicationPerWidth);
 
-			$('#publication-container').width($('#include-container').width() + 500);
-
 			var offset = 0;
 
 			var countLine = 0;
@@ -237,6 +235,8 @@ function getFlux()
 					else if(data.result == 1)
 					{
 						$('#publication-container').append(data.reply);
+
+						$('.publication-line').width($('#include-container').width() + 500);
 					}
 					else
 					{

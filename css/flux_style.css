@@ -26,7 +26,6 @@
 #publication-container
 {
 	text-align: center;
-	overflow: hidden;
 	position: relative;
 	padding-top: 10px;
 	padding-left: 10px;
@@ -37,6 +36,14 @@
 	box-sizing: border-box;
 	background-color: rgb(240, 240, 240);
 }
+
+#publication-container .publication-line
+{
+	width: 100%;
+	overflow: hidden;
+}
+
+
 
 #tags-container
 {
