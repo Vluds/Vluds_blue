@@ -422,6 +422,19 @@
 			}
 		}
 
+		public static function loadAdminPanel()
+		{
+			$newStaticBdd = new BDD();	
+			$dataArray['reply'] = "";
+
+			ob_start();
+			include(ROOT.'models/manager.php');
+			$dataArray['reply'] .= ob_get_contents();
+			ob_end_clean();
+
+			return $dataArray['reply'];
+		}
+
 		public static function sendConfirmationMail($email, $username)
 		{
 			if (!preg_match("#^[a-z0-9._-]+@(hotmail|live|msn).[a-z]{2,4}$#", $email)) // On filtre les serveurs qui présentent des bogues.

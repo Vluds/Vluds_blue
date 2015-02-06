@@ -632,7 +632,42 @@ function loadPublicationViewer(id)
 	}
 }
 
+function loadAdminPanel()
+{
+	if(isBusy == 0)
+	{
+		isBusy = 1;
 
+		$("#include-container").stop().fadeOut(200).queue(function() {
+			$('#include-container').html("");
+
+			$.post(setJsPath + "src/php/executor.php", { action: "loadAdminPanel"}, function(data)
+			{
+				if(data.result == 1 & data.reply != false)
+				{	
+					$("#include-container").append(data.reply);
+					$('#manage-container').fadeIn(200);
+					$('#manage-container').loadingOut();
+					window.history.pushState({page: 'manager'}, "Panel administateur", setJsPath + "/Manager");
+					document.title = "Vluds - Panel administateur";
+				}
+				else if(data.reply == false)
+				{
+
+				}
+				else
+				{
+					messageBox("Erreur: le panel admin n'a pas pu être chargé ...");
+				}
+
+				isBusy = 0;
+
+			}, "json");
+
+			$("#include-container").stop().fadeIn(100).dequeue();
+		});
+	}
+}
 
 function sendConfirmationMail(email, username)
 {

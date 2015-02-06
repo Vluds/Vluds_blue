@@ -448,6 +448,12 @@
 			}
 		}
 
+		if($action == "loadAdminPanel") 
+		{
+			$dataArray['reply'] = Engine::loadAdminPanel();
+			$dataArray['result'] = 1;
+		}
+
 		if($action == "sendConfirmationMail") 
 		{
 			if(isset($_POST['email']) and isset($_POST['email']) AND isset($_POST['username']) and isset($_POST['username']))
