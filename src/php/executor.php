@@ -448,9 +448,9 @@
 			}
 		}
 
-		if($action == "loadAdminPanel") 
+		if($action == "loadManager") 
 		{
-			$dataArray['reply'] = Engine::loadAdminPanel();
+			$dataArray['reply'] = Engine::loadManager();
 			$dataArray['result'] = 1;
 		}
 

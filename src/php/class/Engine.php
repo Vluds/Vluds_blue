@@ -422,7 +422,7 @@
 			}
 		}
 
-		public static function loadAdminPanel()
+		public static function loadManager()
 		{
 			$newStaticBdd = new BDD();	
 			$dataArray['reply'] = "";

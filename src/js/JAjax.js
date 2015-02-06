@@ -632,7 +632,7 @@ function loadPublicationViewer(id)
 	}
 }
 
-function loadAdminPanel()
+function loadManager()
 {
 	if(isBusy == 0)
 	{
@@ -641,7 +641,7 @@ function loadAdminPanel()
 		$("#include-container").stop().fadeOut(200).queue(function() {
 			$('#include-container').html("");
 
-			$.post(setJsPath + "src/php/executor.php", { action: "loadAdminPanel"}, function(data)
+			$.post(setJsPath + "src/php/executor.php", { action: "loadManager"}, function(data)
 			{
 				if(data.result == 1 & data.reply != false)
 				{	

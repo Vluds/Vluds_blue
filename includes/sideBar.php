@@ -124,7 +124,7 @@
 				<?php
 					if (User::getUserrole() == 1) {
 				?>
-					<li class="unactive" onClick="loadManage()"><p>Manage</p></li>
+					<li class="unactive" onClick="loadManager()"><p>Manage</p></li>
 				<?php
 					}
 				?>
