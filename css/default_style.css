@@ -673,6 +673,8 @@ header
 #publicationViewer #cover #cover-container img
 {
 	margin-bottom: -25px;
+	margin-left: -50%;
+	margin-right: -50%;
 }
 #publicationViewer #cover #hover
 {
