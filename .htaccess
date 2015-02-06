@@ -2,5 +2,5 @@ Options +FollowSymlinks
 RewriteEngine On
 
 RewriteRule ^(([a-z_]|[0-9_])*)$  index.php?username=$1 [NC,L]
-RewriteRule ^tagsfinder/(([a-z]|[0-9])*)$  index.php?tag=$1 [NC,L]
+RewriteRule ^Search/(([a-z]|[0-9])*)$  index.php?tag=$1 [NC,L]
 RewriteRule ^publication/(([a-z]|[0-9])*)$  index.php?publication=$1 [NC,L]

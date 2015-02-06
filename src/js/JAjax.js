@@ -476,7 +476,7 @@ function loadProfil(username)
 					$("#include-container").append(data.reply);
 					$('#profil-container').fadeIn(200);
 					$('#profil-container').loadingOut();
-					window.history.pushState({page: 'profil', username: username}, "Profil de " + username, username);
+					window.history.pushState({page: 'profil', username: username}, "Profil de " + username, setJsPath + username);
 					document.title = "Vluds - Profil de " + username;
 				}
 				else if(data.reply == false)
