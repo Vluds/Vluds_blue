@@ -218,7 +218,7 @@ function getFlux()
 			nbPublicationPerWidth = Math.round(nbPublicationPerWidth, 0);
 			console.log("per width: " + nbPublicationPerWidth);
 
-			$('#include-container').width($('#include-container').width()+500);
+			$('#publication-container').width($('#include-container').width() + 500);
 
 			var offset = 0;
 
