@@ -43,5 +43,8 @@
 	<script src="<?php echo LIB; ?>jquery-ui.min.js"></script>
 	<script src="<?php echo LIB; ?>JLight.js"></script>
 	<script src="<?php echo LIB; ?>mousewheel.min.js"></script>
+	<script type="text/javascript">
+		var setJsPath = '<?php echo WEBROOT; ?>';
+	</script>
 	<script src="<?php echo SCRIPT; ?>JAjax.js"></script>
 	<script src="<?php echo SCRIPT; ?>JEngine.js"></script>

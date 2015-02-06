@@ -7,7 +7,7 @@
 	{
 ?>
 		<div id="slider">
-			<img src="img/cross.png">
+			<img src="<?php echo WEBROOT; ?>img/cross.png">
 		</div>
 <?php
 	}
@@ -24,7 +24,7 @@
 				{
 		?>
 					<div id="avatar" class="activate">
-						<img src="users/<?php echo User::getId();?>/avatar/300_<?php echo User::getAvatar();?>.png">
+						<img src="<?php echo WEBROOT; ?>users/<?php echo User::getId();?>/avatar/300_<?php echo User::getAvatar();?>.png">
 
 						<div id="profilEdit" onClick="loadProfil('<?php echo User::getUsername(); ?>')">
 							<div class="info">
@@ -38,7 +38,7 @@
 				{
 		?>
 					<div id="avatar" class="unactivate">
-						<img src="img/avatar.png">
+						<img src="<?php echo WEBROOT; ?>img/avatar.png">
 
 						<div id="profilEdit" onClick="loadProfil('<?php echo User::getUsername(); ?>')">
 							<div class="info">
@@ -97,7 +97,7 @@
 
 	<nav>
 		<ul>
-			<li class="active" onClick="getFlux()"><p>Flux d'actualités</p><div id="sort"><img src="img/grid.png"></div></li>
+			<li class="active" onClick="getFlux()"><p>Flux d'actualités</p><div id="sort"><img src="<?php echo WEBROOT; ?>img/grid.png"></div></li>
 			<li class="unactive" onClick="loadTagsFinder('vluds')"><p>Rechercher</p></li>
 		<?php
 			if(User::isLogged())
@@ -112,7 +112,7 @@
 				</li>
 				<ul id="notifications-viewer">
 					<div id="close">
-						<img src="img/cross.png">
+						<img src="<?php echo WEBROOT; ?>img/cross.png">
 					</div>
 
 					<div id="content">			

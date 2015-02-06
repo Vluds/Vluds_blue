@@ -1,5 +1,10 @@
 <?php
 	session_start();
+
+	// Define directory.
+	define('ROOT', str_replace('src/php/executor.php', '', $_SERVER['SCRIPT_FILENAME']), true);
+	define('WEBROOT', str_replace('src/php/executor.php', '', $_SERVER['SCRIPT_NAME']), true);
+
 	require("class/bdd.php");
 	require("class/User.php");
 	require("class/Engine.php");

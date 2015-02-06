@@ -3,13 +3,13 @@
 	if(isset($getUserInfos['banner']) AND !empty($getUserInfos['banner']))
 	{
 ?>
-		<div id="banner" style="background-image: url('users/<?php echo $getUserInfos['id'];?>/banner/800_<?php echo $getUserInfos['banner'];?>.png');">
+		<div id="banner" style="background-image: url('<?php echo WEBROOT; ?>users/<?php echo $getUserInfos['id'];?>/banner/800_<?php echo $getUserInfos['banner'];?>.png');">
 <?php
 	}
 	else
 	{
 ?>
-		<div id="banner" style="background-image: url('img/default_banner.png');">
+		<div id="banner" style="background-image: url('<?php echo WEBROOT; ?>img/default_banner.png');">
 <?php
 	}
 			if(User::isLogged())
@@ -36,13 +36,13 @@
 					if(!empty($getUserInfos['avatar']) AND $getUserInfos['avatar'] != "0")
 					{
 				?>
-						<img src="users/<?php echo $getUserInfos['id'];?>/avatar/300_<?php echo $getUserInfos['avatar'];?>.png">
+						<img src="<?php echo WEBROOT; ?>users/<?php echo $getUserInfos['id'];?>/avatar/300_<?php echo $getUserInfos['avatar'];?>.png">
 				<?php
 					}
 					else
 					{
 				?>
-						<img src="img/avatar.png">
+						<img src="<?php echo WEBROOT; ?>img/avatar.png">
 				<?php
 					}
 
@@ -124,7 +124,7 @@
 							</div>
 							<div id="input-container">
 								<input id="addtag-input" placeholder="Entrer pour valider" type="text">
-								<img id="remove" src="img/cross.png">
+								<img id="remove" src="<?php echo WEBROOT; ?>img/cross.png">
 							</div>
 						</div>
 			<?php

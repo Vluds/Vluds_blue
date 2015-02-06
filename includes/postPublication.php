@@ -1,6 +1,6 @@
 <div id="postPublication" class="box">
 	<div class="close">
-		<img src="img/cross.png">
+		<img src="<?php echo WEBROOT; ?>img/cross.png">
 	</div>
 
 	<div class="container">
@@ -9,13 +9,13 @@
 				if(User::getAvatar())
 				{
 			?>
-					<img src="users/<?php echo User::getId();?>/avatar/60_<?php echo User::getAvatar();?>.png">
+					<img src="<?php echo WEBROOT; ?>users/<?php echo User::getId();?>/avatar/60_<?php echo User::getAvatar();?>.png">
 			<?php	
 				}
 				else
 				{
 			?>
-					<img src="img/avatar.png">
+					<img src="<?php echo WEBROOT; ?>img/avatar.png">
 			<?php
 				}
 			?>
@@ -28,7 +28,7 @@
 
 			<input id="file-upload" name="file-upload" type="file" multiple="multiple"></input>
 			<div id="add-file" class="option-button">
-				<img src="img/add_20.png">
+				<img src="<?php echo WEBROOT; ?>img/add_20.png">
 				<div class="align-middle"></div>
 
 				<div class="info">
@@ -37,7 +37,7 @@
 			</div>
 
 			<div id="add-url" class="option-button">
-				<img src="img/add_20.png">
+				<img src="<?php echo WEBROOT; ?>img/add_20.png">
 				<div class="align-middle"></div>
 
 				<div class="info">

@@ -1,5 +1,5 @@
 <div id="signBox" class="box">
-	<div class="close"><img src="img/cross.png"></div>
+	<div class="close"><img src="<?php echo WEBROOT; ?>img/cross.png"></div>
 	<h2>Connexion</h2>
 	<div id="container">
 		<ul>

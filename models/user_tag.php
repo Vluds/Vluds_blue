@@ -7,7 +7,7 @@
 		{
 ?>
 			<div class="remove">
-				<img src="img/cross.png">
+				<img src="<?php echo WEBROOT; ?>img/cross.png">
 			</div>
 <?php 
 		}

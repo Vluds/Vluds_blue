@@ -6,7 +6,7 @@
 		{
 ?>
 			<div class="more">
-				<img src="img/more_icon.png">
+				<img src="<?php echo WEBROOT; ?>img/more_icon.png">
 			</div>
 
 			<div class="menu">	
@@ -26,14 +26,14 @@
 		if($getPublication['type'] == 'image')
 		{
 	?>
-			<img src="publications/<?php echo $getPublication['id'];?>/cover_<?php echo $getPublication['token'];?>.png" alt="cover-<?php echo $getPublication['id']?>"/>
+			<img src="<?php echo WEBROOT; ?>publications/<?php echo $getPublication['id'];?>/cover_<?php echo $getPublication['token'];?>.png" alt="cover-<?php echo $getPublication['id']?>"/>
 	<?php
 		}
 		else if($getPublication['type'] == 'audio')
 		{
 	?>
 			<audio controls="controls">
-			  	<source src="publications/<?php echo $getPublication['id'];?>/<?php echo $getPublication['token'];?>.<?php echo $getPublication['ext'];?>" type="<?php echo $getPublication['MIME'];?>" />
+			  	<source src="<?php echo WEBROOT; ?>publications/<?php echo $getPublication['id'];?>/<?php echo $getPublication['token'];?>.<?php echo $getPublication['ext'];?>" type="<?php echo $getPublication['MIME'];?>" />
 				Veuillez mettre à jour votre navigateur
 			</audio>
 
@@ -46,7 +46,7 @@
 		{
 	?>
 			<video controls="controls">
-				<source src="publications/<?php echo $getPublication['id'];?>/<?php echo $getPublication['token'];?>.<?php echo $getPublication['ext'];?>" type="<?php echo $getPublication['MIME'];?>" />
+				<source src="<?php echo WEBROOT; ?>publications/<?php echo $getPublication['id'];?>/<?php echo $getPublication['token'];?>.<?php echo $getPublication['ext'];?>" type="<?php echo $getPublication['MIME'];?>" />
 			  	Veuillez mettre à jour votre navigateur
 			</video>
 
@@ -93,13 +93,13 @@
 					if(!empty($getUserInfos['avatar']) AND $getUserInfos['avatar'] != "0")
 					{
 				?>
-						<img src="users/<?php echo $getUserInfos['id'];?>/avatar/60_<?php echo $getUserInfos['avatar'];?>.png">
+						<img src="<?php echo WEBROOT; ?>users/<?php echo $getUserInfos['id'];?>/avatar/60_<?php echo $getUserInfos['avatar'];?>.png">
 				<?php
 					}
 					else
 					{
 				?>
-						<img src="img/avatar.png">
+						<img src="<?php echo WEBROOT; ?>img/avatar.png">
 				<?php
 					}
 				?>

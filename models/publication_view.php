@@ -5,19 +5,19 @@
 	if(!empty($getPublication['ext']))
 	{
 ?>
-	<div id="cover" style="background-image: url('publications/<?php echo $getPublication['id'];?>/coverBlured_<?php echo $getPublication['token'];?>.png')">
+	<div id="cover" style="background-image: url('<?php echo WEBROOT; ?>publications/<?php echo $getPublication['id'];?>/coverBlured_<?php echo $getPublication['token'];?>.png')">
 		<?php 
 			if($getPublication['type'] == 'image')
 			{
 		?>
-				<img src="publications/<?php echo $getPublication['id'];?>/<?php echo $getPublication['token'];?>.<?php echo $getPublication['ext'];?>" alt="image-<?php echo $getPublication['id']?>"/>
+				<img src="<?php echo WEBROOT; ?>publications/<?php echo $getPublication['id'];?>/<?php echo $getPublication['token'];?>.<?php echo $getPublication['ext'];?>" alt="image-<?php echo $getPublication['id']?>"/>
 		<?php
 			}
 			else if($getPublication['type'] == 'audio')
 			{
 		?>
 				<audio controls="controls">
-				  	<source src="publications/<?php echo $getPublication['id'];?>/<?php echo $getPublication['token'];?>.<?php echo $getPublication['ext'];?>" type="<?php echo $getPublication['MIME'];?>" />
+				  	<source src="<?php echo WEBROOT; ?>publications/<?php echo $getPublication['id'];?>/<?php echo $getPublication['token'];?>.<?php echo $getPublication['ext'];?>" type="<?php echo $getPublication['MIME'];?>" />
 					Veuillez mettre à jour votre navigateur
 				</audio>
 		<?php
@@ -26,7 +26,7 @@
 			{
 		?>
 				<video controls="controls">
-					<source src="publications/<?php echo $getPublication['id'];?>/<?php echo $getPublication['token'];?>.<?php echo $getPublication['ext'];?>" type="<?php echo $getPublication['MIME'];?>" />
+					<source src="<?php echo WEBROOT; ?>publications/<?php echo $getPublication['id'];?>/<?php echo $getPublication['token'];?>.<?php echo $getPublication['ext'];?>" type="<?php echo $getPublication['MIME'];?>" />
 				  	Veuillez mettre à jour votre navigateur
 				</video>
 		<?php
@@ -71,13 +71,13 @@
 					if(!empty($getUserInfos['avatar']) AND $getUserInfos['avatar'] != "0")
 					{
 				?>
-						<img src="users/<?php echo $getUserInfos['id'];?>/avatar/60_<?php echo $getUserInfos['avatar'];?>.png">
+						<img src="<?php echo WEBROOT; ?>users/<?php echo $getUserInfos['id'];?>/avatar/60_<?php echo $getUserInfos['avatar'];?>.png">
 				<?php
 					}
 					else
 					{
 				?>
-						<img src="img/avatar.png">
+						<img src="<?php echo WEBROOT; ?>img/avatar.png">
 				<?php
 					}
 				?>
@@ -120,13 +120,13 @@
 							{
 								echo User::getAvatar();
 						?>
-								<img src="users/<?php echo User::getId();?>/avatar/60_<?php echo User::getAvatar();?>.png">
+								<img src="<?php echo WEBROOT; ?>users/<?php echo User::getId();?>/avatar/60_<?php echo User::getAvatar();?>.png">
 						<?php
 							}
 							else
 							{
 						?>
-								<img src="img/avatar.png">
+								<img src="<?php echo WEBROOT; ?>img/avatar.png">
 						<?php
 							}
 						?>

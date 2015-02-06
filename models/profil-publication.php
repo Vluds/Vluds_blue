@@ -5,13 +5,13 @@
 				if(!empty($getProfilInfos['banner']))
 				{
 			?>
-					<img src="users/<?php echo $getProfilInfos['id'];?>/banner/800_<?php echo $getProfilInfos['banner'];?>.png" alt="banner-<?php echo $getProfilInfos['id'], '-', $getProfilInfos['username'];?>"/>
+					<img src="<?php echo WEBROOT; ?>users/<?php echo $getProfilInfos['id'];?>/banner/800_<?php echo $getProfilInfos['banner'];?>.png" alt="banner-<?php echo $getProfilInfos['id'], '-', $getProfilInfos['username'];?>"/>
 			<?php
 				}
 				else
 				{
 			?>
-					<img src="img/default_banner.png" alt="banner-default"/>
+					<img src="<?php echo WEBROOT; ?>img/default_banner.png" alt="banner-default"/>
 			<?php
 				}
 			?>
@@ -23,13 +23,13 @@
 					if($getProfilInfos['avatar'] != "0" AND !empty($getProfilInfos['avatar']))
 					{
 				?>
-						<img src="users/<?php echo $getProfilInfos['id'];?>/avatar/60_<?php echo $getProfilInfos['avatar'];?>.png">
+						<img src="<?php echo WEBROOT; ?>users/<?php echo $getProfilInfos['id'];?>/avatar/60_<?php echo $getProfilInfos['avatar'];?>.png">
 				<?php
 					}
 					else
 					{
 				?>
-						<img src="img/avatar.png">
+						<img src="<?php echo WEBROOT; ?>img/avatar.png">
 				<?php
 					}
 				?>

@@ -1,5 +1,5 @@
 <div id="addPublication" class="box">
-	<div id="cross"><img src="img/cross.png"></div>
+	<div id="cross"><img src="<?php echo WEBROOT; ?>img/cross.png"></div>
 	<h2>Ajouter une création</h2>
 	<div id="container">
 		<ul>

@@ -1,5 +1,5 @@
 <div id="publicationViewer" class="box">
-	<div class="close"><img src="img/cross.png"></div>
+	<div class="close"><img src="<?php echo WEBROOT; ?>img/cross.png"></div>
 	<div id="container">
 		<div id="cover">
 			<div id="cover-container">
@@ -47,13 +47,13 @@
 								{
 									echo User::getAvatar();
 							?>
-									<img src="users/<?php echo User::getId();?>/avatar/60_<?php echo User::getAvatar();?>.png">
+									<img src="<?php echo WEBROOT; ?>users/<?php echo User::getId();?>/avatar/60_<?php echo User::getAvatar();?>.png">
 							<?php
 								}
 								else
 								{
 							?>
-									<img src="img/avatar.png">
+									<img src="<?php echo WEBROOT; ?>img/avatar.png">
 							<?php
 								}
 							?>

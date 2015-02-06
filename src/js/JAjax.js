@@ -39,7 +39,7 @@ function regUser()
 	{
 		if(checkAT > -1 && checkDOT > -1)
 		{
-			$.post("src/php/executor.php", { action: "regUser", email: email, password: password, username: username}, function(data)
+			$.post(setJsPath + "src/php/executor.php", { action: "regUser", email: email, password: password, username: username}, function(data)
 			{
 				if(data.result == 1)
 				{
@@ -89,7 +89,7 @@ function regUser()
 
 function logUser(username, password)
 {
-	$.post("src/php/executor.php", { action: "logUser", username: username, password: password}, function(data)
+	$.post(setJsPath + "src/php/executor.php", { action: "logUser", username: username, password: password}, function(data)
 	{
 		if(data.result == 1)
 		{
@@ -131,7 +131,7 @@ function logUser(username, password)
 
 function logOut()
 {
-	$.post("src/php/executor.php", { action: "logOut"}, function(data)
+	$.post(setJsPath + "src/php/executor.php", { action: "logOut"}, function(data)
 	{
 		if(data.result == 1)
 		{	
@@ -158,7 +158,7 @@ function logOut()
 
 function setTime()
 {
-	$.post("src/php/executor.php", { action: "setTime"}, function(data)
+	$.post(setJsPath + "src/php/executor.php", { action: "setTime"}, function(data)
 	{
 		if(data.result == 1)
 		{
@@ -176,7 +176,7 @@ function setFullName()
 {
 	var fullname = $('#sidebar #profil #addName #fullname input').val();
 
-	$.post("src/php/executor.php", { action: "setFullName", fullname: fullname}, function(data)
+	$.post(setJsPath + "src/php/executor.php", { action: "setFullName", fullname: fullname}, function(data)
 	{
 		if(data.result == 1)
 		{
@@ -223,7 +223,7 @@ function getFlux()
 
 			while(countLine != nbLinePerHeight)
 			{
-				$.post("src/php/executor.php", { action: "getFlux", limit: nbPublicationPerWidth, offset: offset }, function(data)
+				$.post(setJsPath + "src/php/executor.php", { action: "getFlux", limit: nbPublicationPerWidth, offset: offset }, function(data)
 				{
 					$('#include-container').loadingOut();
 
@@ -275,7 +275,7 @@ function getPublicationsByUserId(userId)
 
 	while(countLine != nbLinePerHeight)
 	{
-		$.post("src/php/executor.php", { action: "getPublicationsByUserId", userId: userId, limit: nbPublicationPerWidth, offset: offset }, function(data)
+		$.post(setJsPath + "src/php/executor.php", { action: "getPublicationsByUserId", userId: userId, limit: nbPublicationPerWidth, offset: offset }, function(data)
 		{
 			if(data.result == 1)
 			{
@@ -300,7 +300,7 @@ function getPublicationsByUserId(userId)
 
 function postComment(publicationId, content)
 {
-	$.post("src/php/executor.php", { action: "postComment", publicationId: publicationId, content: content }, function(data)
+	$.post(setJsPath + "src/php/executor.php", { action: "postComment", publicationId: publicationId, content: content }, function(data)
 	{
 		if(data.result == true)
 		{
@@ -318,7 +318,7 @@ function postComment(publicationId, content)
 
 function likePublication(publicationId)
 {
-	$.post("src/php/executor.php", { action: "likePublication", publicationId: publicationId }, function(data)
+	$.post(setJsPath + "src/php/executor.php", { action: "likePublication", publicationId: publicationId }, function(data)
 	{
 		if(data.result == 1)
 		{
@@ -337,7 +337,7 @@ function likePublication(publicationId)
 
 function unlikePublication(publicationId)
 {
-	$.post("src/php/executor.php", { action: "unlikePublication", publicationId: publicationId }, function(data)
+	$.post(setJsPath + "src/php/executor.php", { action: "unlikePublication", publicationId: publicationId }, function(data)
 	{
 		if(data.result == 1)
 		{
@@ -356,7 +356,7 @@ function unlikePublication(publicationId)
 
 function addUserTag(name)
 {
-	$.post("src/php/executor.php", { action: "addUserTag", name: name }, function(data)
+	$.post(setJsPath + "src/php/executor.php", { action: "addUserTag", name: name }, function(data)
 	{
 		if(data.result == true)
 		{
@@ -373,7 +373,7 @@ function addUserTag(name)
 
 function removeUserTag(tagId)
 {
-	$.post("src/php/executor.php", { action: "removeUserTag", tagId: tagId }, function(data)
+	$.post(setJsPath + "src/php/executor.php", { action: "removeUserTag", tagId: tagId }, function(data)
 	{
 		if(data.result == true)
 		{
@@ -389,7 +389,7 @@ function removeUserTag(tagId)
 
 function followUser(userId)
 {
-	$.post("src/php/executor.php", { action: "followUser", userId: userId }, function(data)
+	$.post(setJsPath + "src/php/executor.php", { action: "followUser", userId: userId }, function(data)
 	{
 		if(data.result == 1)
 		{
@@ -405,7 +405,7 @@ function followUser(userId)
 
 function unfollowUser(userId)
 {
-	$.post("src/php/executor.php", { action: "unfollowUser", userId: userId }, function(data)
+	$.post(setJsPath + "src/php/executor.php", { action: "unfollowUser", userId: userId }, function(data)
 	{
 		if(data.result == 1)
 		{
@@ -421,7 +421,7 @@ function unfollowUser(userId)
 
 function checkToken()
 {
-	$.post("src/php/executor.php", { action: "checkToken"}, function(data)
+	$.post(setJsPath + "src/php/executor.php", { action: "checkToken"}, function(data)
 	{
 		if(data.result == 1)
 		{
@@ -444,7 +444,7 @@ function checkToken()
 
 function loadFile(file, div)
 {
-	$.post("src/php/executor.php", { action: "loadFile", file: file}, function(data)
+	$.post(setJsPath + "src/php/executor.php", { action: "loadFile", file: file}, function(data)
 	{
 		if(data.result == 1)
 		{
@@ -469,7 +469,7 @@ function loadProfil(username)
 		$("#include-container").stop().fadeOut(200).queue(function() {
 			$('#include-container').html("");
 
-			$.post("src/php/executor.php", { action: "loadProfil", username: username}, function(data)
+			$.post(setJsPath + "src/php/executor.php", { action: "loadProfil", username: username}, function(data)
 			{
 				if(data.result == 1 & data.reply != false)
 				{	
@@ -509,7 +509,7 @@ function loadNotifications()
 
 			$('#notifications-viewer #content').loadingIn();
 
-			$.post("src/php/executor.php", { action: "loadNotifications"}, function(data)
+			$.post(setJsPath + "src/php/executor.php", { action: "loadNotifications"}, function(data)
 			{
 				$('#notifications-viewer #content').loadingOut();
 
@@ -537,7 +537,7 @@ function loadNotifications()
 
 function readNotification(notificationId)
 {
-	$.post("src/php/executor.php", { action: "readNotification", notificationId: notificationId }, function(data)
+	$.post(setJsPath + "src/php/executor.php", { action: "readNotification", notificationId: notificationId }, function(data)
 	{
 		if(data.result == 1)
 		{
@@ -566,7 +566,7 @@ function loadTagsFinder(tag)
 			
 			loadFile("tagsfinder-container", "#include-container");
 
-			$.post("src/php/executor.php", { action: "loadTagsFinder", tag: tag}, function(data)
+			$.post(setJsPath + "src/php/executor.php", { action: "loadTagsFinder", tag: tag}, function(data)
 			{
 				$("#tagsfinder-container #view-mode #searchbar #searchtag").val(tag);
 
@@ -604,10 +604,10 @@ function loadPublicationViewer(id)
 		isBusy = 1;
 
 		$("#include-container").stop().fadeOut(200).queue(function() {
-			window.history.pushState({page: 'publication', id: id}, "Publication " + id, "publication/" + id);
+			window.history.pushState({page: 'publication', id: id}, "Publication " + id, setJsPath + "publication/" + id);
 			$("#include-container").html("");
 
-			$.post("src/php/executor.php", { action: "loadPublicationViewer", id: id}, function(data)
+			$.post(setJsPath + "src/php/executor.php", { action: "loadPublicationViewer", id: id}, function(data)
 			{
 				if(data.result == 1 && data.reply != "")
 				{	
@@ -637,7 +637,7 @@ function loadPublicationViewer(id)
 
 function sendConfirmationMail(email, username)
 {
-	$.post("src/php/executor.php", { action: "sendConfirmationMail", email: email, username: username}, function(data)
+	$.post(setJsPath + "src/php/executor.php", { action: "sendConfirmationMail", email: email, username: username}, function(data)
 	{
 		if(data.result == 1)
 		{
@@ -686,7 +686,7 @@ function uploadAvatar(files, avatarFile)
 				var src = $('section#sidebar ul#profil #avatar img').attr("src");
 				src = src.substring(0, src.length -12);
 
-				$('section#sidebar ul#profil #avatar img').attr("src", src + sData.reply + ".png");
+				$('section#sidebar ul#profil #avatar img').attr("src", setJsPath + src + sData.reply + ".png");
 				
 			    messageBox("Votre avatar à bien été modifié !");
 			} 
@@ -809,7 +809,7 @@ function postPublication(publicationFile, publicationContent, publicationTags)
 
 function deletePublication(publicationId)
 {
-	$.post("src/php/executor.php", { action: "deletePublication", publicationId: publicationId }, function(data)
+	$.post(setJsPath + "src/php/executor.php", { action: "deletePublication", publicationId: publicationId }, function(data)
 	{
 		if(data.result == true)
 		{
@@ -825,7 +825,7 @@ function deletePublication(publicationId)
 
 function deleteComment(commentId)
 {
-	$.post("src/php/executor.php", { action: "deleteComment", commentId: commentId }, function(data)
+	$.post(setJsPath + "src/php/executor.php", { action: "deleteComment", commentId: commentId }, function(data)
 	{
 		if(data.result == true)
 		{

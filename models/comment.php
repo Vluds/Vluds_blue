@@ -5,13 +5,13 @@
 				if(!empty($getUserInfos['avatar']) AND $getUserInfos['avatar'] != "0")
 				{
 			?>
-					<img src="users/<?php echo $getUserInfos['id'];?>/avatar/60_<?php echo $getUserInfos['avatar'];?>.png">
+					<img src="<?php echo WEBROOT; ?>users/<?php echo $getUserInfos['id'];?>/avatar/60_<?php echo $getUserInfos['avatar'];?>.png">
 			<?php
 				}
 				else
 				{
 			?>
-					<img src="img/avatar.png">
+					<img src="<?php echo WEBROOT; ?>img/avatar.png">
 			<?php
 				}
 			?>
@@ -63,7 +63,7 @@
 			{
 	?>
 				<div class="more">
-					<img src="img/more_icon.png">
+					<img src="<?php echo WEBROOT; ?>img/more_icon.png">
 				</div>
 
 				<div class="menu">		

@@ -1,4 +1,5 @@
 <?php
+
 	class Engine
 	{
 		public $newbdd;
@@ -409,7 +410,7 @@
 				$getUserInfos = $newStaticBdd->fetch_array($UserInfos);
 
 				ob_start();
-				include('../../models/publication_view.php');
+				include(ROOT.'models/publication_view.php');
 				$dataArray['reply'] .= ob_get_contents();
 				ob_end_clean();
 

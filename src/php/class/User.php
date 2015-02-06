@@ -94,8 +94,8 @@
 					$UserId = $this->newbdd->select("id", "users", "WHERE password LIKE '".$passwordHash."'");
 					$getUserId = $this->newbdd->fetch_array($UserId);
 
-					mkdir("../../users/".$getUserId['id']."/avatar", 0700, true);
-					mkdir("../../users/".$getUserId['id']."/banner", 0700, true);
+					mkdir(ROOT."users/".$getUserId['id']."/avatar", 0700, true);
+					mkdir(ROOT."users/".$getUserId['id']."/banner", 0700, true);
 
 					self::logUser($username, $password);
 
@@ -687,8 +687,8 @@
 						$cover300 = $avatarResized;
 					}
 	
-					imagepng($cover60, "../../users/".User::getId()."/avatar/60_".$avatarId.".png");
-					imagepng($cover300, "../../users/".User::getId()."/avatar/300_".$avatarId.".png");
+					imagepng($cover60, ROOT."users/".User::getId()."/avatar/60_".$avatarId.".png");
+					imagepng($cover300, ROOT."users/".User::getId()."/avatar/300_".$avatarId.".png");
 
 					return $avatarId;
 				}
