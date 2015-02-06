@@ -199,7 +199,7 @@ function getFlux()
 		isBusy = 1;
 
 		$("#include-container").stop().fadeOut(100).queue(function() {
-			window.history.pushState({page: 'flux'}, "Flux d'actualité", "Flux");
+			window.history.pushState({page: 'flux'}, "Flux d'actualité", setJsPath + "Flux");
 			document.title = "Vluds - Flux d'actualité";
 
 			$('#include-container').html("");
