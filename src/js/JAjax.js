@@ -830,6 +830,9 @@ function postPublication(publicationFile, publicationContent, publicationTags)
 
 			loadPublicationViewer(sData.id);
 
+			$('#postPublication .post-content textarea').val("");
+			$('#postPublication .tags-container input').val("");
+
 			messageBox("Votre publication à bien été ajoutée !");
 		} 
 		else if(sData.result == -1)
