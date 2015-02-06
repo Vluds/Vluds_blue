@@ -121,6 +121,13 @@
 				<!--<li class="unactive"><a href=""><p>Mes favoris</p></a></li>
 				<li class="unactive"><a href=""><p>Mes tags</p></a></li>
 				<li class="unactive"><a href=""><p>Mes reglages</p></a></li>-->
+				<?php
+					if (isset($getUserInfos['admin']) AND $getUserInfos['admin'] == 1) {
+				?>
+					<li class="unactive" onClick="#"><p>Manage</p></li>
+				<?php
+					}
+				?>
 
 				<div id="submit-artwork">
 					<input type="submit" value="Ajouter une publication"/>
