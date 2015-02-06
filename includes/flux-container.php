@@ -1,6 +1,6 @@
 <div id="flux-container">
-	<div id="view-mode">
-	<!--<?php
+	<!--<div id="view-mode">
+	<?php
 		if(User::isLogged())
 		{
 	?>
@@ -14,8 +14,8 @@
 	<?php
 		}
 	?>
-	-->
-	</div>
+
+	</div>-->
 
 	<div id="publication-container">
 		<div class="loading">

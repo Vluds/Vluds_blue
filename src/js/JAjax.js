@@ -208,15 +208,17 @@ function getFlux()
 
 			loadFile("flux-container", '#include-container');
 
+			var containerHeight = $('#include-container').height();
+			var nbLinePerHeight = (containerHeight / 260);
+			nbLinePerHeight = Math.round(nbLinePerHeight, 0);
+			console.log("line: " + nbLinePerHeight);
+
 			var containerWidth = $('#include-container').width();
-			var nbPublicationPerWidth = (containerWidth / 500);
+			var nbPublicationPerWidth = (containerWidth / 510);
 			nbPublicationPerWidth = Math.round(nbPublicationPerWidth, 0);
 			console.log("per width: " + nbPublicationPerWidth);
 
-			var containerHeight = $('#include-container').height();
-			var nbLinePerHeight = (containerHeight / 250);
-			nbLinePerHeight = Math.round(nbLinePerHeight, 0);
-			console.log("line: " + nbLinePerHeight);
+			$('#include-container').width($('#include-container').width()+500);
 
 			var offset = 0;
 
