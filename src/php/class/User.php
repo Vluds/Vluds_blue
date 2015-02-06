@@ -479,11 +479,12 @@
 					$returnUserTags = array();
 					$returnUserTags['content'] = "";
 
+					$newStaticBdd = new BDD();
+
 					$name = $newStaticBdd->real_escape_string(htmlspecialchars($name));
 
 					$userTagToken = self::randomSalt(10);
 
-					$newStaticBdd = new BDD();
 					$newStaticBdd->insert("user_tags", "user_id, name, token", "'".User::getId()."', '".$name."', '".$userTagToken."'");
 
 					$UserTag = $newStaticBdd->select("*", "user_tags", "WHERE token LIKE '".$userTagToken."'");
