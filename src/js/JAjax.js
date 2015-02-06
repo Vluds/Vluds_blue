@@ -22,6 +22,10 @@ window.onpopstate = function(event)
 	{
 		loadTagsFinder(event.state.tag);
 	}
+	else if(event.state.page == "manager")
+	{
+		loadManager(event.state.tag);
+	}
 }
 
 var isBusy = 0;
