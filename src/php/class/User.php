@@ -74,6 +74,8 @@
 			$username = preg_replace('#[^A-Za-z0-9]+#', '_', $username);
 			$username = trim($username, '_');
 
+			$email = $this->newbdd->real_escape_string(htmlspecialchars($email));
+
 			$Email = $this->newbdd->select("id", "users", "WHERE email LIKE '".$email."'");
 			$getEmail = $this->newbdd->num_rows($Email);
 
@@ -134,7 +136,7 @@
 		public static function setFullName($fullname)
 		{
 			$newStaticBdd = new BDD();
-			
+
 			$fullname = $newStaticBdd->real_escape_string(htmlspecialchars($fullname));
 
 			$newStaticBdd->update("users", "fullname = '".$fullname."'", "WHERE token = '".self::getToken()."'");
