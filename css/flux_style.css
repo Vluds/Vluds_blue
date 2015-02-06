@@ -398,7 +398,7 @@
 	height: 30px;
 	width: 30px;
 	left: 50%;
-	background-image: url('/img/like.png');
+	background-image: url('../img/like.png');
 	background-size: 100% 100%;
 	vertical-align: middle;
 	display: inline-block;
@@ -407,7 +407,7 @@
 {
 	height: 100%;
 	width: 100%;
-	background-image: url('/img/liked.png');
+	background-image: url('../img/liked.png');
 	background-size: 100% 100%;
 }
 .publication .cover .options .like.liked .hover.liked

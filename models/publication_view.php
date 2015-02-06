@@ -41,30 +41,24 @@
 ?>
 	<div id="content">
 		<div id="profil" onClick="loadProfil('<?php echo $getUserInfos['username']; ?>')">
-			<div id="username">
-				<?php
-					if(isset($getUserInfos['firstname']) AND isset($getUserInfos['lastname']))
-					{
-				?>
-						<div id="firstname">
-							<h3><?php echo $getUserInfos['firstname'];?></h3>
-						</div>
-
-						<div id="lastname">
-							<h3><?php echo $getUserInfos['lastname']?></h3>
-						</div>
-				<?php
-					}
-					else
-					{
-				?>
-						<div id="username">
-							<h3><?php echo $getUserInfos['username'];?></h3>
-						</div>
-				<?php
-					}
-				?>
-			</div>
+			<?php
+				if(isset($getUserInfos['fullname']) AND !empty($getUserInfos['fullname']))
+				{
+			?>
+					<div id="fullname">
+						<h3><?php echo $getUserInfos['fullname'];?></h3>
+					</div>
+			<?php
+				}
+				else
+				{
+			?>
+					<div id="username">
+						<h3><?php echo $getUserInfos['username'];?></h3>
+					</div>
+			<?php
+				}
+			?>
 
 			<div id="avatar">
 				<?php

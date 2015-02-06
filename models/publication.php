@@ -107,10 +107,10 @@
 
 			<div class="username" onClick="loadProfil('<?php echo $getUserInfos['username']; ?>')">
 				<?php
-					if(!empty($getUserInfos['firstname']) AND !empty($getUserInfos['lastname'])) 
+					if(isset($getUserInfos['fullname']) AND !empty($getUserInfos['fullname'])) 
 					{
 				?>
-						<h3><?php echo $getUserInfos['firstname'];?> <?php echo $getUserInfos['lastname'];?></h3>
+						<h3><?php echo $getUserInfos['fullname'];?></h3>
 				<?php
 					}
 					else

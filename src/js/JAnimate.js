@@ -210,22 +210,28 @@ $(document).on('click', '.follow-container', function(event){
 	}
 });
 
-$(document).on('click', '.publication .cover', function(){
+$(document).on('click', '.publication', function(){
 
-	var publicationId = $(this).parent().attr('id');
+	var publicationId = $(this).attr('id');
 
-	var publicationDiv = $(this).parent();
+	var publicationDiv = $(this);
 
 	$('#publicationViewer').attr('ref', publicationId);
+
+	$('#publicationViewer #cover #cover-container').html("");
 
 	$('#publicationViewer #cover #cover-container').html($(publicationDiv).find('.cover').html());
 	$('#publicationViewer #infos-container #time').html($(publicationDiv).find('.time').html());
 	$('#publicationViewer #infos-container #profil').html($(publicationDiv).find('.profil').html());
 
-	var background = $(publicationDiv).find('.cover').css(["background-image", "background-size", "background-repeat", "background-position"]);
-	$('#publicationViewer #cover').css({"background-image": background["background-image"], "background-size": background["background-size"], "background-repeat": background["background-repeat"], "background-position": background["background-position"]});
-	$('#publicationViewer #infos-container #description').html($(publicationDiv).find('.description').html());
-	$('#publicationViewer #infos-container #tags-container').html($(publicationDiv).find('.tags-container').html());
+	var background;
+	if(background = publicationDiv.find('.cover'))
+	{
+		background.css(["background-image", "background-size", "background-repeat", "background-position"]);
+		$('#publicationViewer #cover').css({"background-image": background["background-image"], "background-size": background["background-size"], "background-repeat": background["background-repeat"], "background-position": background["background-position"]});
+		$('#publicationViewer #infos-container #description').html(publicationDiv.find('.description').html());
+		$('#publicationViewer #infos-container #tags-container').html(publicationDiv.find('.tags-container').html());
+	}
 
 	var screenImage = $('img', this);
 
