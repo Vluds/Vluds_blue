@@ -118,7 +118,6 @@
 						<?php
 							if(!empty(User::getAvatar()) AND User::getAvatar() != "0")
 							{
-								echo User::getAvatar();
 						?>
 								<img src="<?php echo WEBROOT; ?>users/<?php echo User::getId();?>/avatar/60_<?php echo User::getAvatar();?>.png">
 						<?php
