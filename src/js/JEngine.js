@@ -61,6 +61,14 @@ function loadSideBar()
 	loadFile('sideBar', '#sidebar');
 }
 
+$(document).on('click', '#regBox #container #submit input', function()
+{
+	var email = $('#regBox #container input#email').val();
+	var password = $('#regBox #container input#password').val();
+	var username = $('#regBox #container input#username').val();
+
+	regUser(email, password, username);
+});
 
 $(document).on('click', '#signBox #container #submit input', function()
 {
@@ -76,6 +84,7 @@ $(document).on('click', '.option-button#add-file', function()
 {
 	$(this).parent().find('#file-upload').click();
 });
+
 $(document).on('change', '#postPublication .options-container #file-upload', function(event) 
 {
 	$('#postPublication .file-viewer .object-slider').html("");

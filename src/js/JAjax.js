@@ -26,12 +26,8 @@ window.onpopstate = function(event)
 
 var isBusy = 0;
 
-function regUser()
+function regUser(email, password, username)
 {
-	var email = $('#regBox #container input#email').val();
-	var password = $('#regBox #container input#password').val();
-	var username = $('#regBox #container input#username').val();
-
 	var checkAT = email.indexOf('@');
 	var checkDOT = email.indexOf('.');
 
