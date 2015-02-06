@@ -197,7 +197,7 @@
 			$returnUserTags['content'] = "";
 
 			$newStaticBdd = new BDD();
-			$UserTag = $newStaticBdd->select("id, name, user_id", "user_tags", "WHERE user_id LIKE '".$id."' ORDER BY rand() LIMIT 0, ".$count."");
+			$UserTag = $newStaticBdd->select("*", "user_tags", "WHERE user_id LIKE '".$id."' ORDER BY rand() LIMIT 0, ".$count."");
 
 			while($getUserTag = $newStaticBdd->fetch_array($UserTag))
 			{

@@ -482,7 +482,7 @@
 					$getUserTag = $newStaticBdd->fetch_array($UserTag);
 
 					ob_start();
-					include('../../models/tag.php');
+					include('../../models/user_tag.php');
 					$returnUserTags['content'] .= ob_get_contents();
 					ob_end_clean();
 

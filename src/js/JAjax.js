@@ -198,7 +198,8 @@ function getFlux()
 	{
 		isBusy = 1;
 
-		$("#include-container").stop().fadeOut(100).queue(function() {
+		$("#include-container").stop().fadeOut(100).queue(function()
+		{
 			window.history.pushState({page: 'flux'}, "Flux d'actualité", setJsPath + "Flux");
 			document.title = "Vluds - Flux d'actualité";
 
@@ -606,7 +607,7 @@ function loadPublicationViewer(id)
 		$("#include-container").stop().fadeOut(200).queue(function() {
 			window.history.pushState({page: 'publication', id: id}, "Publication " + id, setJsPath + "publication/" + id);
 			document.title = "Vluds - Publication n°" + id;
-			
+
 			$("#include-container").html("");
 
 			$.post(setJsPath + "src/php/executor.php", { action: "loadPublicationViewer", id: id}, function(data)
