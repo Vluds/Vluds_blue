@@ -1013,7 +1013,7 @@
 
 					if(($getpublicationInfos['user_id'] == User::getId()) OR User::getUserrole())
 					{
-						$newStaticBdd->delete("publications", "id LIKE '".$publicationId."' AND user_id LIKE '".self::getId()."'");
+						$newStaticBdd->delete("publications", "id LIKE '".$publicationId."'");
 						return true;
 					}
 					else
