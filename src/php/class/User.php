@@ -1004,7 +1004,7 @@
 		{
 			if(self::isLogged())
 			{
-				if(isset($publicationId) AND !empty($publicationId))
+				if(isset($publicationId))
 				{		
 					$newStaticBdd = new BDD();
 
