@@ -38,7 +38,7 @@
 
 				$salt = $getUserInfo['salt'];
 
-				$password = $this->newbdd->real_escape_string(stripslashes($password));
+				$password = $this->newbdd->real_escape_string(htmlspecialchars($password));
 				$passwordHash = hash('sha256', $password).$salt;
 
 				if($passwordHash == $getUserInfo["password"])
@@ -70,7 +70,7 @@
 
 		public function regUser($username, $password, $email)
 		{
-			$username = $this->newbdd->real_escape_string(stripslashes($username));
+			$username = $this->newbdd->real_escape_string(htmlspecialchars($username));
 			$username = preg_replace('#[^A-Za-z0-9]+#', '_', $username);
 			$username = trim($username, '_');
 
@@ -86,7 +86,7 @@
 				{	
 					$salt = self::randomSalt(10);
 
-					$password = $this->newbdd->real_escape_string(stripslashes($password));
+					$password = $this->newbdd->real_escape_string(htmlspecialchars($password));
 					$passwordHash = hash('sha256', $password).$salt;
 
 					$regUser = $this->newbdd->insert("users", "username, password, salt, email", "'".$username."', '".$passwordHash."', '".$salt."', '".$email."'");
@@ -122,9 +122,12 @@
 
 		public static function addNotification($userId, $url, $content)
 		{
+			$newStaticBdd = new BDD();
+
+			$content = $newStaticBdd->real_escape_string(htmlspecialchars($content));
+
 			$notificationToken = self::randomSalt(10);
 
-			$newStaticBdd = new BDD();
 			$addNotification = $newStaticBdd->insert("notifications", "user_id, url, content, time, token", "'".$userId."', '".$url."', '".$content."', '".time()."', '".$notificationToken."'");
 		}
 
@@ -166,13 +169,16 @@
 
 		public static function setToken($userId)
 		{
+			$newStaticBdd = new BDD();
+
+			$newStaticBdd->real_escape_string(htmlspecialchars($userId));
+
 			$token = md5(uniqid(mt_rand(), true));
 
 			unset($_COOKIE['token']);
 
 			setcookie("token", $token);
 
-			$newStaticBdd = new BDD();
 			$newStaticBdd->update("users", "token = '".$token."', time = '".time()."'", "WHERE id = '".$userId."'");
 
 
@@ -328,7 +334,7 @@
 				if(isset($content) AND !empty($content))
 				{	
 					$newStaticBdd = new BDD();
-					$content = $newStaticBdd->real_escape_string($content);
+					$content = $newStaticBdd->real_escape_string(htmlspecialchars($content));
 
 					$commentToken = self::randomSalt(10);
 					
@@ -472,6 +478,8 @@
 				{		
 					$returnUserTags = array();
 					$returnUserTags['content'] = "";
+
+					$name = $newStaticBdd->real_escape_string(htmlspecialchars($name));
 
 					$userTagToken = self::randomSalt(10);
 
@@ -801,7 +809,7 @@
 
 				$newStaticBdd = new BDD();
 
-				$publicationContent = $newStaticBdd->real_escape_string($publicationContent);
+				$publicationContent = $newStaticBdd->real_escape_string(htmlspecialchars($publicationContent));
 
 				///AddPublication
 				$artworkToken = self::randomSalt(10);
@@ -812,7 +820,7 @@
 				$getArtworkId = $newStaticBdd->fetch_array($ArtworkId);
 
 				///AddTags
-				$publicationTags = $newStaticBdd->real_escape_string($publicationTags);
+				$publicationTags = $newStaticBdd->real_escape_string(htmlspecialchars($publicationTags));
 				$publicationTags = explode(" ", $publicationTags);
 
 				$result = count($publicationTags);
