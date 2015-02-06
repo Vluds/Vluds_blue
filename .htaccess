@@ -1,6 +1,7 @@
 Options +FollowSymlinks
 RewriteEngine On
 
+RewriteRule ^Flux  index.php [NC,L]
 RewriteRule ^(([a-z_]|[0-9_])*)$  index.php?username=$1 [NC,L]
 RewriteRule ^Search/(([a-z]|[0-9])*)$  index.php?tag=$1 [NC,L]
 RewriteRule ^publication/(([a-z]|[0-9])*)$  index.php?publication=$1 [NC,L]

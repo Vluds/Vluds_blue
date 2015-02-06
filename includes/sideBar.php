@@ -97,7 +97,7 @@
 
 	<nav>
 		<ul>
-			<li class="active" onClick="getFlux()"><p>Flux d'actualités</p><div id="sort"><img src="<?php echo WEBROOT; ?>img/grid.png"></div></li>
+			<li class="active" onClick="getFlux()"><p>Flux d'actualité</p><div id="sort"><img src="<?php echo WEBROOT; ?>img/grid.png"></div></li>
 			<li class="unactive" onClick="loadTagsFinder('vluds')"><p>Rechercher</p></li>
 		<?php
 			if(User::isLogged())
