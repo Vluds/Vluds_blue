@@ -263,6 +263,18 @@
 			}
 		}
 
+		public static function getUserrole()
+		{
+			if(self::isLogged())
+			{
+				$newStaticBdd = new BDD();
+				$RoleToken = $newStaticBdd->select("admin", "users", "WHERE token LIKE '".self::getToken()."'");
+				$getRoleToken = $newStaticBdd->fetch_array($RoleToken);
+
+				return $getRoleToken['admin'];
+			}
+		}
+
 		public static function getFullName()
 		{
 			if(self::isLogged())
