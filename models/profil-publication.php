@@ -37,16 +37,20 @@
 
 			<div class="username" onClick="loadProfil('<?php echo $getProfilInfos['username']; ?>')">
 				<?php
-					if(!empty($getProfilInfos['firstname']) AND !empty($getProfilInfos['lastname'])) 
+					if(isset($getProfilInfos['fullname']) AND !empty($getProfilInfos['fullname']))
 					{
 				?>
-						<h3><?php echo $getProfilInfos['firstname'];?> <?php echo $getProfilInfos['lastname'];?></h3>
+						<div id="fullname">
+							<h3><?php echo $getProfilInfos['fullname'];?></h3>
+						</div>
 				<?php
 					}
 					else
 					{
 				?>
-						<h3><?php echo $getProfilInfos['username'];?></h3>
+						<div id="username">
+							<h3><?php echo $getProfilInfos['username'];?></h3>
+						</div>
 				<?php
 					}
 				?>
