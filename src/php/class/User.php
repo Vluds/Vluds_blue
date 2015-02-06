@@ -1011,7 +1011,7 @@
 					$publicationInfos = $newStaticBdd->select("*", "publications", "WHERE id LIKE '".$publicationId."'");
 					$getpublicationInfos = $newStaticBdd->fetch_array($publicationInfos);
 
-					if(($getpublicationInfos['user_id'] == User::getId()) OR User::getUserrole() == 1)
+					if($getpublicationInfos['user_id'] == User::getId() OR User::getUserrole() == 1)
 					{
 						$newStaticBdd->delete("publications", "id LIKE '".$publicationId."'");
 						return true;
