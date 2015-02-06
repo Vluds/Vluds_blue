@@ -179,3 +179,11 @@ $(document).on('change', '#addPublication #container #artwork-cover-upload', fun
 
 	reader.readAsDataURL(selectedFile);
 });
+
+// horizontalScroll
+$(document).ready(function() {
+    $('#flux-container').mousewheel(function(e, delta) {
+        this.scrollLeft -= (delta * 100);
+        e.preventDefault();
+    });
+});
