@@ -725,6 +725,7 @@ header
 	overflow: hidden;
 	display: inline-block;
 	vertical-align: middle;
+	cursor: pointer;
 }
 #publicationViewer #infos-container #top-container #profil .username
 {

@@ -299,7 +299,7 @@ function getPublicationsByUserId(userId)
 }
 
 function postComment(publicationId, content)
-{
+{	
 	$.post(setJsPath + "src/php/executor.php", { action: "postComment", publicationId: publicationId, content: content }, function(data)
 	{
 		if(data.result == true)
@@ -605,6 +605,8 @@ function loadPublicationViewer(id)
 
 		$("#include-container").stop().fadeOut(200).queue(function() {
 			window.history.pushState({page: 'publication', id: id}, "Publication " + id, setJsPath + "publication/" + id);
+			document.title = "Vluds - Publication n°" + id;
+			
 			$("#include-container").html("");
 
 			$.post(setJsPath + "src/php/executor.php", { action: "loadPublicationViewer", id: id}, function(data)

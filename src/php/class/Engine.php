@@ -406,7 +406,7 @@
 			if($publicationExist == 1)
 			{
 
-				$UserInfos = $newStaticBdd->select("id, firstname, lastname, username, avatar, banner", "users", "WHERE id LIKE '".$getPublication['user_id']."'");
+				$UserInfos = $newStaticBdd->select("*", "users", "WHERE id LIKE '".$getPublication['user_id']."'");
 				$getUserInfos = $newStaticBdd->fetch_array($UserInfos);
 
 				ob_start();

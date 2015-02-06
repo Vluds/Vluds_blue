@@ -217,6 +217,7 @@ $(document).on('click', '.publication', function(){
 	var publicationDiv = $(this);
 
 	$('#publicationViewer').attr('ref', publicationId);
+	$('#publicationViewer #post-comment').attr('ref', publicationId);
 
 	$('#publicationViewer #cover #cover-container').html("");
 

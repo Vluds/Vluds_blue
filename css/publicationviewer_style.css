@@ -57,21 +57,7 @@
 	display: inline-block;
 	vertical-align: middle;
 }
-#publicationviewer-container #content #profil #username
-{
-	display: inline-block;
-	vertical-align: middle;
-	text-align: left;
-	font-size: 1.1em;
-	height: 100%;
-	line-height: 68px;
-}
-#publicationviewer-container #content #profil #username #firstname
-{
-	display: inline-block;
-	vertical-align: middle;
-}
-#publicationviewer-container #content #profil #username #lastname
+#publicationviewer-container #content #profil #fullname
 {
 	display: inline-block;
 	vertical-align: middle;
