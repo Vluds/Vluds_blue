@@ -87,6 +87,14 @@
 					</script>
 			<?php
 				}
+				else if(isset($_GET['manager']) AND !empty($_GET['manager'])) 
+				{	
+			?>	
+					<script type="text/javascript">
+						loadManager();
+					</script>
+			<?php
+				}
 				else
 				{
 			?>
