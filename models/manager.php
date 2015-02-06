@@ -8,10 +8,10 @@ if(User::isLogged()) {
 	?>
 		<table>
 			<tr>
-				<th>ID</th>
-				<th>User ID</th>
-				<th>Content</th>
-				<th>Action</th>
+				<th><p>ID</p></th>
+				<th><p>User ID</p></th>
+				<th><p>Content</p></th>
+				<th><p>Action</p></th>
 			</tr>
 	<?php
 		$PublicationInfos = $newStaticBdd->select("*", "publications", "");
@@ -29,10 +29,10 @@ if(User::isLogged()) {
 
     ?>
 			<tr>
-				<td><?php echo $getPublicationInfos['id']; ?></td>
-				<td><?php echo $getPublicationInfos['user_id']; ?></td>
-				<td><?php echo $chaine; ?></td>
-				<td><button onClick="deletePublication(<?php echo $getPublicationInfos['id']; ?>)">DELETE</button></td>
+				<td><p><?php echo $getPublicationInfos['id']; ?></p></td>
+				<td><p><?php echo $getPublicationInfos['user_id']; ?></p></td>
+				<td><p><?php echo $chaine; ?></p></td>
+				<td><p><button onClick="deletePublication(<?php echo $getPublicationInfos['id']; ?>)">DELETE</button></p></td>
 			</tr>
 
 	<?php
