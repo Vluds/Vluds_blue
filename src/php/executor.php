@@ -544,7 +544,7 @@
 			}
 		}
 
-		if($action == "deletePublication") 
+		if($action == "deletePublication")
 		{
 			if(isset($_POST['publicationId']))
 			{

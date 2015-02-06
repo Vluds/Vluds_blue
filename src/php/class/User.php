@@ -1007,9 +1007,19 @@
 				if(isset($publicationId) AND !empty($publicationId))
 				{		
 					$newStaticBdd = new BDD();
-					$newStaticBdd->delete("publications", "id LIKE '".$publicationId."' AND user_id LIKE '".self::getId()."'");
 
-					return true;
+					$publicationInfos = $newStaticBdd->select("*", "publications", "WHERE id LIKE '".$publicationId."'");
+					$getpublicationInfos = $newStaticBdd->fetch_array($publicationInfos);
+
+					if(($getpublicationInfos['user_id'] == User::getId()) OR User::getUserrole())
+					{
+						$newStaticBdd->delete("publications", "id LIKE '".$publicationId."' AND user_id LIKE '".self::getId()."'");
+						return true;
+					}
+					else
+					{
+						return false;
+					}
 				}
 				else
 				{
