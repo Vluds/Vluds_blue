@@ -652,7 +652,7 @@ function loadManager()
 					$("#include-container").append(data.reply);
 					$('#manage-container').fadeIn(200);
 					$('#manage-container').loadingOut();
-					window.history.pushState({page: 'manager'}, "Panel administateur", setJsPath + "/Manager");
+					window.history.pushState({page: 'manager'}, "Panel administateur", setJsPath + "Manager");
 					document.title = "Vluds - Panel administateur";
 				}
 				else if(data.reply == false)
