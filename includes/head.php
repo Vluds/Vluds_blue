@@ -37,6 +37,7 @@
 	<link rel="stylesheet" type="text/css" href="<?php echo STYLE; ?>profil_style.css">
 	<link rel="stylesheet" type="text/css" href="<?php echo STYLE; ?>flux_style.css">
 	<link rel="stylesheet" type="text/css" href="<?php echo STYLE; ?>publicationviewer_style.css">
+	<link rel="stylesheet" type="text/css" href="<?php echo STYLE; ?>manager_style.css">
 
 	<!-- Script -->
 	<script src="<?php echo LIB; ?>jquery.min-1.11.1.js"></script>
