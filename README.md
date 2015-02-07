@@ -10,8 +10,8 @@ Follow us on [Twitter](https://twitter.com/Vluds_)
 2. Import vluds_bdd.sql.
 3. Use database-filler.php to fill it !
 4. user:
-	1. Admin  /pass: 123
-	2. Membre /pass: 123
+	- Admin  /pass: 123
+	- Membre /pass: 123
 
 ##Authors
 
