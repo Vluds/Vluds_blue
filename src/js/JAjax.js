@@ -222,7 +222,9 @@ function getFlux()
 
 			var countLine = 0;
 
-			$.post(setJsPath + "src/php/executor.php", { action: "getFlux", limit: 8, offset: offset }, function(data)
+			while(countLine != nbLinePerHeight)
+			{
+				$.post(setJsPath + "src/php/executor.php", { action: "getFlux", limit: nbPublicationPerWidth, offset: offset }, function(data)
 				{
 					$('#include-container').loadingOut();
 
@@ -252,6 +254,7 @@ function getFlux()
 
 				offset = offset + nbPublicationPerWidth;
 				countLine++;
+			}
 
 			$("#include-container").stop().fadeIn(100).dequeue();
 		});
