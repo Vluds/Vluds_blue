@@ -6,66 +6,70 @@ if(User::isLogged()) {
 	if (User::getUserrole() == 1) {
 
 		?>
-		<table>
-			<tr>
-				<th><p>ID</p></th>
-				<th><p>User ID</p></th>
-				<th><p>Content</p></th>
-				<th><p>Action</p></th>
-			</tr>
-		<?php
+		<div class="table_container">
+			<table class="manager manager_table manager_table--publication">
+				<tr>
+					<th>ID</th>
+					<th>User ID</th>
+					<th>Content</th>
+					<th>Action</th>
+				</tr>
+			<?php
 
-				$PublicationInfos = $newStaticBdd->select("*", "publications", "");
-		        while ($getPublicationInfos = $newStaticBdd->fetch_array($PublicationInfos)) {
+					$PublicationInfos = $newStaticBdd->select("*", "publications", "");
+			        while ($getPublicationInfos = $newStaticBdd->fetch_array($PublicationInfos)) {
 
-		        	if( strlen($getPublicationInfos['content']) >= 40 ) {
+			        	if( strlen($getPublicationInfos['content']) >= 40 ) {
 
-						$chaine = substr($getPublicationInfos['content'],0,40);
+							$chaine = substr($getPublicationInfos['content'],0,40);
 
-					} else {
+						} else {
 
-						$chaine = $getPublicationInfos['content'];
+							$chaine = $getPublicationInfos['content'];
+
+						}
+
+						?>
+							<tr class="publication_manage" id="<?php echo $getPublicationInfos['id']; ?>">
+								<td><?php echo $getPublicationInfos['id']; ?></td>
+								<td><?php echo $getPublicationInfos['user_id']; ?></td>
+								<td><?php echo $chaine; ?></td>
+								<td><button onClick="deletePublicationManage(<?php echo $getPublicationInfos['id']; ?>)">DELETE</button></td>
+							</tr>
+						<?php
 
 					}
 
-					?>
-						<tr class="publication_manage" id="<?php echo $getPublicationInfos['id']; ?>">
-							<td><p><?php echo $getPublicationInfos['id']; ?></p></td>
-							<td><p><?php echo $getPublicationInfos['user_id']; ?></p></td>
-							<td><p><?php echo $chaine; ?></p></td>
-							<td><p><button onClick="deletePublicationManage(<?php echo $getPublicationInfos['id']; ?>)">DELETE</button></p></td>
-						</tr>
-					<?php
+			?>
+			</table>
+		</div>
+		<div class="table_container">
+			<table class="manager manager_table manager_table--user">
+				<tr>
+					<th>ID</th>
+					<th>Role</th>
+					<th>Username</th>
+					<th>Action</th>
+				</tr>
+			<?php
 
-				}
+					$userInfos = $newStaticBdd->select("*", "users", "");
+			        while ($getUserInfos = $newStaticBdd->fetch_array($userInfos)) {
 
-		?>
-		</table>
-		<table>
-			<tr>
-				<th><p>ID</p></th>
-				<th><p>Role</p></th>
-				<th><p>Username</p></th>
-				<th><p>Action</p></th>
-			</tr>
-		<?php
+						?>
+							<tr class="user" id="<?php echo $getUserInfos['id']; ?>">
+								<td><?php echo $getUserInfos['id']; ?></td>
+								<td><?php echo $getUserInfos['role']; ?></td>
+								<td><?php echo $getUserInfos['username']; ?></td>
+								<td><button onClick="deleteUser(<?php echo $getUserInfos['id']; ?>)">DELETE</button></td>
+							</tr>
+						<?php
 
-				$userInfos = $newStaticBdd->select("*", "users", "");
-		        while ($getUserInfos = $newStaticBdd->fetch_array($userInfos)) {
+					}
 
-					?>
-						<tr class="user" id="<?php echo $getUserInfos['id']; ?>">
-							<td><p><?php echo $getUserInfos['id']; ?></p></td>
-							<td><p><?php echo $getUserInfos['role']; ?></p></td>
-							<td><p><?php echo $getUserInfos['username']; ?></p></td>
-							<td><p><button onClick="deleteUser(<?php echo $getUserInfos['id']; ?>)">DELETE</button></p></td>
-						</tr>
-					<?php
-
-				}
-
-		?>
-		</table>
+			?>
+			</table>
+		</div>
 		<?php
 			
 	}
