@@ -5,6 +5,26 @@ $(document).on('click', function()
 	setTime();
 });
 
+function adaptPublications(containerHeight, nbLinePerHeight)
+{
+	var publicationContainerHeight = $('#publication-container').height();
+	console.log("publicationContainerHeight: " + publicationContainerHeight);
+
+	var remainingSpace = containerHeight - publicationContainerHeight;
+	console.log("remainingSpace: " + remainingSpace);
+
+	margin = remainingSpace / nbLinePerHeight;
+	margin = Math.round(margin, 0) - 1;
+	console.log("margin: " + margin);
+
+	var existingMargin = $(".publication").css("margin");
+	console.log("existingMargin: " + existingMargin);
+
+	margin = margin + 5;
+
+	$('.publication').animate({ margin: '+' + margin + 'px' }, 1000);
+}
+
 checkAcceptationCookies();
 
 function checkAcceptationCookies()
