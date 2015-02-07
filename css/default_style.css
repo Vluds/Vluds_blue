@@ -440,16 +440,19 @@ header
 
 
 #include-container
-{
-	height: 100%;
-	width: 100%;
+{	
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 200px;
+	right: 0;
+	height: auto;
+	width: auto;
 	margin-bottom: -2px;
 	overflow-y: auto;
 	overflow-x: hidden;
-	position: relative;
 	text-align: center;
 	box-sizing: border-box;
-	padding-left: 200px;
 	text-align: center;
 }
 
