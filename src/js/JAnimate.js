@@ -27,7 +27,7 @@ $(document).on('click', '#slider', function() {
 	if($("#sidebar").attr('class') == "active")
 	{
 		$("#sidebar").stop().animate({width: "0px"}).fadeOut(0);
-		$("section#include-container").stop().animate({paddingLeft: "0px"});
+		$("section#include-container").stop().animate({left: "0px"});
 
 		$("#sidebar").attr('class', 'unactive');
 	}
@@ -41,7 +41,7 @@ $(document).on('mouseenter', '#slider', function() {
 
 $(document).on('click', '#slideBar', function() {
 	$("#sidebar").stop().fadeIn(0).animate({width: "200px"});
-	$("section#include-container").stop().animate({paddingLeft: "200px"});
+	$("section#include-container").stop().animate({left: "200px"});
 
 	$(this).stop().animate({left: "170px"}).rotate(0, 200);
 
