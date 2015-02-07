@@ -209,13 +209,15 @@ function getFlux()
 			loadFile("flux-container", '#include-container');
 
 			var containerHeight = $('#include-container').height();
-			var nbLinePerHeight = (containerHeight / 260);
+			var nbLinePerHeight = (containerHeight / 300);
 			nbLinePerHeight = Math.round(nbLinePerHeight, 0);
+			console.log("Height: " + containerHeight);
 			console.log("line: " + nbLinePerHeight);
 
 			var containerWidth = $('#include-container').width();
 			var nbPublicationPerWidth = (containerWidth / 510);
-			nbPublicationPerWidth = Math.round(nbPublicationPerWidth, 0);
+			nbPublicationPerWidth = Math.round(nbPublicationPerWidth, 0) + 2;
+			console.log("Width: " + containerWidth);
 			console.log("per width: " + nbPublicationPerWidth);
 
 			var offset = 0;
@@ -236,8 +238,8 @@ function getFlux()
 					{
 						$('#publication-container').append(data.reply);
 
-						$('.publication-line').width($('#include-container').width() + 250);
-						$('.publication-line').height($('#include-container').height() / nbLinePerHeight);
+						$('.publication-line').width($('#include-container').width() + 130);
+						
 					}
 					else
 					{
