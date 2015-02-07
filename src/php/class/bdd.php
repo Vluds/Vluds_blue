@@ -6,7 +6,7 @@ class BDD
 	private $host = "127.0.0.1";
 	private $user = "root";
 	private $password = "";
-	private $bdname = "tack_bdd";
+	private $bdname = "vluds_bdd";
 
 	public function __construct()
 	{

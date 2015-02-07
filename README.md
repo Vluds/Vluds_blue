@@ -6,7 +6,9 @@ Social network for **creative** people. Discover creations, meet people, talk to
 Follow us on [Twitter](https://twitter.com/Vluds_)
 
 ##Database
-Import into your database tack_bdd.sql for setup.
+Create a database named vluds_bdd.
+Import vluds_bdd.sql.
+Use database-filler.php to fill it !
 
 ##Authors
 
