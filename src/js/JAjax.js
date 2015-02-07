@@ -237,6 +237,7 @@ function getFlux()
 						$('#publication-container').append(data.reply);
 
 						$('.publication-line').width($('#include-container').width() + 250);
+						$('.publication-line').height($('#include-container').height() / nbLinePerHeight);
 					}
 					else
 					{
