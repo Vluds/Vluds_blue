@@ -181,9 +181,7 @@ $(document).on('change', '#addPublication #container #artwork-cover-upload', fun
 });
 
 // horizontalScroll
-$(document).ready(function() {
-    $('#flux-container').mousewheel(function(e, delta) {
-        this.scrollLeft -= (delta * 100);
-        e.preventDefault();
-    });
+$(document).on('mousewheel', '#flux-container', function(e, delta){
+	this.scrollLeft -= (delta * 100);
+	e.preventDefault();
 });
