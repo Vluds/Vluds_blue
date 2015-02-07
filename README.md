@@ -6,9 +6,9 @@ Social network for **creative** people. Discover creations, meet people, talk to
 Follow us on [Twitter](https://twitter.com/Vluds_)
 
 ##Database
-Create a database named vluds_bdd.
-Import vluds_bdd.sql.
-Use database-filler.php to fill it !
+1. Create a database named vluds_bdd.
+2. Import vluds_bdd.sql.
+3. Use database-filler.php to fill it !
 
 ##Authors
 
