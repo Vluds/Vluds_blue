@@ -1036,16 +1036,17 @@
 		{
 			if(self::isLogged())
 			{
-				if(isset($userId))
-				{		
-					$newStaticBdd = new BDD();
-
-					$userInfos = $newStaticBdd->select("*", "users", "WHERE id LIKE '".$userId."'");
-					$getuserInfos = $newStaticBdd->fetch_array($userInfos);
-
-					if(User::getUserrole() == 1)
+				if(User::getUserrole() == 1)
+				{
+					if(isset($userId))
 					{
+						$newStaticBdd = new BDD();
+
+						$userInfos = $newStaticBdd->select("*", "users", "WHERE id LIKE '".$userId."'");
+						$getuserInfos = $newStaticBdd->fetch_array($userInfos);
+
 						$newStaticBdd->delete("users", "id LIKE '".$userId."'");
+
 						return true;
 					}
 					else

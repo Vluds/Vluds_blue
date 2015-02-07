@@ -221,8 +221,6 @@
 
 			$nbProfil = rand(1, $limit);
 
-			$dataArray['reply'] .= '<div class="publication-line">';
-
 			while($getPublication = $newStaticBdd->fetch_array($Publication))
 			{
 				$UserInfos = $newStaticBdd->select("*", "users", "WHERE id LIKE '".$getPublication['user_id']."'");
@@ -269,8 +267,6 @@
 
 				}
 			}
-
-			$dataArray['reply'] .= '</div>';
 
 			return $dataArray['reply'];
 		}
