@@ -867,6 +867,38 @@ function deletePublication(publicationId)
 	}, "json");
 }
 
+function deletePublicationManage(publicationId)
+{
+	$.post(setJsPath + "src/php/executor.php", { action: "deletePublication", publicationId: publicationId }, function(data)
+	{
+		if(data.result == true)
+		{
+			$(".publication_manage#"+ publicationId).fadeOut(400);
+		}
+		else
+		{
+			messageBox("Erreur lors de la suppression de la publication ...");
+		}
+
+	}, "json");
+}
+
+function deleteUser(userId)
+{
+	$.post(setJsPath + "src/php/executor.php", { action: "deleteUser", userId: userId }, function(data)
+	{
+		if(data.result == true)
+		{
+			$(".user#"+ userId).fadeOut(400);
+		}
+		else
+		{
+			messageBox("Erreur lors de la suppression de l'utilisateur' ...");
+		}
+
+	}, "json");
+}
+
 function deleteComment(commentId)
 {
 	$.post(setJsPath + "src/php/executor.php", { action: "deleteComment", commentId: commentId }, function(data)

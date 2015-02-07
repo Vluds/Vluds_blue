@@ -268,10 +268,10 @@
 			if(self::isLogged())
 			{
 				$newStaticBdd = new BDD();
-				$RoleToken = $newStaticBdd->select("admin", "users", "WHERE token LIKE '".self::getToken()."'");
+				$RoleToken = $newStaticBdd->select("role", "users", "WHERE token LIKE '".self::getToken()."'");
 				$getRoleToken = $newStaticBdd->fetch_array($RoleToken);
 
-				return $getRoleToken['admin'];
+				return $getRoleToken['role'];
 			}
 		}
 
@@ -1014,6 +1014,38 @@
 					if($getpublicationInfos['user_id'] == User::getId() OR User::getUserrole() == 1)
 					{
 						$newStaticBdd->delete("publications", "id LIKE '".$publicationId."'");
+						return true;
+					}
+					else
+					{
+						return false;
+					}
+				}
+				else
+				{
+					return false;
+				}
+			}
+			else
+			{
+				return false;
+			}
+		}
+
+		public static function deleteUser($userId)
+		{
+			if(self::isLogged())
+			{
+				if(isset($userId))
+				{		
+					$newStaticBdd = new BDD();
+
+					$userInfos = $newStaticBdd->select("*", "users", "WHERE id LIKE '".$userId."'");
+					$getuserInfos = $newStaticBdd->fetch_array($userInfos);
+
+					if(User::getUserrole() == 1)
+					{
+						$newStaticBdd->delete("users", "id LIKE '".$userId."'");
 						return true;
 					}
 					else

@@ -565,6 +565,27 @@
 			}
 		}
 
+		if($action == "deleteUser")
+		{
+			if(isset($_POST['userId']))
+			{
+				$userId = $_POST['userId'];
+
+				if(User::deleteUser($userId))
+				{
+					$dataArray['result'] = true;
+				}
+				else
+				{
+					$dataArray['result'] = false;
+				}
+			}
+			else
+			{
+				$dataArray['result'] = false;
+			}
+		}
+
 		if($action == "isLogged")
 		{
 			if(User::isLogged())

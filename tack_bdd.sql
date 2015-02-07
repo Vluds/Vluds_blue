@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.0.10.6
+-- version 4.1.14
 -- http://www.phpmyadmin.net
 --
--- Host: mysql1.alwaysdata.com
--- Generation Time: Feb 02, 2015 at 10:28 PM
--- Server version: 5.1.66-0+squeeze1
--- PHP Version: 5.3.6-11
+-- Client :  127.0.0.1
+-- Généré le :  Sam 07 Février 2015 à 11:14
+-- Version du serveur :  5.6.17
+-- Version de PHP :  5.5.12
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -17,13 +17,13 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8 */;
 
 --
--- Database: `tack_bdd`
+-- Base de données :  `tack_bdd`
 --
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `answers`
+-- Structure de la table `answers`
 --
 
 CREATE TABLE IF NOT EXISTS `answers` (
@@ -38,7 +38,7 @@ CREATE TABLE IF NOT EXISTS `answers` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `comments`
+-- Structure de la table `comments`
 --
 
 CREATE TABLE IF NOT EXISTS `comments` (
@@ -49,12 +49,12 @@ CREATE TABLE IF NOT EXISTS `comments` (
   `token` varchar(255) NOT NULL,
   `time` int(11) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=4 ;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `followers`
+-- Structure de la table `followers`
 --
 
 CREATE TABLE IF NOT EXISTS `followers` (
@@ -62,12 +62,12 @@ CREATE TABLE IF NOT EXISTS `followers` (
   `user_id` int(11) NOT NULL,
   `follower_id` int(11) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=35 ;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `likes`
+-- Structure de la table `likes`
 --
 
 CREATE TABLE IF NOT EXISTS `likes` (
@@ -75,12 +75,12 @@ CREATE TABLE IF NOT EXISTS `likes` (
   `user_id` int(11) NOT NULL,
   `publication_id` int(11) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=67 ;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `notifications`
+-- Structure de la table `notifications`
 --
 
 CREATE TABLE IF NOT EXISTS `notifications` (
@@ -92,12 +92,12 @@ CREATE TABLE IF NOT EXISTS `notifications` (
   `time` int(11) NOT NULL,
   `token` varchar(255) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=35 ;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `publications`
+-- Structure de la table `publications`
 --
 
 CREATE TABLE IF NOT EXISTS `publications` (
@@ -110,12 +110,12 @@ CREATE TABLE IF NOT EXISTS `publications` (
   `time` int(11) NOT NULL,
   `token` varchar(255) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=57 ;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tags`
+-- Structure de la table `tags`
 --
 
 CREATE TABLE IF NOT EXISTS `tags` (
@@ -123,29 +123,29 @@ CREATE TABLE IF NOT EXISTS `tags` (
   `publication_id` int(11) NOT NULL,
   `name` varchar(255) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=212 ;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `type`
+-- Structure de la table `type`
 --
 
 CREATE TABLE IF NOT EXISTS `type` (
   `type_id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(255) NOT NULL,
   PRIMARY KEY (`type_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=6 ;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `users`
+-- Structure de la table `users`
 --
 
 CREATE TABLE IF NOT EXISTS `users` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `admin` int(11) NOT NULL,
+  `role` int(11) NOT NULL,
   `username` varchar(255) NOT NULL,
   `email` varchar(255) NOT NULL,
   `firstname` varchar(255) NOT NULL,
@@ -159,12 +159,12 @@ CREATE TABLE IF NOT EXISTS `users` (
   `time` int(11) NOT NULL,
   `token` varchar(255) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=66 ;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `user_tags`
+-- Structure de la table `user_tags`
 --
 
 CREATE TABLE IF NOT EXISTS `user_tags` (
@@ -173,7 +173,7 @@ CREATE TABLE IF NOT EXISTS `user_tags` (
   `name` varchar(255) NOT NULL,
   `token` varchar(255) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=31 ;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
