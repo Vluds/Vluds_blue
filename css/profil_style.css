@@ -58,7 +58,7 @@
 
 #profil-container #profil #avatar
 {
-	height: 210px;
+	height: 200px;
 	width: 210px;
 	left: 50%;
 	margin-left: -105px;
@@ -69,7 +69,6 @@
 	height: 200px;
 	width: 200px;
 	border-radius: 200px;
-	box-shadow: 0px 0px 0px 4px rgba(10, 10, 10, 0.2);
 }
 #profil-container #profil #avatar #addAvatar
 {
@@ -147,6 +146,7 @@
 	overflow: hidden;
 	text-align: center;
 	width: 100%;
+	box-sizing: border-box;
 }
 #profil-container #infos #time
 {

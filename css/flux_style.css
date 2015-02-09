@@ -36,7 +36,7 @@
 
 #publication-container .publication-line
 {
-	width: 100%;
+	width: 300%;
 	overflow: hidden;
 }
 
@@ -49,7 +49,7 @@
 	overflow: hidden;
 }
 
-.profil-publication
+.publication.profil
 {
 	width: 245px;
 	height: 245px;
@@ -58,10 +58,7 @@
 	display: inline-block;
 	vertical-align: top;
 	border-radius: 4px;
-	margin-top: 5px;
-	margin-bottom: 5px;
-	margin-left: 5px;
-	margin-right: 5px;
+
 	border-bottom: 2px solid rgba(10, 10, 10, 0.2);
 	box-sizing: border-box;
 	position: relative;
@@ -69,17 +66,17 @@
 	float: left;
 }
 
-.profil-publication .infos
+.publication.profil .infos
 {
 	float: left;
 	height: 100%;
 	width: 100%;
-	margin-top: 25px;
 	box-sizing: border-box;
 	text-align: left;
 	overflow: hidden;
+	padding-left: 0px;
 }
-.profil-publication .infos .banner
+.publication.profil .infos .banner
 {
 	background-color: rgb(242, 242, 242);
 	text-align: center;
@@ -91,13 +88,13 @@
 	overflow: hidden;
 	z-index: 0;
 }
-.profil-publication .infos .banner img
+.publication.profil .infos .banner img
 {
 	min-height: 100%;
 	max-width: 100%;
 }
 
-.profil-publication .infos .profil
+.publication.profil .infos .profil
 {
 	margin-top: 15%;
 	margin-bottom: 5px;
@@ -106,33 +103,31 @@
 	position: absolute;
 	z-index: 1;
 }
-.profil-publication .infos .profil .avatar
+.publication.profil .infos .profil .avatar
 {
+	display: block;
 }
-.profil-publication .infos .profil .avatar img
+.publication.profil .infos .profil .avatar img
 {
 	border-radius: 100px;
 	width: 60px;
 	height: 60px;
 	box-shadow: 0px 0px 0px 2px rgba(10, 10, 10, 0.2);
 }
-.profil-publication .infos .profil .username
+.publication.profil .infos .profil .username
 {
-	display: inline-block;
-	vertical-align: middle;
 	margin-left: 3px;
 	height: 28px;
 
 	overflow: hidden;
 	cursor: pointer;
 }
-.profil-publication .infos .profil .username h3
+.publication.profil .infos .profil .username h3
 {
 	font-size: 1.3em;
-	display: inline-block;
-	vertical-align: middle;
+	
 }
-.profil-publication .infos .profil .username .followed
+.publication.profil .infos .profil .username .followed
 {
 	background-color: rgba(10, 10, 10, 0.1);
 	display: inline-block;
@@ -144,7 +139,7 @@
 	margin-left: 1px;
 	font-size: 0.8em;
 }
-.profil-publication .infos .title
+.publication.profil .infos .title
 {
 	padding-left: 15px;
 	margin-bottom: 5px;
@@ -152,7 +147,7 @@
 	width: 150%;
 	overflow: hidden;
 }
-.profil-publication .infos .text
+.publication.profil .infos .text
 {
 	padding-left: 15px;
 	padding-right: 5px;
@@ -164,7 +159,7 @@
 	text-align: center;
 	font-size: 0.9em;
 }
-.profil-publication .infos .tags-container
+.publication.profil .infos .tags-container
 {
 	padding-left: 15px;
 	padding-right: 5px;
@@ -174,7 +169,7 @@
 	text-align: center;
 	height: 25px;
 }
-.profil-publication .infos .tags-container .tag
+.publication.profil .infos .tags-container .tag
 {
 	display: inline-block;
 	vertical-align: top;
@@ -187,12 +182,12 @@
 	margin-right: 4px;
 	cursor: pointer;
 }
-.profil-publication .infos .tags-container .tag p
+.publication.profil .infos .tags-container .tag p
 {
 	font-size: 0.8em;
 }
 
-.profil-publication .cover
+.publication.profil .cover
 {
 	float: right;
 	height: 100%;
@@ -203,13 +198,13 @@
 	background-color: rgba(10, 10, 10, 0.2);
 	position: relative;
 }
-.profil-publication .cover img
+.publication.profil .cover img
 {
 	height: 100%;
 	margin-left: -50%;
 	margin-right: -50%;
 }
-.profil-publication .cover .options
+.publication.profil .cover .options
 {
 	height: 100%;
 	width: 100%;
@@ -221,7 +216,7 @@
 
 	display: none;
 }
-.profil-publication .cover .options .like
+.publication.profil .cover .options .like
 {
 	height: 30px;
 	width: 30px;
@@ -231,18 +226,18 @@
 	vertical-align: middle;
 	display: inline-block;
 }
-.profil-publication .cover .options .like .hover
+.publication.profil .cover .options .like .hover
 {
 	height: 100%;
 	width: 100%;
 	background-image: url('../img/liked.png');
 	background-size: 100% 100%;
 }
-.profil-publication .cover .options .like.liked .hover.liked
+.publication.profil .cover .options .like.liked .hover.liked
 {
 	display: inline-block;
 }
-.profil-publication .cover .options .like.unliked .hover.unliked
+.publication.profil .cover .options .like.unliked .hover.unliked
 {
 	display: none;
 }
@@ -258,10 +253,7 @@
 	background-color: rgba(255, 255, 255, 1);
 	overflow: hidden;
 	border-radius: 4px;
-	margin-top: 5px;
-	margin-bottom: 5px;
-	margin-left: 5px;
-	margin-right: 5px;
+
 	border-bottom: 2px solid rgba(10, 10, 10, 0.2);
 	box-sizing: border-box;
 	position: relative;

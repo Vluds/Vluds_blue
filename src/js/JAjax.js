@@ -216,7 +216,7 @@ function getFlux()
 
 			var containerWidth = $('#include-container').width();
 			var nbPublicationPerWidth = (containerWidth / 510);
-			nbPublicationPerWidth = Math.round(nbPublicationPerWidth, 0) + 2;
+			nbPublicationPerWidth = Math.round(nbPublicationPerWidth, 0) + 1;
 			console.log("Width: " + containerWidth);
 			console.log("per width: " + nbPublicationPerWidth);
 
@@ -225,6 +225,12 @@ function getFlux()
 			var countLine = 0;
 
 			var margin = 0;
+
+			var publicationContainerHeight = 0;
+
+			var remainingSpace = 0;
+
+			var existingMargin = 0;
 
 			while(countLine != nbLinePerHeight)
 			{
@@ -240,9 +246,23 @@ function getFlux()
 					{
 						$('#publication-container').append(data.reply);
 
-						$('.publication-line').width($('#include-container').width() + 130);
+						publicationContainerHeight = $('.publication-line').height() * nbLinePerHeight;
+						console.log("publicationContainerHeight: " + publicationContainerHeight);
 
-						adaptPublications(containerHeight, nbLinePerHeight);
+						remainingSpace = containerHeight - publicationContainerHeight;
+						console.log("remainingSpace: " + remainingSpace);
+
+						margin = remainingSpace / nbLinePerHeight;
+						margin = margin / 2;
+						margin = Math.round(margin, 0) - 1;
+						console.log("margin: " + margin);
+						
+						marginMini = margin / 2;
+						marginMini = Math.round(marginMini, 0);
+						console.log("marginMini: " + marginMini);
+
+						existingMargin = $(".publication").css("margin");
+						console.log("existingMargin: " + existingMargin);
 					}
 					else
 					{
@@ -251,6 +271,7 @@ function getFlux()
 
 					$('.publication img').load(function(){
 						$('.publication').fadeIn(400);
+						$('.publication').animate({ marginTop: '+' + margin + 'px', marginBottom: '+' + margin + 'px', marginLeft: '+' + marginMini + 'px', marginRight: '+' + marginMini + 'px'}, 200);
 					});
 
 					isBusy = 0;

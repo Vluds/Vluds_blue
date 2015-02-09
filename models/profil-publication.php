@@ -1,4 +1,4 @@
-<div id="<?php echo $getProfilInfos['id'];?>" class="profil-publication" type="">
+<div id="<?php echo $getProfilInfos['id'];?>" class="publication profil" type="">
 	<div class="infos">
 		<div class="banner" >
 			<?php
