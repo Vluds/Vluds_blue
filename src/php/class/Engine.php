@@ -212,9 +212,9 @@
 
 		public static function getFlux($line, $limit)
 		{
-							$newStaticBdd = new BDD();
-				$dataArray['reply'] = "";
-				
+			$newStaticBdd = new BDD();
+			$dataArray['reply'] = "";
+
 			$countLine = 0;
 			$offset = 0;
 
@@ -391,6 +391,40 @@
 			while($getUserTags = $newStaticBdd->fetch_array($UserTags))
 			{
 				$UserInfos = $newStaticBdd->select("*", "users", "WHERE id LIKE '".$getUserTags['user_id']."'");
+				$getProfilInfos = $newStaticBdd->fetch_array($UserInfos);
+
+				$isUserExist = $newStaticBdd->num_rows($UserInfos);
+
+				if($isUserExist == 1)
+				{
+					ob_start();
+					include(ROOT.'models/profil-publication.php');
+					$dataArray['reply'] .= ob_get_contents();
+					ob_end_clean();
+				}
+			}
+
+			$UserFullname = $newStaticBdd->select("*", "users", "WHERE fullname LIKE '%".$tag."%'");
+			while($getUserFullname = $newStaticBdd->fetch_array($UserFullname))
+			{
+				$UserInfos = $newStaticBdd->select("*", "users", "WHERE id LIKE '".$getUserFullname['id']."'");
+				$getProfilInfos = $newStaticBdd->fetch_array($UserInfos);
+
+				$isUserExist = $newStaticBdd->num_rows($UserInfos);
+
+				if($isUserExist == 1)
+				{
+					ob_start();
+					include(ROOT.'models/profil-publication.php');
+					$dataArray['reply'] .= ob_get_contents();
+					ob_end_clean();
+				}
+			}
+
+			$UserName = $newStaticBdd->select("*", "users", "WHERE username LIKE '%".$tag."%'");
+			while($getUserName = $newStaticBdd->fetch_array($UserName))
+			{
+				$UserInfos = $newStaticBdd->select("*", "users", "WHERE id LIKE '".$getUserName['id']."'");
 				$getProfilInfos = $newStaticBdd->fetch_array($UserInfos);
 
 				$isUserExist = $newStaticBdd->num_rows($UserInfos);

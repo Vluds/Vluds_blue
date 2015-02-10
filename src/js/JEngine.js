@@ -197,7 +197,7 @@ $(document).on('mousewheel', '#flux-container', function(e, delta){
 jQuery(function($) {
     $('#flux-container').bind('scroll', function() {
         if($(this).scrollLeft() + $(this).innerWidth() >= this.scrollWidth) {
-            alert('end reached');
+            messageBox("Fin du flux !");
         }
     })
 });

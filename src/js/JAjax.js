@@ -216,7 +216,7 @@ function getFlux()
 
 			var containerWidth = $('#include-container').width();
 			var nbPublicationPerWidth = (containerWidth / 510);
-			nbPublicationPerWidth = Math.round(nbPublicationPerWidth, 0) + 1;
+			nbPublicationPerWidth = Math.round(nbPublicationPerWidth, 0) + 3;
 			console.log("Width: " + containerWidth);
 			console.log("per width: " + nbPublicationPerWidth);
 
