@@ -193,3 +193,11 @@ $(document).on('mousewheel', '#flux-container', function(e, delta){
 	this.scrollLeft -= (delta * 100);
 	e.preventDefault();
 });
+
+jQuery(function($) {
+    $('#flux-container').bind('scroll', function() {
+        if($(this).scrollLeft() + $(this).innerWidth() >= this.scrollWidth) {
+            alert('end reached');
+        }
+    })
+});
