@@ -210,11 +210,11 @@ $(document).on('click', '.follow-container', function(event){
 	}
 });
 
-$(document).on('click', '.publication', function(){
+$(document).on('click', '.publication .cover, .publication .infos .description', function(){
 
 	var publicationId = $(this).attr('id');
 
-	var publicationDiv = $(this);
+	var publicationDiv = $(this).parents(".publication");
 
 	$('#publicationViewer').attr('ref', publicationId);
 	$('#publicationViewer #post-comment').attr('ref', publicationId);
