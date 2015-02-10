@@ -4,6 +4,7 @@
 	overflow-x: scroll;
 	overflow-y: hidden;
 	box-sizing: border-box;
+	padding-bottom: 5px;
 }
 
 #view-mode

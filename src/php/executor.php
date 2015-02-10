@@ -108,7 +108,7 @@
 		////////setFullName///////
 		if($action == "setFullName")
 		{
-			if(isset($_POST['fullname']) AND !empty($_POST['fullname'])) 
+			if(isset($_POST['fullname'])) 
 			{
 				$fullname = $_POST['fullname'];
 
@@ -123,14 +123,14 @@
 			}
 		}
 
-		if($action == "getFlux") 
+		if($action == "getFlux")
 		{
-			if(isset($_POST['limit']) and isset($_POST['offset']))
+			if(isset($_POST['line']) AND isset($_POST['limit']))
 			{
+				$line = $_POST['line'];
 				$limit = $_POST['limit'];
-				$offset = $_POST['offset'];
 
-				$dataArray['reply'] = Engine::getFlux($limit, $offset);
+				$dataArray['reply'] = Engine::getFlux($line, $limit);
 				$dataArray['result'] = 1;
 			}
 			else

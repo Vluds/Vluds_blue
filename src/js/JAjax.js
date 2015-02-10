@@ -192,7 +192,7 @@ function setFullName()
 	}, "json");
 }
 
-function getFlux()
+function s()
 {
 	if(isBusy == 0)
 	{
@@ -284,6 +284,125 @@ function getFlux()
 
 			$("#include-container").stop().fadeIn(100).dequeue();
 		});
+	}
+}
+
+function getFlux()
+{
+	if(isBusy == 0)
+	{
+		isBusy = 1;
+
+		$("#include-container").stop().fadeOut(100).queue(function()
+		{
+			window.history.pushState({page: 'flux'}, "Flux d'actualité", setJsPath + "Flux");
+			document.title = "Vluds - Flux d'actualité";
+
+			$('#include-container').html("");
+			$('#include-container').loadingIn();
+
+			loadFile("flux-container", '#include-container');
+
+			var containerHeight = $('#include-container').height();
+			var nbLinePerHeight = (containerHeight / 300);
+			nbLinePerHeight = Math.round(nbLinePerHeight, 0);
+			console.log("Height: " + containerHeight);
+			console.log("line: " + nbLinePerHeight);
+
+			var containerWidth = $('#include-container').width();
+			var nbPublicationPerWidth = (containerWidth / 510);
+			nbPublicationPerWidth = Math.round(nbPublicationPerWidth, 0) + 1;
+			console.log("Width: " + containerWidth);
+			console.log("per width: " + nbPublicationPerWidth);
+
+			var offset = 0;
+
+			var countLine = 0;
+
+			var margin = 0;
+
+			var publicationContainerHeight = 0;
+
+			var remainingSpace = 0;
+
+			var existingMargin = 0;
+
+				$('#include-container').loadingOut();
+
+				function ajaxRequest(callback)
+			 	{
+				 	var formData = new FormData();
+				 	formData.append("action", "getFlux");
+				 	formData.append("line", nbLinePerHeight);
+				 	formData.append("limit", nbPublicationPerWidth);
+				 	formData.append("offset", offset);
+
+				 	var xhr = new XMLHttpRequest();
+
+					xhr.onreadystatechange = function() 
+					{
+				        if (xhr.readyState == 4 && (xhr.status == 200 || xhr.status == 0)) 
+				        {
+				            var myArr = JSON.parse(xhr.responseText);
+		        			callback(myArr);
+				        }
+					};
+
+					xhr.open('POST', 'src/php/executor.php', true);
+					xhr.send(formData);
+				}
+
+				function readData(sData) 
+				{
+					$('#include-container').loadingOut();
+
+					if(sData.reply == "")
+					{
+						//messageBox("Aucune publication à afficher ...");
+					}
+					else if(sData.result == 1)
+					{
+						$('#publication-container').append(sData.reply);
+
+						publicationContainerHeight = $('.publication-line').height() * nbLinePerHeight;
+						console.log("publicationContainerHeight: " + publicationContainerHeight);
+
+						remainingSpace = containerHeight - publicationContainerHeight;
+						console.log("remainingSpace: " + remainingSpace);
+
+						margin = remainingSpace / nbLinePerHeight;
+						margin = margin / 2;
+						margin = Math.round(margin, 0) - 1;
+						console.log("margin: " + margin);
+						
+						marginMini = margin / 2;
+						marginMini = Math.round(marginMini, 0);
+						console.log("marginMini: " + marginMini);
+
+						existingMargin = $(".publication").css("margin");
+						console.log("existingMargin: " + existingMargin);
+					}
+					else
+					{
+						messageBox("Erreur lors du chargement des publications !");
+					}
+
+					$('.publication img').load(function(){
+						$('.publication').fadeIn(400);
+						$('.publication').animate({ marginTop: '+' + margin + 'px', marginBottom: '+' + margin + 'px', marginLeft: '+' + marginMini + 'px', marginRight: '+' + marginMini + 'px'}, 200);
+					});
+
+					isBusy = 0;
+				}
+
+				ajaxRequest(readData);
+
+			$("#include-container").stop().fadeIn(100).dequeue();
+		});
+	}
+	else
+	{
+		console.log("Ajax occupé");
 	}
 }
 

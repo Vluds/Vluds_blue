@@ -210,42 +210,60 @@
 			return $returnUserTags['content'];
 		}
 
-		public static function getFlux($limit, $offset)
+		public static function getFlux($line, $limit)
 		{
-			$newStaticBdd = new BDD();	
-			$dataArray['reply'] = "";
+							$newStaticBdd = new BDD();
+				$dataArray['reply'] = "";
+				
+			$countLine = 0;
+			$offset = 0;
 
-			$publicationCount = 0;
-
-			$Publication = $newStaticBdd->select("*", "publications", "ORDER BY id DESC LIMIT ".$limit." OFFSET ".$offset."");
-
-			$nbProfil = rand(1, $limit);
-
-			$dataArray['reply'] .= '<div class="publication-line">';
-
-			while($getPublication = $newStaticBdd->fetch_array($Publication))
+			while($countLine < $line)
 			{
-				$UserInfos = $newStaticBdd->select("*", "users", "WHERE id LIKE '".$getPublication['user_id']."'");
-				$getUserInfos = $newStaticBdd->fetch_array($UserInfos);
+				$publicationCount = 0;
 
-				ob_start();
-				include(ROOT.'models/publication.php');
-				$dataArray['reply'] .= ob_get_contents();
-				ob_end_clean();
+				$Publication = $newStaticBdd->select("*", "publications", "ORDER BY id DESC LIMIT ".$limit." OFFSET ".$offset."");
 
-				$publicationCount++;
+				$nbProfil = rand(1, $limit);
 
-				/////ADD PROFIL PUBLICATION
+				$dataArray['reply'] .= '<div id="'.$countLine.'" class="publication-line">';
 
-				if($publicationCount == $nbProfil)
+				while($getPublication = $newStaticBdd->fetch_array($Publication))
 				{
-					if(User::isLogged())
-					{
-						$ProfilInfos = $newStaticBdd->select("*", "users", "WHERE token NOT LIKE '".User::getToken()."' ORDER BY rand() LIMIT 0, 1 ");
+					$UserInfos = $newStaticBdd->select("*", "users", "WHERE id LIKE '".$getPublication['user_id']."'");
+					$getUserInfos = $newStaticBdd->fetch_array($UserInfos);
 
-						while($getProfilInfos = $newStaticBdd->fetch_array($ProfilInfos))
+					ob_start();
+					include(ROOT.'models/publication.php');
+					$dataArray['reply'] .= ob_get_contents();
+					ob_end_clean();
+
+					$publicationCount++;
+
+					/////ADD PROFIL PUBLICATION
+
+					if($publicationCount == $nbProfil)
+					{
+						if(User::isLogged())
 						{
-							if(User::isFollowed(User::getId(), $getProfilInfos['id']) == false)
+							$ProfilInfos = $newStaticBdd->select("*", "users", "WHERE token NOT LIKE '".User::getToken()."' ORDER BY rand() LIMIT 0, 1 ");
+
+							while($getProfilInfos = $newStaticBdd->fetch_array($ProfilInfos))
+							{
+								if(User::isFollowed(User::getId(), $getProfilInfos['id']) == false)
+								{
+									ob_start();
+									include(ROOT.'models/profil-publication.php');
+									$dataArray['reply'] .= ob_get_contents();
+									ob_end_clean();
+								}
+							}
+						}
+						else
+						{
+							$ProfilInfos = $newStaticBdd->select("*", "users", "ORDER BY rand() LIMIT 0, 1");
+
+							while($getProfilInfos = $newStaticBdd->fetch_array($ProfilInfos))
 							{
 								ob_start();
 								include(ROOT.'models/profil-publication.php');
@@ -253,24 +271,15 @@
 								ob_end_clean();
 							}
 						}
-					}
-					else
-					{
-						$ProfilInfos = $newStaticBdd->select("*", "users", "ORDER BY rand() LIMIT 0, 1");
 
-						while($getProfilInfos = $newStaticBdd->fetch_array($ProfilInfos))
-						{
-							ob_start();
-							include(ROOT.'models/profil-publication.php');
-							$dataArray['reply'] .= ob_get_contents();
-							ob_end_clean();
-						}
 					}
-
 				}
-			}
 
-			$dataArray['reply'] .= '</div>';
+				$dataArray['reply'] .= '</div>';
+
+				$offset = $offset + $limit;
+				$countLine++;
+			}
 
 			return $dataArray['reply'];
 		}
