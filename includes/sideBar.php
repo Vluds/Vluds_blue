@@ -98,7 +98,7 @@
 	<nav>
 		<ul>
 			<li class="active" onClick="getFlux()"><p>Flux d'actualité</p><div id="sort"><img src="<?php echo WEBROOT; ?>img/grid.png"></div></li>
-			<li class="unactive" onClick="loadTagsFinder('vluds')"><p>Rechercher</p></li>
+			<li class="unactive" onClick="loadTagsFinder('<?php echo User::getUsername(); ?>')"><p>Rechercher</p></li>
 		<?php
 			if(User::isLogged())
 			{
@@ -122,7 +122,7 @@
 				<li class="unactive"><a href=""><p>Mes tags</p></a></li>
 				<li class="unactive"><a href=""><p>Mes reglages</p></a></li>-->
 				<?php
-					if (User::getUserrole() == 1) {
+					if (User::getUserRole() == 1) {
 				?>
 					<li class="unactive" onClick="loadManager()"><p>Manage</p></li>
 				<?php

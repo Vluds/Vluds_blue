@@ -419,7 +419,7 @@
 
 .publication .infos .description
 {
-	height: 165px;
+	height: 162px;
 	width: 100%;
 	float: right;
 	overflow: hidden;
@@ -448,9 +448,9 @@
 .publication .infos .tags-container
 {
 	position: absolute;
-	bottom: 5px;
+	bottom: 3px;
 	left: 5px;
 	width: 150%;
-	height: 27px;
+	height: 25px;
 	overflow: hidden;
 }

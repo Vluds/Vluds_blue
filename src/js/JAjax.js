@@ -234,7 +234,7 @@ function getFlux()
 
 			while(countLine != nbLinePerHeight)
 			{
-				$.post(setJsPath + "src/php/executor.php", { action: "getFlux", limit: 5, offset: offset }, function(data)
+				$.post(setJsPath + "src/php/executor.php", { action: "getFlux", limit: nbPublicationPerWidth, offset: offset }, function(data)
 				{
 					$('#include-container').loadingOut();
 

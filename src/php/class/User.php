@@ -263,7 +263,7 @@
 			}
 		}
 
-		public static function getUserrole()
+		public static function getUserRole()
 		{
 			if(self::isLogged())
 			{
