@@ -402,9 +402,9 @@ header
 }
 #sidebar nav ul#notifications-viewer #close
 {
-	position: absolute;
-	right: 25px;
-	top: 5px;
+	
+	right: 4px;
+	top: -1px;
 	cursor: pointer;
 }
 #sidebar nav ul#notifications-viewer #content
@@ -412,7 +412,6 @@ header
 	overflow: auto;
 	height: 100%;
 	width: 100%;
-	padding-top: 20px;
 }
 #sidebar nav ul#notifications-viewer #content .notification
 {
