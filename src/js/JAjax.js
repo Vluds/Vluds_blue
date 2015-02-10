@@ -270,8 +270,10 @@ function getFlux()
 					{
 						$('#publication-container').append(sData.reply);
 
-						publicationContainerWidth = $('.publication-line').width();
-						console.log("publicationContainerWidth: " + publicationContainerWidth);
+						includeContainerWidth = $('#include-container').width();
+						console.log("includeContainerWidth: " + includeContainerWidth);
+
+						$('.publication-line').width(includeContainerWidth * 4);
 
 						publicationContainerHeight = $('.publication-line').height() * nbLinePerHeight;
 						console.log("publicationContainerHeight: " + publicationContainerHeight);

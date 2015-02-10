@@ -38,7 +38,7 @@
 
 #publication-container .publication-line
 {
-	width: 300%;
+	min-width: 100%;
 	overflow: hidden;
 }
 
