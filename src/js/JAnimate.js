@@ -224,15 +224,12 @@ $(document).on('click', '.publication .cover, .publication .infos .description',
 	$('#publicationViewer #cover #cover-container').html($(publicationDiv).find('.cover').html());
 	$('#publicationViewer #infos-container #time').html($(publicationDiv).find('.time').html());
 	$('#publicationViewer #infos-container #profil').html($(publicationDiv).find('.profil').html());
+	$('#publicationViewer #infos-container #description').html(publicationDiv.find('.description').html());
+	$('#publicationViewer #infos-container #tags-container').html(publicationDiv.find('.tags-container').html());
 
-	var background;
-	if(background = publicationDiv.find('.cover'))
-	{
-		background.css(["background-image", "background-size", "background-repeat", "background-position"]);
-		$('#publicationViewer #cover').css({"background-image": background["background-image"], "background-size": background["background-size"], "background-repeat": background["background-repeat"], "background-position": background["background-position"]});
-		$('#publicationViewer #infos-container #description').html(publicationDiv.find('.description').html());
-		$('#publicationViewer #infos-container #tags-container').html(publicationDiv.find('.tags-container').html());
-	}
+	var background = publicationDiv.find('.cover');
+
+	$('#publicationViewer #cover').css({"background-image": background["background-image"], "background-size": background["background-size"], "background-repeat": background["background-repeat"], "background-position": background["background-position"]});
 
 	var screenImage = $('img', this);
 
