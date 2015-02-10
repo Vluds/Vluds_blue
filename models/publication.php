@@ -1,4 +1,4 @@
-<div id="<?php echo $getPublication['id'];?>" class="publication<?php if(empty($getPublication['ext'])){echo " minimized";}?>" type="" style="display: none;">
+<div id="<?php echo $getPublication['id'];?>" class="publication<?php if(empty($getPublication['ext'])){echo " minimized";}?>" type="">
 <?php
 	if(User::isLogged())
 	{
