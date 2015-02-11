@@ -31,6 +31,19 @@ class DatabaseFiller {
 		return $randString;
 	}
 
+	public function randomName($nbChar) {
+
+		$randString = "";
+		$chars = "abcdefghijklmnpqrstuvwxy";
+		srand((double)microtime()*1000000);
+
+		for($i=0; $i < $nbChar; $i++) {
+			$randString .= $chars[rand()%strlen($chars)];
+		}
+
+		return $randString;
+	}
+
 	public function generateData() {
 
 		foreach ($this->names as $username) {

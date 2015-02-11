@@ -16,7 +16,7 @@ if(User::isLogged()) {
 				</tr>
 			<?php
 
-					$PublicationInfos = $newStaticBdd->select("*", "publications", "");
+					$PublicationInfos = $newStaticBdd->select("*", "publications", "ORDER BY ID DESC");
 			        while ($getPublicationInfos = $newStaticBdd->fetch_array($PublicationInfos)) {
 
 			        	if( strlen($getPublicationInfos['content']) >= 40 ) {
@@ -53,7 +53,7 @@ if(User::isLogged()) {
 				</tr>
 			<?php
 
-					$userInfos = $newStaticBdd->select("*", "users", "");
+					$userInfos = $newStaticBdd->select("*", "users", "ORDER BY ID DESC");
 			        while ($getUserInfos = $newStaticBdd->fetch_array($userInfos)) {
 
 						?>
