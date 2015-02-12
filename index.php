@@ -20,10 +20,8 @@
 	define('IMG', WEBROOT.'img/', true);
 
 	// Define social link.
-	define('TWITTER', 'https://www.twitter.com/mxcmaxime', true);
-	define('YOUTUBE', 'https://www.youtube.com/user/mxcmaxime', true);
-	define('BEHANCE', 'https://www.behance.net/mxcmaxime', true);
-	define('FACEBOOK', 'https://www.facebook.com/mxcmaxime.fr', true);
+	define('TWITTER', 'https://www.twitter.com/vluds_', true);
+	define('FACEBOOK', 'https://www.facebook.com/vluds', true);
 
 	require(PHP."class/bdd.php");
 	require(PHP."class/Engine.php");

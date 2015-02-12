@@ -6,7 +6,7 @@
 	<meta name="google" content="notranslate">
 
 	<!-- Site infos -->
-	<title>Vluds - Créez, partagez, découvrez. Plus.</title>
+	<title>Vluds - Create, Share, Discover.</title>
 	<meta name="author" content="Vluds.eu">
 	<meta name="description" content="Réseau social pour les personnes créatives. Venez découvrir des créations, rencontrez des personnes, discutez avec elles et partagez !" />
 	<meta name="keywords" content="vluds, réseau, social, créatives, création, partarger, découvrir, tags, ..." />
@@ -15,20 +15,29 @@
 	<link rel="shortcut icon" href="<?php echo IMG; ?>favicon.ico"/>
 	
 	<!-- Social -->
-	<meta property="og:title" content="Vluds - Social. More.">
-	<meta property="og:description" content="Réseau social pour les personnes créatives. Venez découvrir des créations, rencontrez des personnes, discutez avec elles et partagez !">
-	<meta property="og:type" content="website">
-	<meta property="og:url" content="<?php echo URL; ?>">
-	<meta property="og:image" content="<?php echo URL.IMG; ?>preview.png">
-	<meta name="twitter:card" content="summary">
-	<meta name="twitter:url" content="http://beta.vluds.eu">
-	<meta name="twitter:domain" content="<?php echo URL; ?>">
-	<meta name="twitter:title" content="Vluds - Social. More.">
-	<meta name="twitter:description" content="Réseau social pour les personnes créatives. Venez découvrir des créations, rencontrez des personnes, discutez avec elles et partagez !">
-	<meta name="twitter:image" content="<?php echo URL.IMG; ?>preview.png">
-	<meta name="twitter:site" content="@tymmesyde">
-	<meta name="twitter:creator" content="@tymmesyde">
-	<meta name="apple-mobile-web-app-title" content="Vluds - Social. More.">
+	<meta name="apple-mobile-web-app-title" content="Vluds - Create, Share, Discover.">
+
+	<!-- Open Graph data -->
+	<meta property="og:locale" content="FR" />
+	<meta property="og:type" content="website" />
+	<meta property="og:title" content="Vluds - Create, Share, Discover." />
+	<meta property="og:description" content="Réseau social pour les personnes créatives. Venez découvrir des créations, rencontrez des personnes, discutez avec elles et partagez !" />
+	<meta property="og:url" content="<?php echo URL; ?>" />
+	<meta property="og:site_name" content="vluds" />
+	<meta property="og:image" content="<?php echo URL.IMG; ?>preview.jpg" />
+
+	<!-- Facebook spec -->
+	<meta property="article:publisher" content="<?php echo FACEBOOK; ?>" />
+
+	<!-- Twitter data -->
+	<meta property="twitter:card" content="summary_large_image" />
+	<meta property="twitter:site" content="@vluds_" />
+	<meta property="twitter:domain" content="vluds" />
+	<meta property="twitter:creator" content="@vluds_" />
+	<meta property="twitter:image" content="<?php echo URL.IMG; ?>preview.jpg" />
+	<meta property="twitter:title" content="Vluds - Create, Share, Discover." />
+	<meta property="twitter:description" content="Réseau social pour les personnes créatives. Venez découvrir des créations, rencontrez des personnes, discutez avec elles et partagez !" />
+	<meta property="twitter:url" content="<?php echo URL; ?>" />
 
 <!-- Settings -->
 
