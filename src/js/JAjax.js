@@ -758,9 +758,9 @@ function uploadAvatar(files, avatarFile)
 				})
 				.fadeIn(300);
 
-				if(event.state.page == "profil")
+				if(history.state.page == "profil")
 				{
-					loadProfil(event.state.username);
+					loadProfil(history.state.username);
 				}
 				
 			    messageBox("Votre avatar à bien été modifié !");
