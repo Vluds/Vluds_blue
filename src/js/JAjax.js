@@ -1,33 +1,3 @@
-if(typeof history.pushState == 'undefined')
-{
-	alert("Votre navigateur n'est pas assez récent !");
-}	
-
-window.onpopstate = function(event)
-{
-	console.log(event.state);
-	if(event.state.page == "flux")
-	{
-		getFlux();
-	}
-	else if(event.state.page == "profil")
-	{
-		loadProfil(event.state.username);
-	}
-	else if(event.state.page == "publication")
-	{
-		loadPublicationViewer(event.state.id);
-	}
-	else if(event.state.page == "tagsfinder")
-	{
-		loadTagsFinder(event.state.tag);
-	}
-	else if(event.state.page == "manager")
-	{
-		loadManager(event.state.tag);
-	}
-}
-
 var isBusy = 0;
 
 function regUser(email, password, username)
@@ -781,10 +751,17 @@ function uploadAvatar(files, avatarFile)
 		{
 			if(sData.result == 1)
 			{
-				var src = $('section#sidebar ul#profil #avatar img').attr("src");
-				src = src.substring(0, src.length -12);
+				$('#sidebar #profil #avatar img').fadeOut(300)
+				.queue(function(){
+					$(this).attr("src", setJsPath + sData.reply)
+					.dequeue();
+				})
+				.fadeIn(300);
 
-				$('section#sidebar ul#profil #avatar img').attr("src", setJsPath + src + sData.reply + ".png");
+				if(event.state.page == "profil")
+				{
+					loadProfil(event.state.username);
+				}
 				
 			    messageBox("Votre avatar à bien été modifié !");
 			} 

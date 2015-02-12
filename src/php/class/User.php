@@ -716,7 +716,7 @@
 					imagepng($cover60, ROOT."users/".User::getId()."/avatar/60_".$avatarId.".png");
 					imagepng($cover300, ROOT."users/".User::getId()."/avatar/300_".$avatarId.".png");
 
-					return $avatarId;
+					return "users/".User::getId()."/avatar/300_".$avatarId.".png";
 				}
 				else
 				{

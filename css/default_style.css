@@ -254,6 +254,7 @@ header
 #sidebar ul#profil #avatar
 {
 	position: relative;
+	height: 100px;
 }
 #sidebar ul#profil #avatar #profilEdit
 {
