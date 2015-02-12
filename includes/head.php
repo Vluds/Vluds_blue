@@ -18,7 +18,7 @@
 	<meta name="apple-mobile-web-app-title" content="Vluds - Create, Share, Discover.">
 
 	<!-- Open Graph data -->
-	<meta property="og:locale" content="FR" />
+	<meta property="og:locale" content="fr-FR" />
 	<meta property="og:type" content="website" />
 	<meta property="og:title" content="Vluds - Create, Share, Discover." />
 	<meta property="og:description" content="Réseau social pour les personnes créatives. Venez découvrir des créations, rencontrez des personnes, discutez avec elles et partagez !" />
