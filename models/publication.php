@@ -20,7 +20,7 @@
 	if(!empty($getPublication['ext']))
 	{
 ?>
-		<div class="cover" style="background-image: url('publications/<?php echo $getPublication['id'];?>/coverBlured_<?php echo $getPublication['token'];?>.png'); background-repeat: no-repeat; background-position: center center; background-size: cover;"> 
+		<div class="cover" style="background-image: url('publications/<?php echo $getPublication['id'];?>/coverBlured_<?php echo $getPublication['token'];?>.png');"> 
 			
 	<?php 
 		if($getPublication['type'] == 'image')

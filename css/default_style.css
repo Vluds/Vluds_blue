@@ -552,7 +552,7 @@ header
 }
 #comments-content
 {
-	padding-bottom: 15px;
+	
 }
 
 .comment
@@ -649,11 +649,14 @@ header
 
 #publicationViewer
 {
-	min-width: 470px;
+	max-height: 80%;
+	max-width: 80%;
+	min-width: 480px;
 	padding-left: 0;
 	padding-right: 0;
 	padding-top: 0;
 	padding-bottom: 0;
+	overflow: auto;
 }
 #publicationViewer #container
 {
@@ -666,6 +669,12 @@ header
 	overflow: hidden;
 	background-color: rgb(220, 220, 220);
 	position: relative;
+}
+#publicationViewer #cover #cover-container
+{
+	background-repeat: no-repeat;
+	background-position: center center;
+	background-size: cover;
 }
 #publicationViewer #cover #cover-container img
 {
@@ -736,6 +745,7 @@ header
 	display: inline-block;
 	vertical-align: middle;
 	text-align: center;
+	margin-right: 5px;
 }
 #publicationViewer #infos-container #top-container #profil .avatar img
 {

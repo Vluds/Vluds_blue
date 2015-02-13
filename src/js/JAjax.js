@@ -491,6 +491,53 @@ function loadFile(file, div)
 	}, "json");
 }
 
+function loadPublicationViewer(id, imgCover)
+{
+	if(isBusy == 0)
+	{
+		isBusy = 1;
+
+		$.post(setJsPath + "src/php/executor.php", { action: "loadPublicationViewer", id: id}, function(data)
+		{
+			if(data.result == true & data.reply != "")
+			{	
+				$("#publicationViewer-container").html(data.reply);
+
+				var imageWidth = imgCover.width;
+				var imageHeight = imgCover.height;
+
+				$('#publicationViewer').width(imageWidth);
+
+				var width = $('#publicationViewer').width();
+
+				var height = $('#publicationViewer').height();
+
+				var marginLeft = width /2;
+				marginLeft = Math.floor(marginLeft);
+
+				var marginTop = height /2;
+				marginTop = Math.floor(marginTop);
+
+				$('#publicationViewer').css({ marginLeft : "-"+ marginLeft +"px", marginTop : "-"+ marginTop +"px" });
+
+				backgroundBox(1);
+				$('#publicationViewer').fadeIn();
+			}
+			else if(data.reply == false)
+			{
+
+			}
+			else
+			{
+				messageBox("Erreur: le viewer n'a pas pu être chargé ...");
+			}
+
+			isBusy = 0;
+
+		}, "json");
+	}
+}
+
 function loadProfil(username)
 {
 	if(isBusy == 0)
@@ -628,7 +675,7 @@ function loadTagsFinder(tag)
 	}
 }
 
-function loadPublicationViewer(id)
+function loadPublicationPage(id)
 {
 	if(isBusy == 0)
 	{
@@ -640,7 +687,7 @@ function loadPublicationViewer(id)
 
 			$("#include-container").html("");
 
-			$.post(setJsPath + "src/php/executor.php", { action: "loadPublicationViewer", id: id}, function(data)
+			$.post(setJsPath + "src/php/executor.php", { action: "loadPublicationPage", id: id}, function(data)
 			{
 				if(data.result == 1 && data.reply != "")
 				{	
@@ -875,7 +922,7 @@ function postPublication(publicationFile, publicationContent, publicationTags)
 			backgroundBox(0);
 			$('#addPublication').fadeOut(400);
 
-			loadPublicationViewer(sData.id);
+			loadPublicationPage(sData.id);
 
 			$('#postPublication .post-content textarea').val("");
 			$('#postPublication .tags-container input').val("");

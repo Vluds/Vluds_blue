@@ -118,8 +118,11 @@
 		<div id="module-container">
 			<script type="text/javascript">
 				loadFile('postPublication', '#module-container');
-				loadFile('publicationViewer', '#module-container');
 			</script>
+
+			<div id="publicationViewer-container">
+				
+			</div>
 		</div>
 
 		<div id="backgroundBox"></div>

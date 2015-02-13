@@ -367,6 +367,21 @@
 			}
 		}
 
+		if($action == "loadPublicationViewer") 
+		{
+			if(isset($_POST['id']) and isset($_POST['id']))
+			{
+				$id = $_POST['id'];
+
+				$dataArray['reply'] = Engine::loadPublicationViewer($id);
+				$dataArray['result'] = true;
+			}
+			else
+			{
+				$dataArray['result'] = false;
+			}
+		}
+
 		if($action == "loadProfil") 
 		{
 			if(isset($_POST['username']) and isset($_POST['username']))
@@ -433,13 +448,13 @@
 			}
 		}
 
-		if($action == "loadPublicationViewer") 
+		if($action == "loadPublicationPage") 
 		{
 			if(isset($_POST['id']) and isset($_POST['id']))
 			{
 				$id = $_POST['id'];
 
-				$dataArray['reply'] = Engine::loadPublicationViewer($id);
+				$dataArray['reply'] = Engine::loadPublicationPage($id);
 				$dataArray['result'] = 1;
 			}
 			else

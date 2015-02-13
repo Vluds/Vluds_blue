@@ -219,47 +219,12 @@ $(document).on('click', '.publication .cover, .publication .infos .description',
 
 	var publicationId = $(this).parents(".publication").attr('id');
 
-	var publicationDiv = $(this).parents(".publication");
-
-	$('#publicationViewer').attr('ref', publicationId);
-	$('#publicationViewer #post-comment').attr('ref', publicationId);
-
-	$('#publicationViewer #cover #cover-container').html("");
-
-	$('#publicationViewer #cover #cover-container').html($(publicationDiv).find('.cover').html());
-	$('#publicationViewer #infos-container #time').html($(publicationDiv).find('.time').html());
-	$('#publicationViewer #infos-container #profil').html($(publicationDiv).find('.profil').html());
-	$('#publicationViewer #infos-container #description').html(publicationDiv.find('.description').html());
-	$('#publicationViewer #infos-container #tags-container').html(publicationDiv.find('.tags-container').html());
-
-	var background = publicationDiv.find('.cover');
-
-	$('#publicationViewer #cover').css({"background-image": background["background-image"], "background-size": background["background-size"], "background-repeat": background["background-repeat"], "background-position": background["background-position"]});
-
 	var screenImage = $('img', this);
 
-	var theImage = new Image();
-	theImage.src = screenImage.attr("src");
+	var imgCover = new Image();
+	imgCover.src = screenImage.attr("src");
 
-	var imageWidth = theImage.width;
-	var imageHeight = theImage.height;
-
-	$('#publicationViewer').width(imageWidth);
-
-	var width = $('#publicationViewer').width();
-
-	var height = $('#publicationViewer').height();
-
-	var marginLeft = width /2;
-	marginLeft = Math.floor(marginLeft);
-
-	var marginTop = height /2;
-	marginTop = Math.floor(marginTop);
-
-	$('#publicationViewer').css({ marginLeft : "-"+ marginLeft +"px", marginTop : "-"+ marginTop +"px" });
-
-	backgroundBox(1);
-	$('#publicationViewer').fadeIn();
+	loadPublicationViewer(publicationId, imgCover);
 });
 
 $(document).on('click', '.more', function(){

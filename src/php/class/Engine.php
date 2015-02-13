@@ -338,6 +338,41 @@
 			return $dataArray['reply'];
 		}
 
+		public static function loadPublicationViewer($id)
+		{
+			$newStaticBdd = new BDD();	
+			$dataArray['reply'] = "";
+
+			$PublicationInfos = $newStaticBdd->select("*", "publications", "WHERE id LIKE '".$id."'");
+			$getPublicationInfos = $newStaticBdd->fetch_array($PublicationInfos);
+			$publicationExist = $newStaticBdd->num_rows($PublicationInfos);
+
+			if($publicationExist == 1)
+			{
+				$UserInfos = $newStaticBdd->select("*", "users", "WHERE id LIKE '".$getPublicationInfos['user_id']."'");
+				$getUserInfos = $newStaticBdd->fetch_array($UserInfos);
+				$usernameExist = $newStaticBdd->num_rows($UserInfos);
+
+				if($usernameExist == 1)
+				{
+					ob_start();
+					include(ROOT.'models/publicationViewer.php');
+					$dataArray['reply'] .= ob_get_contents();
+					ob_end_clean();
+
+					return $dataArray['reply'];
+				}
+				else
+				{
+					return false;
+				}
+			}
+			else
+			{
+				return false;
+			}
+		}
+
 		public static function loadProfil($username)
 		{
 			$newStaticBdd = new BDD();	
@@ -441,7 +476,7 @@
 			return $dataArray['reply'];
 		}
 
-		public static function loadPublicationViewer($id)
+		public static function loadPublicationPage($id)
 		{
 			$newStaticBdd = new BDD();	
 			$dataArray['reply'] = "";
@@ -457,7 +492,7 @@
 				$getUserInfos = $newStaticBdd->fetch_array($UserInfos);
 
 				ob_start();
-				include(ROOT.'models/publication_view.php');
+				include(ROOT.'models/publicationPage.php');
 				$dataArray['reply'] .= ob_get_contents();
 				ob_end_clean();
 
