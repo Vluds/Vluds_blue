@@ -121,13 +121,14 @@
 				<!--<li class="unactive"><a href=""><p>Mes favoris</p></a></li>
 				<li class="unactive"><a href=""><p>Mes tags</p></a></li>
 				<li class="unactive"><a href=""><p>Mes reglages</p></a></li>-->
-				<?php
-					if (User::getUserRole() == 1) {
-				?>
-					<li id="manager" class="unactive" onClick="loadManager()"><p>Manage</p></li>
-				<?php
-					}
-				?>
+		<?php
+			if (User::getUserRole() == 1)
+			{
+		?>
+				<li id="manager" class="unactive" onClick="loadManager()"><p>Manage</p></li>
+		<?php
+			}
+		?>
 
 				<div id="submit-artwork">
 					<input type="submit" value="Ajouter une publication"/>
