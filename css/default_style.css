@@ -298,6 +298,7 @@ header
 #sidebar ul#profil #username
 {
 	cursor: pointer;
+	margin-top: 5px;
 }
 #sidebar ul#profil #addName
 {
