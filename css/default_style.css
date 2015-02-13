@@ -455,9 +455,7 @@ header
 	margin-bottom: -2px;
 	overflow-y: auto;
 	overflow-x: hidden;
-	text-align: center;
 	box-sizing: border-box;
-	text-align: center;
 }
 
 #searchbar
