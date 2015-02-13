@@ -1133,6 +1133,9 @@
 						$getuserInfos = $newStaticBdd->fetch_array($userInfos);
 
 						$newStaticBdd->delete("users", "id LIKE '".$userId."'");
+						self::deleteDirectory(ROOT.'users/'.$userId.'/avatar/', false);
+						self::deleteDirectory(ROOT.'users/'.$userId.'/banner/', false);
+						self::deleteDirectory(ROOT.'users/'.$userId, false);
 
 						return true;
 					}
