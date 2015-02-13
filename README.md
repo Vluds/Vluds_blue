@@ -14,6 +14,6 @@ Follow us on [Twitter](https://twitter.com/Vluds_)
 
 ##Authors
 
-[TymmeSyde](https://github.com/TymmeSyde), [mxcmaxime](https://github.com/mxcmaxime)
+[tymmesyde](https://github.com/TymmeSyde), [mxcmaxime](https://github.com/mxcmaxime)
 
 Made with our little hands for you :heart:
