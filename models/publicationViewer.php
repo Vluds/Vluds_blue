@@ -1,6 +1,6 @@
 <div id="publicationViewer" class="box" ref="<?php echo $getPublicationInfos['id'];?>">
-	<div class="close"><img src="<?php echo WEBROOT; ?>img/cross.png"></div>
 	<div id="container">
+		<div class="close"><img src="<?php echo WEBROOT; ?>img/cross.png"></div>
 <?php
 	if($getPublicationInfos['type'] == 'image')
 	{

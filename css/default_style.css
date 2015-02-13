@@ -648,13 +648,18 @@ header
 	padding-right: 0;
 	padding-top: 0;
 	padding-bottom: 0;
-	overflow: auto;
+}
+#publicationViewer .close
+{
+	top: 5px;
+	left: 5px;
 }
 #publicationViewer #container
 {
 	height: 100%;
 	width: 100%;
 	position: relative;
+	overflow: auto;
 }
 #publicationViewer #cover
 {
@@ -704,6 +709,7 @@ header
 {
 	min-height: 50px;
 	width: 100%;
+	max-height: 65px;
 	line-height: 100%;
 	padding-top: 15px;
 	padding-bottom: 10px;
