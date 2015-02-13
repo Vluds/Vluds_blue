@@ -760,7 +760,12 @@ function uploadAvatar(files, avatarFile)
 
 				if(history.state.page == "profil")
 				{
-					loadProfil(history.state.username);
+					$('#profil-container #profil #avatar img').fadeOut(300)
+					.queue(function(){
+						$(this).attr("src", setJsPath + sData.reply)
+						.dequeue();
+					})
+					.fadeIn(500);
 				}
 				
 			    messageBox("Votre avatar à bien été modifié !");
@@ -810,10 +815,15 @@ function uploadBanner(files, bannerFile)
 		{
 			if(sData.result == 1)
 			{
-				var src = $('#profil-container #banner').attr("src");
-				src = src.substring(0, src.length -12);
-
-				$('#profil-container #banner').css({"background" : "url('"+ sData.reply +"')"});
+				if(history.state.page == "profil")
+				{
+					$('#profil-container #banner').fadeOut(300)
+					.queue(function(){
+						$(this).css({"background-image" : "url('" + setJsPath + sData.reply + "')"})
+						.dequeue();
+					})
+					.fadeIn(500);
+				}
 				
 			    messageBox("Votre bannière à bien été modifiée !");
 			} 

@@ -810,7 +810,7 @@
 	
 					imagepng($cover300, "../../users/".User::getId()."/banner/800_".$bannerId.".png");
 
-					return $bannerId;
+					return "users/".User::getId()."/banner/800_".$bannerId.".png";
 				}
 				else
 				{
