@@ -33,7 +33,7 @@ if(User::isLogged()) {
 							<tr class="manager_table__publication" id="<?php echo $getPublicationInfos['id']; ?>">
 								<td class="manager_table__td"><?php echo $getPublicationInfos['id']; ?></td>
 								<td class="manager_table__td"><?php echo $getPublicationInfos['user_id']; ?></td>
-								<td class="manager_table__td manager_table__publication__text"><?php echo $chaine; ?></td>
+								<td class="manager_table__td manager_table__publication__text" onclick="loadPublicationPage('<?php echo $getPublicationInfos['id'];?>')"><?php echo $chaine; ?></td>
 								<td class="manager_table__td"><button class="manager_table__td__button" onClick="deletePublicationManage(<?php echo $getPublicationInfos['id']; ?>)">☓</button></td>
 							</tr>
 						<?php

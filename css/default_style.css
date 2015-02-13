@@ -520,7 +520,7 @@ header
 #post-comment #post-content
 {
 	display: inline-block;
-	vertical-align: middle;
+	vertical-align: top;
 	margin-left: 10px;
 	margin-top: 1px;
 	min-height: 40px;
@@ -566,12 +566,12 @@ header
 	background-color: rgba(255, 255, 255, 1);
 	position: relative;
 	box-sizing: border-box;
-	height: 53px;
+	min-height: 53px;
 }
 .comment .profil
 {
 	display: inline-block;
-	vertical-align: middle;
+	vertical-align: top;
 }
 .comment .profil .avatar
 {
@@ -585,29 +585,20 @@ header
 	width: 35px;
 	height: 35px;
 }
-/*.comment .username
+.comment .fullname
 {
 	display: inline-block;
 	vertical-align: middle;
-	overflow: hidden;
 	cursor: pointer;
-	margin-left: -4px;
+	font-size: 0.9em;
 }
-.comment .username h3
-{
-	font-size: 1.1em;
-}
-.comment .username .firstname
+.comment .username
 {
 	display: inline-block;
 	vertical-align: middle;
-
+	cursor: pointer;
+	font-size: 0.9em;
 }
-.comment .username .lastname
-{
-	display: inline-block;
-	vertical-align: middle;
-}*/
 .comment .content-container
 {
 	display: inline-block;
@@ -775,6 +766,18 @@ header
 	margin-top: 10px;
 	text-align: left;
 	margin-left: -5px;
+}
+#publicationViewer #infos-container .comment .fullname
+{
+	display: none;
+}
+#publicationViewer #infos-container .comment .username
+{
+	display: none;
+}
+#publicationViewer #infos-container .comment .content-container
+{
+	margin-left: -2px;
 }
 #publicationViewer #infos-container .comment .content-container p
 {

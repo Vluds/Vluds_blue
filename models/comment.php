@@ -20,31 +20,24 @@
 					
 			</div>
 		</div>
-
-		<!--<div class="username" onClick="loadProfil('<?php echo $getUserInfos['username']; ?>')">
-			<?php
-				if(isset($getUserInfos['firstname']) AND isset($getUserInfos['lastname']))
-				{
-			?>
-					<div class="firstname">
-						<h3><?php echo $getUserInfos['firstname'];?></h3>
-					</div>
-
-					<div class="lastname">
-						<h3><?php echo $getUserInfos['lastname']?></h3>
-					</div>
-			<?php
-				}
-				else
-				{
-			?>
-					<div class="username">
-						<h3><?php echo $getUserInfos['username'];?></h3>
-					</div>
-			<?php
-				}
-			?>
-		</div>-->
+	<?php
+		if(isset($getUserInfos['fullname']))
+		{
+	?>
+			<div class="fullname" onClick="loadProfil('<?php echo $getUserInfos['username']; ?>')">
+				<h3><?php echo $getUserInfos['fullname'];?></h3>
+			</div>
+	<?php
+		}
+		else
+		{
+	?>
+			<div class="username" onClick="loadProfil('<?php echo $getUserInfos['username']; ?>')">
+				<h3><?php echo $getUserInfos['username'];?></h3>
+			</div>
+	<?php
+		}
+	?>
 	</div>
 
 	<div class="content-container">

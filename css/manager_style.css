@@ -113,6 +113,7 @@
 	font-size: 13px;
 	line-height: 18px;
 	padding: 10px 0 10px 0;
+	cursor: pointer;
 }
 
 .manager_table__user img {
