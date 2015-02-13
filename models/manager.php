@@ -6,6 +6,24 @@ if(User::isLogged()) {
 	if (User::getUserrole() == 1) {
 
 		?>
+		<div class="manager_stats">
+			<div class="manager_stats__box manager_stats__box--publications">
+				<h2>Publications</h2>
+				<?php
+					$PublicationsNbBdd = $newStaticBdd->select("COUNT(*) AS publicount", "publications", "");
+					$PublicationsNb = $newStaticBdd->fetch_array($PublicationsNbBdd);
+					echo '<p>'.$PublicationsNb['publicount'].'</p>';
+				?>
+			</div>
+			<div class="manager_stats__box manager_stats__box--users">
+				<h2>Users</h2>
+				<?php
+					$UsersNbBdd = $newStaticBdd->select("COUNT(*) AS usercount", "users", "");
+					$UsersNb = $newStaticBdd->fetch_array($UsersNbBdd);
+					echo '<p>'.$UsersNb['usercount'].'</p>';
+				?>
+			</div>
+		</div>
 		<div class="table_container">
 			<table class="manager manager_table manager_table--publication">
 				<tr>
