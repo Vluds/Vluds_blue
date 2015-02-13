@@ -1,4 +1,4 @@
-<div id="publicationViewer" class="box">
+<div id="publicationViewer" class="box" ref="">
 	<div class="close"><img src="<?php echo WEBROOT; ?>img/cross.png"></div>
 	<div id="container">
 		<div id="cover">
@@ -40,7 +40,7 @@
 				if(User::isLogged())
 				{
 			?>
-					<div id="post-comment">
+					<div id="post-comment" ref="">
 						<div id="avatar">
 							<?php
 								if(!empty(User::getAvatar()) AND User::getAvatar() != "0")

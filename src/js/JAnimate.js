@@ -217,7 +217,7 @@ $(document).on('click', '.follow-container', function(event){
 
 $(document).on('click', '.publication .cover, .publication .infos .description', function(){
 
-	var publicationId = $(this).attr('id');
+	var publicationId = $(this).parents(".publication").attr('id');
 
 	var publicationDiv = $(this).parents(".publication");
 
