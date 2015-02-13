@@ -1,6 +1,10 @@
 <div id="publicationViewer" class="box" ref="<?php echo $getPublicationInfos['id'];?>">
 	<div class="close"><img src="<?php echo WEBROOT; ?>img/cross.png"></div>
 	<div id="container">
+<?php
+	if($getPublicationInfos['type'] == 'image')
+	{
+?>
 		<div id="cover">
 			<div id="cover-container" style="background-image: url('<?php echo WEBROOT; ?>publications/<?php echo $getPublicationInfos['id'];?>/coverBlured_<?php echo $getPublicationInfos['token'];?>.png');">
 				<img alt="cover-<?php echo $getPublicationInfos['id'];?>" src="<?php echo WEBROOT; ?>publications/<?php echo $getPublicationInfos['id'];?>/cover_<?php echo $getPublicationInfos['token'];?>.png">
@@ -14,6 +18,9 @@
 				</div>
 			</div>
 		</div>
+<?php
+	}
+?>
 
 		<div id="infos-container">
 			<div id="top-container">
