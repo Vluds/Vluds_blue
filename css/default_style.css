@@ -404,7 +404,6 @@ header
 }
 #sidebar nav ul#notifications-viewer #close
 {
-	
 	right: 4px;
 	top: -1px;
 	cursor: pointer;
@@ -767,19 +766,27 @@ header
 	text-align: left;
 	margin-left: -5px;
 }
-#publicationViewer #infos-container .comment .fullname
+#publicationViewer #infos-container #comments-container #post-comment
+{
+	margin-bottom: 5px;
+}
+#publicationViewer #infos-container #comments-container .comment
+{
+	margin-top: 0px;
+}
+#publicationViewer #infos-container #comments-container .comment .fullname
 {
 	display: none;
 }
-#publicationViewer #infos-container .comment .username
+#publicationViewer #infos-container #comments-container .comment .username
 {
 	display: none;
 }
-#publicationViewer #infos-container .comment .content-container
+#publicationViewer #infos-container #comments-container .comment .content-container
 {
 	margin-left: -2px;
 }
-#publicationViewer #infos-container .comment .content-container p
+#publicationViewer #infos-container #comments-container .comment .content-container p
 {
 	font-size: 0.9em;
 }
