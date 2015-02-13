@@ -90,17 +90,6 @@ window.onpopstate = function(event)
 	}
 }
 
-$(document).on('click', 'sidebar nav ul li', function() 
-{
-	$('section#sidebar nav ul li.active').stop().animate({"background-color": "rgba(10, 10, 10, 0)"}).borderRight(0, 'rgba(10, 10, 10, 0.1)', 100);
-	$('section#sidebar nav ul li.active').attr('class', 'unactive');
-
-	$(this).attr('class', 'active');
-	$(this).stop().animate({"background-color": "rgba(10, 10, 10, 0.1)"}).borderRight(4, 'rgba(10, 10, 10, 0.1)', 100);
-
-	setSidebarPage();
-});
-
 function setSidebarPage()
 {
 	if(history.state.page == "flux")
