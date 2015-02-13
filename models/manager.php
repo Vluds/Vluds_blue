@@ -9,19 +9,19 @@ if(User::isLogged()) {
 		<div class="table_container">
 			<table class="manager manager_table manager_table--publication">
 				<tr>
-					<th>ID</th>
-					<th>User ID</th>
+					<th class="manager_table__th__id">ID</th>
+					<th class="manager_table__th__userid">User ID</th>
 					<th>Content</th>
-					<th>Action</th>
+					<th class="manager_table__th__action">Action</th>
 				</tr>
 			<?php
 
 					$PublicationInfos = $newStaticBdd->select("*", "publications", "ORDER BY ID DESC");
 			        while ($getPublicationInfos = $newStaticBdd->fetch_array($PublicationInfos)) {
 
-			        	if( strlen($getPublicationInfos['content']) >= 40 ) {
+			        	if( strlen($getPublicationInfos['content']) >= 100 ) {
 
-							$chaine = substr($getPublicationInfos['content'],0,40);
+							$chaine = substr($getPublicationInfos['content'],0,100);
 
 						} else {
 
@@ -30,11 +30,11 @@ if(User::isLogged()) {
 						}
 
 						?>
-							<tr class="publication_manage" id="<?php echo $getPublicationInfos['id']; ?>">
-								<td><?php echo $getPublicationInfos['id']; ?></td>
-								<td><?php echo $getPublicationInfos['user_id']; ?></td>
-								<td><?php echo $chaine; ?></td>
-								<td><button onClick="deletePublicationManage(<?php echo $getPublicationInfos['id']; ?>)">DELETE</button></td>
+							<tr class="manager_table__publication" id="<?php echo $getPublicationInfos['id']; ?>">
+								<td class="manager_table__td"><?php echo $getPublicationInfos['id']; ?></td>
+								<td class="manager_table__td"><?php echo $getPublicationInfos['user_id']; ?></td>
+								<td class="manager_table__td manager_table__publication__text"><?php echo $chaine; ?></td>
+								<td class="manager_table__td"><button class="manager_table__td__button" onClick="deletePublicationManage(<?php echo $getPublicationInfos['id']; ?>)">X</button></td>
 							</tr>
 						<?php
 
@@ -46,10 +46,11 @@ if(User::isLogged()) {
 		<div class="table_container">
 			<table class="manager manager_table manager_table--user">
 				<tr>
-					<th>ID</th>
+					<th class="manager_table__th__id">ID</th>
 					<th>Role</th>
+					<th>Avatar</th>
 					<th>Username</th>
-					<th>Action</th>
+					<th class="manager_table__th__action">Action</th>
 				</tr>
 			<?php
 
@@ -57,11 +58,24 @@ if(User::isLogged()) {
 			        while ($getUserInfos = $newStaticBdd->fetch_array($userInfos)) {
 
 						?>
-							<tr class="user" id="<?php echo $getUserInfos['id']; ?>">
-								<td><?php echo $getUserInfos['id']; ?></td>
-								<td><?php echo $getUserInfos['role']; ?></td>
-								<td><?php echo $getUserInfos['username']; ?></td>
-								<td><button onClick="deleteUser(<?php echo $getUserInfos['id']; ?>)">DELETE</button></td>
+							<tr class="manager_table__user" id="<?php echo $getUserInfos['id']; ?>">
+								<td class="manager_table__td"><?php echo $getUserInfos['id']; ?></td>
+								<td class="manager_table__td"><?php echo $getUserInfos['role']; ?></td>
+								<td class="manager_table__user__td">
+									<?php
+										if(!empty($getUserInfos['avatar']) AND $getUserInfos['avatar'] != "0") {
+									?>
+										<img src="<?php echo WEBROOT; ?>users/<?php echo $getUserInfos['id'];?>/avatar/300_<?php echo $getUserInfos['avatar'];?>.png">
+									<?php
+										} else {
+									?>
+										<img src="<?php echo WEBROOT; ?>img/avatar.png">
+									<?php
+										}
+									?>
+								</td>
+								<td class="manager_table__td"><?php echo $getUserInfos['username']; ?></td>
+								<td class="manager_table__td"><button class="manager_table__td__button" onClick="deleteUser(<?php echo $getUserInfos['id']; ?>)">X</button></td>
 							</tr>
 						<?php
 

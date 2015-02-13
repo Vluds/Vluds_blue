@@ -31,7 +31,7 @@
 	-ms-flex: 1 auto;
 	flex: 1 auto;
 
-	padding: 0 10px 0 10px;
+	padding: 10px 10px 0 10px;
 }
 
 .manager.manager_table {
@@ -40,25 +40,32 @@
 }
 
 .manager.manager_table tr {
+	font-family: "OpenSans-Regular";
 	text-align: center;
 	background-attachment: scroll;
 	background-clip: border-box;
-	background-color: #eaeaea;
+	background-color: #E6E6E6;
 	background-image: none;
 	background-origin: padding-box;
 	background-position: 0% 0%;
 	background-repeat: repeat;
 	background-size: auto auto;
 	border-collapse: collapse;
-	font-size: 18px;
-	font-weight: 300;
 	height: 40px;
-	line-height: 30px;
+	-webkit-transition: all 1s ease 0s;
+	-moz-transition: all 1s ease 0s;
+	-o-transition: all 1s ease 0s;
+	transition: all 1s ease 0s;
+}
+
+.manager.manager_table tr:hover {
+	background-color: #333333;
+	color: #eaeaea;
 }
 
 .manager.manager_table th {
 	text-align: center;
-	font-size: 18px;
+	font-size: 16px;
 	font-weight: 300;
 	line-height: 30px;
 	margin-bottom: 0px;
@@ -68,16 +75,22 @@
 	text-align: center;
 }
 
-.manager.manager_table tr {
-	border-collapse: collapse;
-	font-size: 18px;
-	font-weight: 300;
-	height: 40px;
-	line-height: 30px;
+.manager_table__th__userid {
+	min-width: 80px;
 }
 
-.manager.manager_table td {
-	font-size: 18px;
+.manager_table__th__action {
+	padding: 0 15px 0 15px;
+	width: 60px;
+}
+
+.manager_table__th__id {
+	padding: 0 15px 0 15px;
+	width: 10px;
+}
+
+.manager_table__publication__td {
+	font-size: 16px;
 	font-weight: 300;
 	line-height: 30px;
 	margin-bottom: 0px;
@@ -85,8 +98,36 @@
 	margin-right: 0px;
 	margin-top: 0px;
 	padding-bottom: 0px;
-	padding-left: 0px;
-	padding-right: 0px;
+	padding-left: 10px;
+	padding-right: 10px;
 	padding-top: 0px;
 	text-align: center;
+}
+
+.manager_table__publication__text {
+	font-size: 13px;
+	line-height: 18px;
+}
+
+.manager_table__user img {
+	width: 30px;
+	height: 30px;
+}
+
+.manager_table__td__button {
+	background: #e74c3c;
+	color: #eaeaea;
+	width: 30px;
+	height: 30px;
+	border: 0;
+	-webkit-transition: all 0.5s ease 0s;
+	-moz-transition: all 0.5s ease 0s;
+	-o-transition: all 0.5s ease 0s;
+	transition: all 0.5s ease 0s;
+}
+
+.manager_table__td__button:hover {
+	cursor: pointer;
+	background: #eaeaea;
+	color: #e74c3c;
 }

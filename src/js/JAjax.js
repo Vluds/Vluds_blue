@@ -917,7 +917,7 @@ function deletePublicationManage(publicationId)
 	{
 		if(data.result == true)
 		{
-			$(".publication_manage#"+ publicationId).fadeOut(400);
+			$(".manager_table__publication#"+ publicationId).fadeOut(400);
 		}
 		else
 		{
@@ -933,7 +933,7 @@ function deleteUser(userId)
 	{
 		if(data.result == true)
 		{
-			$(".user#"+ userId).fadeOut(400);
+			$(".manager_table__user#"+ userId).fadeOut(400);
 		}
 		else
 		{
