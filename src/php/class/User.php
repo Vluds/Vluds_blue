@@ -1049,6 +1049,43 @@
 			}
 		}
 
+		public static function deleteDirectory($directory, $empty) {
+
+			if(substr($directory,-1) == "/") {
+				$directory = substr($directory,0,-1);
+			}
+
+			if(!file_exists($directory) || !is_dir($directory)) {
+				return false;
+			} elseif(!is_readable($directory)) {
+				return false;
+			} else {
+				$directoryHandle = opendir($directory);
+		
+		        while ($contents = readdir($directoryHandle)) {
+		            if($contents != '.' && $contents != '..') {
+		                $path = $directory . "/" . $contents;
+		 
+		                if(is_dir($path)) {
+		                    supprimer_dossier($path);
+		                } else {
+		                    unlink($path);
+		                }
+		            }
+		        }
+		 
+		        closedir($directoryHandle);
+		 
+		        if($empty == false) {
+		            if(!rmdir($directory)) {
+		                return false;
+		            }
+		        }
+		 
+		        return true;
+		    }
+		} 
+
 		public static function deletePublication($publicationId)
 		{
 			if(self::isLogged())
@@ -1063,6 +1100,7 @@
 					if($getpublicationInfos['user_id'] == User::getId() OR User::getUserrole() == 1)
 					{
 						$newStaticBdd->delete("publications", "id LIKE '".$publicationId."'");
+						self::deleteDirectory(ROOT.'publications/'.$publicationId, false);
 						return true;
 					}
 					else
