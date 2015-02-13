@@ -382,6 +382,19 @@
 			}
 		}
 
+		if($action == "loadPostPublication") 
+		{
+			if(User::isLogged())
+			{
+				$dataArray['reply'] = Engine::loadPostPublication();
+				$dataArray['result'] = true;
+			}
+			else
+			{
+				$dataArray['result'] = false;
+			}
+		}
+
 		if($action == "loadProfil") 
 		{
 			if(isset($_POST['username']) and isset($_POST['username']))
@@ -517,45 +530,52 @@
 
 		if($action == "postPublication") 
 		{
-			if((isset($_POST['publicationContent']) and !empty($_POST['publicationContent'])) AND (isset($_POST['publicationTags']) and !empty($_POST['publicationTags'])))
+			if(User::isLogged())
 			{
-				if(isset($_FILES['publicationFile']) AND !empty($_FILES['publicationFile']))
+				if((isset($_POST['publicationContent']) and !empty($_POST['publicationContent'])) AND (isset($_POST['publicationTags']) and !empty($_POST['publicationTags'])))
 				{
-					$publicationFile = $_FILES['publicationFile'];
+					if(isset($_FILES['publicationFile']) AND !empty($_FILES['publicationFile']))
+					{
+						$publicationFile = $_FILES['publicationFile'];
+					}
+					else
+					{
+						$publicationFile = null;
+					}
+
+					$publicationContent = $_POST['publicationContent'];
+					$publicationTags = $_POST['publicationTags'];
+
+					if(isset($_FILES['coverFile']) and !empty($_FILES['coverFile']))
+					{
+						$coverFile = $_FILES['coverFile'];
+					}
+					else
+					{
+						$coverFile = null;
+					}
+
+					$returnLog = array();
+					$returnLog = User::postPublication($publicationFile, $publicationContent, $publicationTags);
+					
+					if($returnLog['result'] == true)
+					{
+						$dataArray['id'] = $returnLog['id'];
+						$dataArray['result'] = 1;
+					}
+					else
+					{
+						$dataArray['result'] = 0;
+					}
 				}
 				else
 				{
-					$publicationFile = null;
-				}
-
-				$publicationContent = $_POST['publicationContent'];
-				$publicationTags = $_POST['publicationTags'];
-
-				if(isset($_FILES['coverFile']) and !empty($_FILES['coverFile']))
-				{
-					$coverFile = $_FILES['coverFile'];
-				}
-				else
-				{
-					$coverFile = null;
-				}
-
-				$returnLog = array();
-				$returnLog = User::postPublication($publicationFile, $publicationContent, $publicationTags);
-				
-				if($returnLog['result'] == true)
-				{
-					$dataArray['id'] = $returnLog['id'];
-					$dataArray['result'] = 1;
-				}
-				else
-				{
-					$dataArray['result'] = 0;
+					$dataArray['result'] = -1;
 				}
 			}
 			else
 			{
-				$dataArray['result'] = -1;
+				$dataArray['result'] = -2;
 			}
 		}
 

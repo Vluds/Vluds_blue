@@ -373,6 +373,16 @@
 			}
 		}
 
+		public static function loadPostPublication()
+		{
+			ob_start();
+			include(ROOT.'models/postPublication.php');
+			$dataArray['reply'] .= ob_get_contents();
+			ob_end_clean();
+
+			return $dataArray['reply'];
+		}
+
 		public static function loadProfil($username)
 		{
 			$newStaticBdd = new BDD();	

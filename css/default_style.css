@@ -420,9 +420,10 @@ header
 	padding-top: 7px;
 	padding-bottom: 7px;
 	padding-left: 10px;
-	padding-right: 10px;
+	padding-right: 5px;
 	cursor: pointer;
-
+	min-height: 36px;
+	box-sizing: border-box;
 	text-align: left;
 }
 #sidebar nav ul#notifications-viewer #content .notification p
@@ -433,6 +434,7 @@ header
 {
 	display: inline-block;
 	vertical-align: middle;
+	max-width: 250px;
 }
 #sidebar nav ul#notifications-viewer #content .date
 {

@@ -523,13 +523,43 @@ function loadPublicationViewer(id, imgCover)
 				backgroundBox(1);
 				$('#publicationViewer').fadeIn();
 			}
-			else if(data.reply == false)
+			else if(data.result == false)
 			{
 
 			}
 			else
 			{
 				messageBox("Erreur: le viewer n'a pas pu être chargé ...");
+			}
+
+			isBusy = 0;
+
+		}, "json");
+	}
+}
+
+function loadPostPublication()
+{
+	if(isBusy == 0)
+	{
+		isBusy = 1;
+
+		$.post(setJsPath + "src/php/executor.php", { action: "loadPostPublication" }, function(data)
+		{
+			if(data.result == true & data.reply != "")
+			{	
+				$("#postPublication-container").html(data.reply);
+
+				backgroundBox(1);
+				$('#postPublication').fadeIn();
+			}
+			else if(data.result == false)
+			{
+
+			}
+			else
+			{
+				messageBox("Erreur: post publication n'a pas pu être chargé ...");
 			}
 
 			isBusy = 0;
@@ -922,10 +952,9 @@ function postPublication(publicationFile, publicationContent, publicationTags)
 			backgroundBox(0);
 			$('#addPublication').fadeOut(400);
 
-			loadPublicationPage(sData.id);
+			loadPostPublication();
 
-			$('#postPublication .post-content textarea').val("");
-			$('#postPublication .tags-container input').val("");
+			loadPublicationPage(sData.id);
 
 			messageBox("Votre publication à bien été ajoutée !");
 		} 

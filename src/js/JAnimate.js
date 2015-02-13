@@ -312,11 +312,6 @@ $(document).on('click', 'section#sidebar ul#profil #submit-container input[type=
 	regBox(1);
 });
 
-$(document).on('click', '#sidebar nav ul #submit-artwork input', function(){
-	backgroundBox(1);
-	$("#postPublication").fadeIn(400);
-});
-
 $(document).on('click', '.box #cross', function(){
 	backgroundBox(0);
 	$(".box").fadeOut(200);

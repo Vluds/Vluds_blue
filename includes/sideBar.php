@@ -131,7 +131,7 @@
 		?>
 
 				<div id="submit-artwork">
-					<input type="submit" value="Ajouter une publication"/>
+					<input type="submit" value="Ajouter une publication" onClick="loadPostPublication()"/>
 				</div>
 		<?php
 			}

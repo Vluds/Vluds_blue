@@ -116,9 +116,9 @@
 		?>
 
 		<div id="module-container">
-			<script type="text/javascript">
-				loadFile('postPublication', '#module-container');
-			</script>
+			<div id="postPublication-container">
+				
+			</div>
 
 			<div id="publicationViewer-container">
 				
