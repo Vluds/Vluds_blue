@@ -81,7 +81,7 @@
 				{	
 			?>	
 					<script type="text/javascript">
-						loadPublicationViewer('<?php echo $_GET['publication']; ?>');
+						loadPublicationPage('<?php echo $_GET['publication']; ?>');
 					</script>
 			<?php
 				}

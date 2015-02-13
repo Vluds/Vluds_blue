@@ -78,7 +78,7 @@ window.onpopstate = function(event)
 	}
 	else if(event.state.page == "publication")
 	{
-		loadPublicationViewer(event.state.id);
+		loadPublicationPage(event.state.id);
 	}
 	else if(event.state.page == "tagsfinder")
 	{

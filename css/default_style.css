@@ -472,7 +472,6 @@ header
 
 #comments-container
 {
-	margin-top: 10px;
 	min-height: 20px;
 	overflow: hidden;
 }
@@ -1089,7 +1088,7 @@ header
 	border-radius: 5px;
 	height: 1px;
 	margin-top: 5px;
-	margin-bottom: 5px;
+	margin-bottom: 10px;
 }
 
 input

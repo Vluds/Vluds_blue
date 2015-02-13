@@ -91,11 +91,11 @@
 				<p><?php echo $getPublication['content'];?></p>
 			</div>
 
-			<div class="separator">
-			</div>
-
 			<div id="tags-container">
 				<?php echo Engine::getTags($getPublication['id'], 10);?>
+			</div>
+
+			<div class="separator">
 			</div>
 		</div>
 
