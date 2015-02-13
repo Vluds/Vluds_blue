@@ -89,6 +89,11 @@
 	width: 10px;
 }
 
+.manager_table__th__admin {
+	padding: 0 15px 0 15px;
+	width: 60px;
+}
+
 .manager_table__publication__td {
 	font-size: 16px;
 	font-weight: 300;
@@ -130,4 +135,42 @@
 	cursor: pointer;
 	background: #eaeaea;
 	color: #e74c3c;
+}
+
+.manager_table__td__button__admin {
+	cursor: pointer;
+	color: #eaeaea;
+	width: 30px;
+	height: 30px;
+	border: 0;
+	-webkit-transition: all 0.5s ease 0s;
+	-moz-transition: all 0.5s ease 0s;
+	-o-transition: all 0.5s ease 0s;
+	transition: all 0.5s ease 0s;
+}
+
+.manager_table__td__button__admin--true {
+	background: #2ecc71;
+	-webkit-transition: all 0.5s ease 0s;
+	-moz-transition: all 0.5s ease 0s;
+	-o-transition: all 0.5s ease 0s;
+	transition: all 0.5s ease 0s;
+}
+
+.manager_table__td__button__admin--true:hover {
+	background: #eaeaea;
+	color: #2ecc71;
+}
+
+.manager_table__td__button__admin--false {
+	background: #333333;
+	-webkit-transition: all 0.5s ease 0s;
+	-moz-transition: all 0.5s ease 0s;
+	-o-transition: all 0.5s ease 0s;
+	transition: all 0.5s ease 0s;
+}
+
+.manager_table__td__button__admin--false:hover {
+	background: #eaeaea;
+	color: #333333;
 }

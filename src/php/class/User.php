@@ -1064,5 +1064,42 @@
 				return false;
 			}
 		}
+
+		public static function changeUserRole($userId)
+		{
+			if(self::isLogged())
+			{
+				if(User::getUserrole() == 1)
+				{
+					if(isset($userId))
+					{
+						$newStaticBdd = new BDD();
+
+						$userInfos = $newStaticBdd->select("*", "users", "WHERE id LIKE '".$userId."'");
+						$getuserInfos = $newStaticBdd->fetch_array($userInfos);
+
+						if ($getuserInfos['role'] == 1) {
+							$newStaticBdd->update("users", "role = '0'", "WHERE id LIKE '".$userId."'");
+						} elseif ($getuserInfos['role'] == 0) {
+							$newStaticBdd->update("users", "role = '1'", "WHERE id LIKE '".$userId."'");
+						}
+
+						return true;
+					}
+					else
+					{
+						return false;
+					}
+				}
+				else
+				{
+					return false;
+				}
+			}
+			else
+			{
+				return false;
+			}
+		}
 	}
 ?>

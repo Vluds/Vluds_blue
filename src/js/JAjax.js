@@ -943,6 +943,28 @@ function deleteUser(userId)
 	}, "json");
 }
 
+function changeUserRole(userId, roleset)
+{
+	$.post(setJsPath + "src/php/executor.php", { action: "changeUserRole", userId: userId }, function(data)
+	{
+		if(data.result == true)
+		{
+			if(roleset == 'false'){
+				$('.manager_table__td__button__admin#'+ userId).fadeOut(400);
+				console.log(roleset);
+			} else {
+				$('.manager_table__td__button__admin#'+ userId).attr('class', 'test');
+				console.log(roleset);
+			}
+		}
+		else
+		{
+			messageBox("Erreur lors de la modification de l'utilisateur' ...");
+		}
+
+	}, "json");
+}
+
 function deleteComment(commentId)
 {
 	$.post(setJsPath + "src/php/executor.php", { action: "deleteComment", commentId: commentId }, function(data)

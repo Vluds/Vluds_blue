@@ -51,11 +51,20 @@ if(User::isLogged()) {
 					<th>Avatar</th>
 					<th>Username</th>
 					<th class="manager_table__th__action">Action</th>
+					<th class="manager_table__th__admin">Admin</th>
 				</tr>
 			<?php
 
 					$userInfos = $newStaticBdd->select("*", "users", "ORDER BY ID DESC");
 			        while ($getUserInfos = $newStaticBdd->fetch_array($userInfos)) {
+
+			        	if ($getUserInfos['role'] == 1) {
+			        		$rolestatut = '✓';
+			        		$roleclass = 'true';
+			        	} else {
+			        		$rolestatut = 'X';
+			        		$roleclass = 'false';
+			        	}
 
 						?>
 							<tr class="manager_table__user" id="<?php echo $getUserInfos['id']; ?>">
@@ -76,6 +85,7 @@ if(User::isLogged()) {
 								</td>
 								<td class="manager_table__td"><?php echo $getUserInfos['username']; ?></td>
 								<td class="manager_table__td"><button class="manager_table__td__button" onClick="deleteUser(<?php echo $getUserInfos['id']; ?>)">X</button></td>
+								<td class="manager_table__td"><button class="manager_table__td__button__admin manager_table__td__button__admin--<?php echo $roleclass; ?>" id="<?php echo $getUserInfos['id']; ?>" onClick="changeUserRole('<?php echo $getUserInfos['id']; ?>', '<?php echo $roleclass; ?>');"><?php echo $rolestatut; ?></button></td>
 							</tr>
 						<?php
 
