@@ -18,7 +18,6 @@
 	</div>-->
 
 	<div id="publication-container">
-		<div class="loading">
-		</div>
+
 	</div>
 </div>

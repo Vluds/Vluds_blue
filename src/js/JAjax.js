@@ -168,8 +168,8 @@ function getFlux()
 	{
 		isBusy = 1;
 
-		$("#include-container").stop().fadeOut(100).queue(function()
-		{
+		$("#include-container").stop().fadeOut(200)
+		.queue(function() {
 			window.history.pushState({page: 'flux'}, "Flux d'actualité", setJsPath + "Flux");
 			document.title = "Vluds - Flux d'actualité";
 
@@ -203,84 +203,83 @@ function getFlux()
 
 			var existingMargin = 0;
 
+			function ajaxRequest(callback)
+			 {
+				var formData = new FormData();
+				formData.append("action", "getFlux");
+				formData.append("line", nbLinePerHeight);
+				formData.append("limit", nbPublicationPerWidth);
+				formData.append("offset", offset);
+
+				var xhr = new XMLHttpRequest();
+
+				xhr.onreadystatechange = function() 
+				{
+					if (xhr.readyState == 4 && (xhr.status == 200 || xhr.status == 0)) 
+					{
+						var myArr = JSON.parse(xhr.responseText);
+						callback(myArr);
+					}
+				};
+
+				xhr.open('POST', 'src/php/executor.php', true);
+				xhr.send(formData);
+			}
+
+			function readData(sData) 
+			{
 				$('#include-container').loadingOut();
 
-				function ajaxRequest(callback)
-			 	{
-				 	var formData = new FormData();
-				 	formData.append("action", "getFlux");
-				 	formData.append("line", nbLinePerHeight);
-				 	formData.append("limit", nbPublicationPerWidth);
-				 	formData.append("offset", offset);
-
-				 	var xhr = new XMLHttpRequest();
-
-					xhr.onreadystatechange = function() 
-					{
-				        if (xhr.readyState == 4 && (xhr.status == 200 || xhr.status == 0)) 
-				        {
-				            var myArr = JSON.parse(xhr.responseText);
-		        			callback(myArr);
-				        }
-					};
-
-					xhr.open('POST', 'src/php/executor.php', true);
-					xhr.send(formData);
-				}
-
-				function readData(sData) 
+				if(sData.reply == "")
 				{
-					$('#include-container').loadingOut();
+					messageBox("Aucune publication à afficher ...");
+				}
+				else if(sData.result == 1)
+				{
+					$('#publication-container').append(sData.reply);
 
-					if(sData.reply == "")
-					{
-						//messageBox("Aucune publication à afficher ...");
-					}
-					else if(sData.result == 1)
-					{
-						$('#publication-container').append(sData.reply);
+					includeContainerWidth = $('#include-container').width();
+					console.log("includeContainerWidth: " + includeContainerWidth);
 
-						includeContainerWidth = $('#include-container').width();
-						console.log("includeContainerWidth: " + includeContainerWidth);
+					$('.publication-line').width(includeContainerWidth * 4);
 
-						$('.publication-line').width(includeContainerWidth * 4);
+					publicationContainerHeight = $('.publication-line').height() * nbLinePerHeight;
+					console.log("publicationContainerHeight: " + publicationContainerHeight);
 
-						publicationContainerHeight = $('.publication-line').height() * nbLinePerHeight;
-						console.log("publicationContainerHeight: " + publicationContainerHeight);
+					remainingSpace = containerHeight - publicationContainerHeight;
+					remainingSpace = remainingSpace - scrollingBarHeight;
+					console.log("remainingSpace: " + remainingSpace);
 
-						remainingSpace = containerHeight - publicationContainerHeight;
-						remainingSpace = remainingSpace - scrollingBarHeight;
-						console.log("remainingSpace: " + remainingSpace);
-
-						margin = remainingSpace / nbLinePerHeight;
-						margin = margin / 2;
-						margin = Math.round(margin, 0) - 1;
-						console.log("margin: " + margin);
+					margin = remainingSpace / nbLinePerHeight;
+					margin = margin / 2;
+					margin = Math.round(margin, 0) - 1;
+					console.log("margin: " + margin);
 						
-						marginMini = margin / 2;
-						marginMini = Math.round(marginMini, 0);
-						console.log("marginMini: " + marginMini);
+					marginMini = margin / 2;
+					marginMini = Math.round(marginMini, 0);
+					console.log("marginMini: " + marginMini);
 
-						existingMargin = $(".publication").css("margin");
-						console.log("existingMargin: " + existingMargin);
-					}
-					else
-					{
-						messageBox("Erreur lors du chargement des publications !");
-					}
-
-					$('.publication img').load(function(){
-						$('.publication').fadeIn(400);
-						$('.publication').animate({ marginTop: '+' + margin + 'px', marginBottom: '+' + margin + 'px', marginLeft: '+' + marginMini + 'px', marginRight: '+' + marginMini + 'px'}, 200);
-					});
-
-					isBusy = 0;
+					existingMargin = $(".publication").css("margin");
+					console.log("existingMargin: " + existingMargin);
+				}
+				else
+				{
+					messageBox("Erreur lors du chargement des publications !");
 				}
 
-				ajaxRequest(readData);
+				$('.publication img').load(function(){
+					$('.publication').fadeIn(400);
+					$('.publication').animate({ marginTop: '+' + margin + 'px', marginBottom: '+' + margin + 'px', marginLeft: '+' + marginMini + 'px', marginRight: '+' + marginMini + 'px'}, 200);
+				});
 
-			$("#include-container").stop().fadeIn(100).dequeue();
-		});
+				isBusy = 0;
+			}
+
+			ajaxRequest(readData);
+
+			$(this).dequeue();
+
+		}).fadeIn(100);
 	}
 	else
 	{
