@@ -117,6 +117,7 @@
 .manager_table__user img {
 	width: 30px;
 	height: 30px;
+	cursor: pointer;
 }
 
 .manager_table__td__button {

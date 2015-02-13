@@ -97,13 +97,13 @@
 
 	<nav>
 		<ul>
-			<li class="active" onClick="getFlux()"><p>Flux d'actualité</p><div id="sort"><img src="<?php echo WEBROOT; ?>img/grid.png"></div></li>
-			<li class="unactive" onClick="loadTagsFinder('<?php echo User::getUsername(); ?>')"><p>Rechercher</p></li>
+			<li id="flux" class="unactive" onClick="getFlux()"><p>Flux d'actualité</p><div id="sort"><img src="<?php echo WEBROOT; ?>img/grid.png"></div></li>
+			<li id="search" class="unactive" onClick="loadTagsFinder('<?php echo User::getUsername(); ?>')"><p>Rechercher</p></li>
 		<?php
 			if(User::isLogged())
 			{
 		?>
-				<li class="unactive" onClick="loadProfil('<?php echo User::getUsername(); ?>')"><p>Mon profil</p></li>
+				<li id="profil" class="unactive" onClick="loadProfil('<?php echo User::getUsername(); ?>')"><p>Mon profil</p></li>
 				<li id="notifications-li" class="unactive">
 					<p>Notifications</p>
 
@@ -124,7 +124,7 @@
 				<?php
 					if (User::getUserRole() == 1) {
 				?>
-					<li class="unactive" onClick="loadManager()"><p>Manage</p></li>
+					<li id="manager" class="unactive" onClick="loadManager()"><p>Manage</p></li>
 				<?php
 					}
 				?>

@@ -70,7 +70,7 @@ if(User::isLogged()) {
 							<tr class="manager_table__user" id="<?php echo $getUserInfos['id']; ?>">
 								<td class="manager_table__td"><?php echo $getUserInfos['id']; ?></td>
 								<td class="manager_table__td"><?php echo $getUserInfos['role']; ?></td>
-								<td class="manager_table__user__td">
+								<td class="manager_table__user__td" onClick="loadProfil('<?php echo User::getUsername(); ?>')">
 									<?php
 										if(!empty($getUserInfos['avatar']) AND $getUserInfos['avatar'] != "0") {
 									?>
@@ -83,7 +83,7 @@ if(User::isLogged()) {
 										}
 									?>
 								</td>
-								<td class="manager_table__td"><?php echo $getUserInfos['username']; ?></td>
+								<td class="manager_table__td" onClick="loadProfil('<?php echo User::getUsername(); ?>')" style="cursor: pointer;"><?php echo $getUserInfos['username']; ?></td>
 								<td class="manager_table__td"><button class="manager_table__td__button" onClick="deleteUser(<?php echo $getUserInfos['id']; ?>)">☓</button></td>
 								<td class="manager_table__td"><button class="manager_table__td__button__admin <?php echo $roleclass; ?>" id="<?php echo $getUserInfos['id']; ?>" onClick="changeUserRole('<?php echo $getUserInfos['id']; ?>');"><?php echo $rolestatut; ?></button></td>
 							</tr>

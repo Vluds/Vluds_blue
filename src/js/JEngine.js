@@ -1,3 +1,5 @@
+setSidebarPage();
+
 var checkToken = setInterval(checkToken, 10000);
 
 $(document).on('click', function() 
@@ -88,7 +90,44 @@ window.onpopstate = function(event)
 	}
 }
 
+$(document).on('click', 'sidebar nav ul li', function() 
+{
+	$('section#sidebar nav ul li.active').stop().animate({"background-color": "rgba(10, 10, 10, 0)"}).borderRight(0, 'rgba(10, 10, 10, 0.1)', 100);
+	$('section#sidebar nav ul li.active').attr('class', 'unactive');
 
+	$(this).attr('class', 'active');
+	$(this).stop().animate({"background-color": "rgba(10, 10, 10, 0.1)"}).borderRight(4, 'rgba(10, 10, 10, 0.1)', 100);
+
+	setSidebarPage();
+});
+
+function setSidebarPage()
+{
+	if(history.state.page == "flux")
+	{
+		$('#sidebar nav ul li#flux').removeClass("unactive");
+		$('#sidebar nav ul li#flux').addClass("active");
+	}
+	else if(history.state.page == "profil")
+	{
+		$('#sidebar nav ul li#profil').removeClass("unactive");
+		$('#sidebar nav ul li#profil').addClass("active");
+	}
+	else if(history.state.page == "publication")
+	{
+		
+	}
+	else if(history.state.page == "tagsfinder")
+	{
+		$('#sidebar nav ul li#search').removeClass("unactive");
+		$('#sidebar nav ul li#search').addClass("active");
+	}
+	else if(history.state.page == "manager")
+	{
+		$('#sidebar nav ul li#manager').removeClass("unactive");
+		$('#sidebar nav ul li#manager').addClass("active");
+	}
+}
 
 function delDiv(div, time)
 {

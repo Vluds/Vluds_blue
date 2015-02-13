@@ -106,19 +106,14 @@ $(document).on('mouseenter', 'textarea', function(){
 });
 
 
+//NAVIGATION
 $(document).on('mouseenter', 'section#sidebar nav ul li.unactive', function(){
 	$(this).stop().backgroundColorFade("rgba(120, 120, 120, 0.1)", 400);
 }).on('mouseleave', 'section#sidebar nav ul li.unactive', function(){
 	$(this).stop().backgroundColorFade("rgba(120, 120, 120, 0)", 200);
 });
 
-$(document).on('click', 'section#sidebar nav ul li', function(){
-	$('section#sidebar nav ul li.active').stop().animate({"background-color": "rgba(10, 10, 10, 0)"}).borderRight(0, 'rgba(10, 10, 10, 0.1)', 100);
-	$('section#sidebar nav ul li.active').attr('class', 'unactive');
 
-	$(this).attr('class', 'active');
-	$(this).stop().animate({"background-color": "rgba(10, 10, 10, 0.1)"}).borderRight(4, 'rgba(10, 10, 10, 0.1)', 100);
-});
 
 $(document).on('click', 'section#sidebar ul#profil #addName', function(){
 	$('#text-indication', this).fadeOut(100);
