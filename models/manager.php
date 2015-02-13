@@ -112,6 +112,16 @@ if(User::isLogged()) {
 			?>
 			</table>
 		</div>
+		<div class="manager_tags">
+			<?php
+			$TagsInfos = $newStaticBdd->select("*", "tags", "ORDER BY ID DESC");
+			while ($getTagsInfos = $newStaticBdd->fetch_array($TagsInfos)) {
+			?>
+				<div class="manager_tags__box" id="<?php echo $getTagsInfos['id']; ?>"><p><?php echo $getTagsInfos['name']; ?><button class="manager_tags__box__button" onClick="deleteTag(<?php echo $getTagsInfos['id']; ?>)">☓</button></p></div>
+			<?php
+			}
+			?>
+		</div>
 		<?php
 			
 	}

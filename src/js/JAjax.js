@@ -1057,3 +1057,19 @@ function deleteComment(commentId)
 
 	}, "json");
 }
+
+function deleteTag(tagId)
+{
+	$.post(setJsPath + "src/php/executor.php", { action: "deleteTag", tagId: tagId }, function(data)
+	{
+		if(data.result == true)
+		{
+			$(".manager_tags__box#"+ tagId).fadeOut(400);
+		}
+		else
+		{
+			messageBox("Erreur lors de la suppression du tag ...");
+		}
+
+	}, "json");
+}

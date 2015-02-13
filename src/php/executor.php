@@ -648,6 +648,27 @@
 			}
 		}
 
+		if($action == "deleteTag")
+		{
+			if(isset($_POST['tagId']))
+			{
+				$tagId = $_POST['tagId'];
+
+				if(User::deleteTag($tagId))
+				{
+					$dataArray['result'] = true;
+				}
+				else
+				{
+					$dataArray['result'] = false;
+				}
+			}
+			else
+			{
+				$dataArray['result'] = false;
+			}
+		}
+
 		if($action == "isLogged")
 		{
 			if(User::isLogged())

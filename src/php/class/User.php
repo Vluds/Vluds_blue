@@ -1155,5 +1155,37 @@
 			}
 		}
 
+		public static function deleteTag($tagId)
+		{
+			if(self::isLogged())
+			{
+				if(isset($tagId))
+				{		
+					$newStaticBdd = new BDD();
+
+					$tagInfos = $newStaticBdd->select("*", "tags", "WHERE id LIKE '".$tagId."'");
+					$gettagInfos = $newStaticBdd->fetch_array($tagInfos);
+
+					if(User::getUserrole() == 1)
+					{
+						$newStaticBdd->delete("tags", "id LIKE '".$tagId."'");
+						return true;
+					}
+					else
+					{
+						return false;
+					}
+				}
+				else
+				{
+					return false;
+				}
+			}
+			else
+			{
+				return false;
+			}
+		}
+
 	}
 ?>
