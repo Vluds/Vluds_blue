@@ -21,7 +21,7 @@
 			</div>
 		</div>
 
-		<div class="username" onClick="loadProfil('<?php echo $getUserInfos['username']; ?>')">
+		<!--<div class="username" onClick="loadProfil('<?php echo $getUserInfos['username']; ?>')">
 			<?php
 				if(isset($getUserInfos['firstname']) AND isset($getUserInfos['lastname']))
 				{
@@ -44,7 +44,7 @@
 			<?php
 				}
 			?>
-		</div>
+		</div>-->
 	</div>
 
 	<div class="content-container">

@@ -64,9 +64,7 @@
 				</div>
 			</div>
 			<div id="description">
-				<p>
-					<?php echo $getPublicationInfos['content'];?>
-				</p>
+				<p><?php echo $getPublicationInfos['content'];?></p>
 			</div>
 
 			<div id="tags-container">
