@@ -566,11 +566,13 @@ header
 	border-radius: 5px;
 	background-color: rgba(255, 255, 255, 1);
 	position: relative;
+	box-sizing: border-box;
+	height: 53px;
 }
 .comment .profil
 {
 	display: inline-block;
-	vertical-align: top;
+	vertical-align: middle;
 }
 .comment .profil .avatar
 {
@@ -584,7 +586,7 @@ header
 	width: 35px;
 	height: 35px;
 }
-.comment .username
+/*.comment .username
 {
 	display: inline-block;
 	vertical-align: middle;
@@ -606,7 +608,7 @@ header
 {
 	display: inline-block;
 	vertical-align: middle;
-}
+}*/
 .comment .content-container
 {
 	display: inline-block;
@@ -614,6 +616,7 @@ header
 	margin-top: 7px;
 	margin-left: 5px;
 	margin-right: 10px;
+	height: 100%;
 }
 .comment .date
 {
@@ -773,6 +776,10 @@ header
 	margin-top: 10px;
 	text-align: left;
 	margin-left: -5px;
+}
+#publicationViewer #infos-container .comment .content-container p
+{
+	font-size: 0.9em;
 }
 
 .box
