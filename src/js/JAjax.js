@@ -943,23 +943,25 @@ function deleteUser(userId)
 	}, "json");
 }
 
-function changeUserRole(userId, roleset)
+function changeUserRole(userId)
 {
-	$.post(setJsPath + "src/php/executor.php", { action: "changeUserRole", userId: userId }, function(data)
+	$.post(setJsPath + "src/php/executor.php", { action: "changeUserRole", userId: userId}, function(data)
 	{
 		if(data.result == true)
 		{
-			if(roleset == 'false'){
-				$('.manager_table__td__button__admin#'+ userId).fadeOut(400);
-				console.log(roleset);
+			if(data.returnRole == 1){
+				$('#'+ userId +'.manager_table__td__button__admin').removeClass('false');
+				$('#'+ userId +'.manager_table__td__button__admin').addClass('true');
+				$('#'+ userId +'.manager_table__td__button__admin').html('✓');
 			} else {
-				$('.manager_table__td__button__admin#'+ userId).attr('class', 'test');
-				console.log(roleset);
+				$('#'+ userId +'.manager_table__td__button__admin').removeClass('true');
+				$('#'+ userId +'.manager_table__td__button__admin').addClass('false');
+				$('#'+ userId +'.manager_table__td__button__admin').html('☓');
 			}
 		}
 		else
 		{
-			messageBox("Erreur lors de la modification de l'utilisateur' ...");
+			messageBox("Erreur lors de la modification des droits de l'utilisateur' ...");
 		}
 
 	}, "json");

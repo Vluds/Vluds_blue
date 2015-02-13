@@ -34,7 +34,7 @@ if(User::isLogged()) {
 								<td class="manager_table__td"><?php echo $getPublicationInfos['id']; ?></td>
 								<td class="manager_table__td"><?php echo $getPublicationInfos['user_id']; ?></td>
 								<td class="manager_table__td manager_table__publication__text"><?php echo $chaine; ?></td>
-								<td class="manager_table__td"><button class="manager_table__td__button" onClick="deletePublicationManage(<?php echo $getPublicationInfos['id']; ?>)">X</button></td>
+								<td class="manager_table__td"><button class="manager_table__td__button" onClick="deletePublicationManage(<?php echo $getPublicationInfos['id']; ?>)">☓</button></td>
 							</tr>
 						<?php
 
@@ -62,7 +62,7 @@ if(User::isLogged()) {
 			        		$rolestatut = '✓';
 			        		$roleclass = 'true';
 			        	} else {
-			        		$rolestatut = 'X';
+			        		$rolestatut = '☓';
 			        		$roleclass = 'false';
 			        	}
 
@@ -84,8 +84,8 @@ if(User::isLogged()) {
 									?>
 								</td>
 								<td class="manager_table__td"><?php echo $getUserInfos['username']; ?></td>
-								<td class="manager_table__td"><button class="manager_table__td__button" onClick="deleteUser(<?php echo $getUserInfos['id']; ?>)">X</button></td>
-								<td class="manager_table__td"><button class="manager_table__td__button__admin manager_table__td__button__admin--<?php echo $roleclass; ?>" id="<?php echo $getUserInfos['id']; ?>" onClick="changeUserRole('<?php echo $getUserInfos['id']; ?>', '<?php echo $roleclass; ?>');"><?php echo $rolestatut; ?></button></td>
+								<td class="manager_table__td"><button class="manager_table__td__button" onClick="deleteUser(<?php echo $getUserInfos['id']; ?>)">☓</button></td>
+								<td class="manager_table__td"><button class="manager_table__td__button__admin <?php echo $roleclass; ?>" id="<?php echo $getUserInfos['id']; ?>" onClick="changeUserRole('<?php echo $getUserInfos['id']; ?>');"><?php echo $rolestatut; ?></button></td>
 							</tr>
 						<?php
 

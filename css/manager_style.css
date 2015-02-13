@@ -149,7 +149,7 @@
 	transition: all 0.5s ease 0s;
 }
 
-.manager_table__td__button__admin--true {
+.manager_table__td__button__admin.true {
 	background: #2ecc71;
 	-webkit-transition: all 0.5s ease 0s;
 	-moz-transition: all 0.5s ease 0s;
@@ -157,12 +157,12 @@
 	transition: all 0.5s ease 0s;
 }
 
-.manager_table__td__button__admin--true:hover {
+.manager_table__td__button__admin.true:hover {
 	background: #eaeaea;
 	color: #2ecc71;
 }
 
-.manager_table__td__button__admin--false {
+.manager_table__td__button__admin.false {
 	background: #333333;
 	-webkit-transition: all 0.5s ease 0s;
 	-moz-transition: all 0.5s ease 0s;
@@ -170,7 +170,7 @@
 	transition: all 0.5s ease 0s;
 }
 
-.manager_table__td__button__admin--false:hover {
+.manager_table__td__button__admin.false:hover {
 	background: #eaeaea;
 	color: #333333;
 }

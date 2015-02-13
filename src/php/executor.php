@@ -592,18 +592,24 @@
 			{
 				$userId = $_POST['userId'];
 
-				if(User::changeUserRole($userId))
+				$returnRole = array();
+				$returnRole = User::changeUserRole($userId);
+
+				if($returnRole['result'] == true)
 				{
 					$dataArray['result'] = true;
+					$dataArray['returnRole'] = $returnRole['returnRole'];
 				}
 				else
 				{
 					$dataArray['result'] = false;
+					$dataArray['returnRole'] = null;
 				}
 			}
 			else
 			{
 				$dataArray['result'] = false;
+				$dataArray['returnRole'] = null;
 			}
 		}
 
