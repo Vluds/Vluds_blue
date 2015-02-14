@@ -287,7 +287,7 @@
 	-ms-flex: 0 auto;
 	flex: 0 auto;
 
-	padding: 0 0 0 5px;
+	padding: 0;
 	border-radius: 5px;
 }
 
@@ -295,16 +295,29 @@
 	color: #ffffff;
 }
 
+.manager_tags__box span {
+	display: inline-block;
+	background-color: #444444;
+	color: #eaeaea;
+	width: 20px;
+	height: 100%;
+	line-height: 20px;
+	font-size: 13px;
+	border-radius: 5px 0 0 5px;
+	margin-right: 5px;
+	border: 0px;
+}
+
 .manager_tags__box__button {
 	cursor: pointer;
-	background-color: #555555;
+	background-color: #e74c3c;
 	color: #eaeaea;
 	width: 20px;
 	height: 20px;
 	line-height: 18px;
 	font-size: 13px;
 	border: 0;
-	border-radius: 5px;
+	border-radius: 0 5px 5px 0;
 	margin-left: 5px;
 	-webkit-transition: all 0.5s ease 0s;
 	-moz-transition: all 0.5s ease 0s;
