@@ -114,7 +114,7 @@ if(User::isLogged()) {
 		</div>
 		<div class="manager_tags">
 			<?php
-			$TagsInfos = $newStaticBdd->select("*", "tags", "ORDER BY ID DESC");
+			$TagsInfos = $newStaticBdd->select("*, COUNT(`name`) AS `name_occurrence`", "tags", "GROUP BY `name` ORDER BY `name_occurrence` DESC");
 			while ($getTagsInfos = $newStaticBdd->fetch_array($TagsInfos)) {
 			?>
 				<div class="manager_tags__box" id="<?php echo $getTagsInfos['id']; ?>"><p><?php echo $getTagsInfos['name']; ?><button class="manager_tags__box__button" onClick="deleteTag(<?php echo $getTagsInfos['id']; ?>)">☓</button></p></div>
