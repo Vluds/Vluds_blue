@@ -66,13 +66,6 @@ function logUser(username, password)
 			$('#signBox #container input#password').val("");
 
 			loadSideBar();
-			loadFile("publicationViewer", 'body');
-
-			delDiv('#postPublication', 200)
-			loadFile('postPublication', '#module-container');
-
-			delDiv('#publicationViewer', 200)
-			loadFile('publicationViewer', '#module-container');
 
 			getFlux();
 
@@ -106,13 +99,6 @@ function logOut()
 		if(data.result == 1)
 		{	
 			loadSideBar();
-			loadFile("publicationViewer", 'body');
-
-			delDiv('#postPublication', 200)
-			loadFile('postPublication', '#module-container');
-
-			delDiv('#publicationViewer', 200)
-			loadFile('publicationViewer', '#module-container');
 
 			getFlux();
 
@@ -825,7 +811,7 @@ function uploadAvatar(files, avatarFile)
 
 		function readData(sData) 
 		{
-			if(sData.result == 1)
+			if(sData.result == 1 && sData.reply != false)
 			{
 				$('#sidebar #profil #avatar img').fadeOut(300)
 				.queue(function(){
@@ -848,7 +834,7 @@ function uploadAvatar(files, avatarFile)
 			} 
 			else 
 			{
-			   	messageBox("Nous n'avons pas pu modifier votre avatar ...!");	    
+			   	messageBox("Nous n'avons pas pu modifier votre avatar ... Veuillez réesayer avec un autre fichier.");	    
 			}
 		}
 
@@ -905,7 +891,7 @@ function uploadBanner(files, bannerFile)
 			} 
 			else 
 			{
-			   	messageBox("Nous n'avons pas pu modifier votre bannière ...!");	    
+			   	messageBox("Nous n'avons pas pu modifier votre bannière ... Veuillez réesayer avec un autre fichier.");	    
 			}
 		}
 

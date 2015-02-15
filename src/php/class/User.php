@@ -11,6 +11,16 @@
 		public function __construct()
 		{
 			$this->newbdd = new BDD();
+
+			/*if(!file_exists(ROOT."users/".User::getId()."/avatar"))
+			{
+				mkdir(ROOT."users/".User::getId()."/avatar", 0700, true);
+			}
+
+			if(!file_exists(ROOT."users/".User::getId()."/banner"))
+			{
+				mkdir(ROOT."users/".User::getId()."/banner", 0700, true);
+			}*/
 		}
 
 		public static function isLogged()
@@ -761,9 +771,16 @@
 						imagecopyresampled($avatarResized, $cover, 0, 0, 0, 0, $width, 300, $coverWidth, $coverHeight);
 						$cover300 = $avatarResized;
 					}
-	
-					imagepng($cover60, ROOT."users/".User::getId()."/avatar/60_".$avatarId.".png");
-					imagepng($cover300, ROOT."users/".User::getId()."/avatar/300_".$avatarId.".png");
+
+					if(file_exists(ROOT."users/".User::getId()."/avatar"))
+					{
+						imagepng($cover60, ROOT."users/".User::getId()."/avatar/60_".$avatarId.".png");
+						imagepng($cover300, ROOT."users/".User::getId()."/avatar/300_".$avatarId.".png");
+					}
+					else
+					{
+						return false;
+					}
 
 					return "users/".User::getId()."/avatar/300_".$avatarId.".png";
 				}
